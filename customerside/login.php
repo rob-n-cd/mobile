@@ -35,7 +35,7 @@ if(isset($_POST['signin']))
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Sign Up </title>
+    <title>login </title>
 
     <!-- Font Icon -->
     <link rel="stylesheet" href="registration/fonts/material-icon/css/material-design-iconic-font.min.css">
@@ -54,7 +54,7 @@ if(isset($_POST['signin']))
                         <a href="regi1.php" class="signup-image-link">Create an account</a>
                     </div>
                     <div class="signin-form">
-                        <h2 class="form-title">Sign up</h2>
+                        <h2 class="form-title">login</h2>
                         <form method="POST" class="register-form" id="login-form">
                             <div class="form-group">
                                 <!--<label for="your_name"><i class="zmdi zmdi-account material-icons-name"></i></label>
