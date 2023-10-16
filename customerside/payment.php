@@ -1,10 +1,9 @@
 <?php 
 
  require('../config/autoload.php'); 
-include("header.php");
 
 $file=new FileUpload();
-$elements=array( "cname"=>"","cplace"=>"","cimg"=>"");
+$elements=array( "cardname"=>"","cardnumber"=>"","hname"=>"","pprice"=>"");
 
 
 $form=new FormAssist($elements,$_POST);
@@ -13,12 +12,14 @@ $form=new FormAssist($elements,$_POST);
 
 $dao=new DataAccess();
 
-$labels=array('cname'=>"Company name",'cplace'=>"Company place",'cimg'=>"Company logo");
+$labels=array('cardname'=>"Card name",'cardnumber'=>"Card Number",'hname'=>"Holder Name",'pprice'=>"Mobile Price");
 
 $rules=array(
-    "cname"=>array("required"=>true,"minlength"=>3,"maxlength"=>30,"alphaonly"=>true),
-    "cplace"=>array("required"=>true,"minlength"=>2,"maxlength"=>30,"alphaonly"=>true),
-    "cimg"=>array("filerequired"=>true)
+    "cardname"=>array("required"=>true,"minlength"=>3,"maxlength"=>30,"alphaonly"=>true),
+    "cardnumber"=>array("required"=>true,"minlength"=>2,"maxlength"=>30,"alphaonly"=>true),
+    "hname"=>array("required"=>true,"minlength"=>3,"maxlength"=>30,"alphaonly"=>true),
+    "pprice"=>array("required"=>true,"minlength"=>2,"maxlength"=>30,"alphaonly"=>true)
+    
      
 );
     
@@ -37,16 +38,18 @@ if($validator->validate($_POST))
 $data=array(
 
        
-        'cname'=>$_POST['cname'],
-        'cplace'=>$_POST['cplace'],
-        'cimg'=>$fileName
+        'cardname'=>$_POST['cardname'],
+        'cardnumber'=>$_POST['cardnumber'],
+        'hname'=>$_POST['hname'],
+        'pprice'=>$_POST['pprice']
+        
         
          
     );
 
     print_r($data);
   
-    if($dao->insert($data,"company"))
+    if($dao->insert($data,"payment"))
     {
         echo "<script> alert('New record created successfully');</script> ";
 
@@ -75,32 +78,40 @@ echo $file->errors();
 
 <div class="row">
                     <div class="col-md-6">
-Company name:
+Card name:
 
-<?= $form->textBox('cname',array('class'=>'form-control')); ?>
-<?= $validator->error('cname'); ?>
-
-</div>
-</div>
-<div class="row">
-                    <div class="col-md-6">
-Company place:
-
-<?= $form->textBox('cplace',array('class'=>'form-control')); ?>
-<?= $validator->error('cplace'); ?>
+<?= $form->textBox('cardname',array('class'=>'form-control')); ?>
+<?= $validator->error('cardname'); ?>
 
 </div>
 </div>
 <div class="row">
                     <div class="col-md-6">
-Company logo:
+Card Number:
 
-<?= $form->fileField('cimg',array('class'=>'form-control')); ?>
-<span style="color:red;"><?= $validator->error('cimg'); ?></span>
+<?= $form->textBox('cardnumber',array('class'=>'form-control')); ?>
+<?= $validator->error('cardnumber'); ?>
 
 </div>
 </div>
+<div class="row">
+                    <div class="col-md-6">
+Holder Name:
+<?= $form->textBox('cardnumber',array('class'=>'form-control')); ?>
+<?= $validator->error('cardnumber'); ?>
 
+
+</div>
+</div>
+<div class="row">
+                    <div class="col-md-6">
+Mobile Price:
+
+<?= $form->textBox('pprice',array('class'=>'form-control')); ?>
+<?= $validator->error('pprice'); ?>
+
+</div>
+</div>
 <button type="submit" name="insert">Submit</button>
 </form>
 
