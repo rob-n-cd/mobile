@@ -30,7 +30,7 @@ $dao=new DataAccess();
     $actions=array(
     'edit'=>array('label'=>'Edit','link'=>'editcompany.php','params'=>array('id'=>'cid'),'attributes'=>array('class'=>'btn btn-success')),
     
-    'delete'=>array('label'=>'Delete','link'=>'editspecilization.php','params'=>array('id'=>'cid'),'attributes'=>array('class'=>'btn btn-success'))
+    'delete'=>array('label'=>'Delete','link'=>'deletecompany.php','params'=>array('id'=>'cid'),'attributes'=>array('class'=>'btn btn-success'))
     
     );
 
