@@ -28,7 +28,7 @@ if($validator->validate($_POST))
 {
 
 if(isset($_FILES['cimg']['name'])){
-			if($fileName=$file->doUploadRandom($_FILES['cimg'],array('.jpg','.png','.jpeg','jfif',),100000,5,'../upload'))
+			if($fileName=$file->doUploadRandom($_FILES['cimg'],array('.jpg','.png','.jpeg','.JPEG','.jfif','.JFIF'),100000,5,'../upload'))
 			{
 				$flag=true;
 					
@@ -108,10 +108,11 @@ Company place:
 <div class="row">
                     <div class="col-md-6">
 
-Company iMAGE:
+Company logo:
 
 
 <?= $form->fileField('cimg',array('class'=>'form-control')); ?>
+<span style="color:red;"><?= $validator->error('cimg'); ?></span>
 
 </div>
 </div>
