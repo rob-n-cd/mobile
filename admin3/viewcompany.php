@@ -51,7 +51,7 @@ $dao=new DataAccess();
     );
      $fields=array('cid','cname','cplace','cimg');
 
-    $users=$dao->selectAsTable($fields,'company',1,null,$actions,$config);
+    $users=$dao->selectAsTable($fields,'company',"status=1",null,$actions,$config);
     
     echo $users;
                     
