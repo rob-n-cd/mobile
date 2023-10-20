@@ -8,8 +8,6 @@ $elements=array( "cardname"=>"","cardnumber"=>"","hname"=>"","pprice"=>"");
 
 $form=new FormAssist($elements,$_POST);
 
-
-
 $dao=new DataAccess();
 
 $labels=array('cardname'=>"Card name",'cardnumber'=>"Card Number",'hname'=>"Holder Name",'pprice'=>"Mobile Price");
