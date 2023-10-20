@@ -93,7 +93,7 @@ Card Number:
 <div class="row">
                     <div class="col-md-6">
 Holder Name:
-<?= $form->textBox('cardnumber',array('class'=>'form-control')); ?>
+<?= $form->textBox('hname',array('class'=>'form-control')); ?>
 <?= $validator->error('hname'); ?>
 
 
