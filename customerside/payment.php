@@ -14,7 +14,7 @@ $labels=array('cardname'=>"Card name",'cardnumber'=>"Card Number",'hname'=>"Hold
 
 $rules=array(
     "cardname"=>array("required"=>true,"minlength"=>3,"maxlength"=>30,"alphaonly"=>true),
-    "cardnumber"=>array("required"=>true,"minlength"=>2,"maxlength"=>30,"alphaonly"=>true),
+    "cardnumber"=>array("required"=>true,"minlength"=>2,"maxlength"=>30,"integeronly"=>true),
     "hname"=>array("required"=>true,"minlength"=>3,"maxlength"=>30,"alphaonly"=>true),
     "pprice"=>array("required"=>true,"minlength"=>2,"maxlength"=>30,"integeronly"=>true)
     
