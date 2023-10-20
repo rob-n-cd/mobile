@@ -16,7 +16,7 @@ $rules=array(
     "cardname"=>array("required"=>true,"minlength"=>3,"maxlength"=>30,"alphaonly"=>true),
     "cardnumber"=>array("required"=>true,"minlength"=>2,"maxlength"=>30,"alphaonly"=>true),
     "hname"=>array("required"=>true,"minlength"=>3,"maxlength"=>30,"alphaonly"=>true),
-    "pprice"=>array("required"=>true,"minlength"=>2,"maxlength"=>30,"alphaonly"=>true)
+    "pprice"=>array("required"=>true,"minlength"=>2,"maxlength"=>30,"integeronly"=>true)
     
      
 );
@@ -30,8 +30,7 @@ if(isset($_POST["insert"]))
 if($validator->validate($_POST))
 {
 	
-    if($fileName=$file->doUploadRandom($_FILES['cimg'],array('.jpg','.png','.JPEG','.jfif','.JFIF'),100000,1,'../upload'))	
-    {
+  
 
 $data=array(
 
@@ -63,7 +62,6 @@ else
 echo $file->errors();
 }
 
-}
 
 
 ?>
@@ -96,7 +94,7 @@ Card Number:
                     <div class="col-md-6">
 Holder Name:
 <?= $form->textBox('cardnumber',array('class'=>'form-control')); ?>
-<?= $validator->error('cardnumber'); ?>
+<?= $validator->error('hname'); ?>
 
 
 </div>
