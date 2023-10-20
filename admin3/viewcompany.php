@@ -30,7 +30,7 @@ $dao=new DataAccess();
     $actions=array(
     'edit'=>array('label'=>'Edit','link'=>'editcompany.php','params'=>array('id'=>'cid'),'attributes'=>array('class'=>'btn btn-success')),
     
-    'delete'=>array('label'=>'Delete','link'=>'editspecilization.php','params'=>array('id'=>'cid'),'attributes'=>array('class'=>'btn btn-success'))
+    'delete'=>array('label'=>'Delete','link'=>'deletecompany.php','params'=>array('id'=>'cid'),'attributes'=>array('class'=>'btn btn-success'))
     
     );
 
@@ -51,7 +51,7 @@ $dao=new DataAccess();
     );
      $fields=array('cid','cname','cplace','cimg');
 
-    $users=$dao->selectAsTable($fields,'company',1,null,$actions,$config);
+    $users=$dao->selectAsTable($fields,'company',"status=1",null,$actions,$config);
     
     echo $users;
                     
