@@ -1,5 +1,4 @@
 <?php 
-
  require('../config/autoload.php'); 
 include("header.php");
 $file=new FileUpload();
