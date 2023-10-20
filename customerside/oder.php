@@ -4,7 +4,7 @@
 include("header.php");
 
 $file=new FileUpload();
-$elements=array("ename"=>"","eage"=>"","did"=>"");
+$elements=array("oname"=>"","oaddress"=>"","pincode"=>"","place"=>"","contry"=>"","proname"=>"","proprice"=>"");
 
 
 $form=new FormAssist($elements,$_POST);
@@ -13,7 +13,7 @@ $form=new FormAssist($elements,$_POST);
 
 $dao=new DataAccess();
 
-$labels=array('ename'=>"Employee name",'eage'=>"Employee age",'did'=>"Departmentname");
+$labels=array('oname'=>"Customer name",'oaddress'=>"Address",'pincode'=>"Pincode","place"=>"Place","contry"=>"Contry","proname"=>"Product name","proprice"=>"Product price");
 
 $rules=array(
     "ename"=>array("required"=>true,"minlength"=>3,"maxlength"=>40,"alphaspaceonly"=>true),
