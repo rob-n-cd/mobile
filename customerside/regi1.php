@@ -3,14 +3,16 @@
 $dao=new DataAccess(); 
 $rules=array(
 	'name'=>array('required'=>true),
+    'address'=>array('required'=>true),
     'email'=>array('required'=>true),
     'password'=>array('required'=>true),
 
 );
-$labels=array('name'=>"Name","email"=>"Email","password"=>"Password");
+$labels=array('name'=>"Name","address"=>"Address","email"=>"Email","password"=>"Password");
 $validator=new FormValidator($rules);
 $elements=array(
     'name' =>'',
+    'address' =>'',
 	'email'=>'',
 	'password' =>'',
     );
@@ -23,6 +25,7 @@ if(isset($_POST['signup']))
 	{
 	$data=array(
         'name'=>$_POST['name'],
+        'address'=>$_POST['address'],
 		'email'=>$_POST['email'],
 		'password'=>$_POST['password'],
   
@@ -32,7 +35,7 @@ if(isset($_POST['signup']))
         {
         	$msg="Registered successfully";
 		echo "<script> alert('New record created successfully');</script> ";
-		
+		header("location:login.php");
 		}
 		
 		else
@@ -73,10 +76,17 @@ if(isset($_POST['signup']))
                                <!-- <label for="name"><i class="zmdi zmdi-account material-icons-name"></i></label>
                                 <input type="text" name="name" id="name" placeholder="Your Name"/>--><h5>NAME:<?php echo $form->textBox('name'); ?> </h5>
 			<?php echo $validator->error('name') ?>
+            </div>
+                            <div class="form-group">
+                               <!-- <label for="email"><i class="zmdi zmdi-email"></i></label>
+                                <input type="email" name="email" id="email" placeholder="Your Email"/>--><h5>Address:<?php echo $form->textBox('address'); ?> </h5>
+                                
+			<?php echo $validator->error('address') ?>
                             </div>
                             <div class="form-group">
                                <!-- <label for="email"><i class="zmdi zmdi-email"></i></label>
                                 <input type="email" name="email" id="email" placeholder="Your Email"/>--><h5>EMAIL:<?php echo $form->textBox('email'); ?> </h5>
+                                
 			<?php echo $validator->error('email') ?>
                             </div>
                             <div class="form-group">
@@ -133,6 +143,10 @@ if(isset($_POST['signup']))
                 	<tr>
 			<td><h4>NAME:<?php echo $form->textBox('name'); ?> </h4><br/></td>
 			<td><?php echo $validator->error('name') ?></td>
+			</tr>
+            	<tr>
+			<td><h4>NAME:<?php echo $form->textBox('address'); ?> </h4><br/></td>
+			<td><?php echo $validator->error('address') ?></td>
 			</tr>
 			<tr>
 			<td><h4>USER NAME:<?php echo $form->textBox('email'); ?> </h4><br/></td>

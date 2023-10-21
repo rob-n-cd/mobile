@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
-<?php require('../config/autoload.php'); ?>
+<?php include('../config/autoload.php'); ?>
 <?php
 $dao=new DataAccess();
 ?>
