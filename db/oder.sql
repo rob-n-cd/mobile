@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1:3306
--- Generation Time: Oct 20, 2023 at 09:17 AM
+-- Generation Time: Oct 21, 2023 at 07:47 AM
 -- Server version: 8.0.31
 -- PHP Version: 8.0.26
 
@@ -31,14 +31,19 @@ DROP TABLE IF EXISTS `oder`;
 CREATE TABLE IF NOT EXISTS `oder` (
   `oid` int NOT NULL AUTO_INCREMENT,
   `oname` varchar(30) NOT NULL,
-  `oaddress` varchar(30) NOT NULL,
-  `pincode` varchar(20) NOT NULL,
-  `place` varchar(30) NOT NULL,
-  `contry` varchar(25) NOT NULL,
-  `proname` varchar(30) NOT NULL,
+  `quandity` int NOT NULL,
+  `total` int NOT NULL,
   `proprice` int NOT NULL,
   PRIMARY KEY (`oid`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=MyISAM AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+
+--
+-- Dumping data for table `oder`
+--
+
+INSERT INTO `oder` (`oid`, `oname`, `quandity`, `total`, `proprice`) VALUES
+(3, 'iphone', 1, 50000, 50000),
+(2, 'iphone', 1, 50000, 50000);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
