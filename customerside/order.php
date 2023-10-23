@@ -46,7 +46,7 @@ $data=array(
     if($dao->insert($data,"oder"))
     {
         echo "<script> alert('New record created successfully');</script> ";
-
+            header('location:payment.php');
     }
     else
         {$msg="Registration failed";} ?>

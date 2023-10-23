@@ -19,7 +19,7 @@ if(isset($_POST['signin']))
 		if($info=$dao->login($data,$table))
 		{
 		$_SESSION['email']=$info['email'];
-		header('location:regi1.php');
+		header('location:header1.php');
 		}
 		else
 		{
@@ -74,7 +74,7 @@ if(isset($_POST['signin']))
                             </div>
                             <div class="form-group form-button">
                                 <input type="submit" name="signin" id="signin" class="form-submit" value="Log in"/>
-                                <a href="index.php">Back to Home</a>
+                                <a href="../customerside/usersample/header1.php">Back to Home</a>
                             </div>
                         </form>
                         <div class="social-login">

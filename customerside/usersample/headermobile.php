@@ -85,10 +85,10 @@ $dao=new DataAccess();
                         <a href="product.html" class="nav-item nav-link">Product</a>
                     </div>
                     <a href="index.html" class="navbar-brand mx-5 d-none d-lg-block">
-                        <h1 class="m-0 display-4 text-primary"><span class="text-secondary">i</span>CREAM</h1>
+                        <h1 class="m-0 display-4 text-primary"><span class="text-secondary">MOB</span>ILE</h1>
                     </a>
                     <div class="navbar-nav mr-auto py-0">
-                        <a href="service.html" class="nav-item nav-link">Service</a>
+                        <a href="../usersample/../login.php" class="nav-item nav-link">login</a>
                         <a href="gallery.html" class="nav-item nav-link">Gallery</a>
                         <a href="contact.html" class="nav-item nav-link">Contact</a>
                     </div>
@@ -99,15 +99,11 @@ $dao=new DataAccess();
 
     <!-- Portfolio Start -->
     <div class="container-fluid my-5 py-5 px-0">
-        <div class="row justify-content-center m-0">
-            <div class="col-lg-5">
-                <h1 class="section-title position-relative text-center mb-5">Delicious Ice Cream Made From Our Very Own Organic Milk</h1>
-            </div>
-        </div>
+        
         <div class="row m-0 portfolio-container">
         <?php
-              // $cid=$_GET['id'];
-              $q="select * from item where status=1" ;
+              $cid=$_GET['id'];
+              $q="select * from addmobile where cmid ='$cid'";
 
               $info=$dao->query($q);
               //print_r($info);
@@ -116,16 +112,16 @@ $dao=new DataAccess();
               if(is_countable($info)) {
               while($i<count($info))
 
-              { $s=$info[$i]["image"];
+              { $s=$info[$i]["mimg"];
 
   ?>
        
         
             <div class="col-lg-4 col-md-6 p-0 portfolio-item">
                 <div class="position-relative overflow-hidden">
-                    <img class="img-fluid w-100" src=<?php echo BASE_URL."uploads/".$info[$i]["image"]; ?> alt="">
-                    <span style="color:red;"><h4>Item Name : <?php echo $info[$i]["iname"]?></h4></span>
-                    <a class="portfolio-btn" href="singleitem.php?id=<?=$info[$i]["iid"]?> data-lightbox="portfolio">
+                    <img class="img-fluid w-100" src=<?php echo BASE_URL."upload/".$info[$i]["mimg"]; ?> alt="">
+                    <span style="color:red;"><h4>Item Name : <?php echo $info[$i]["mname"]?></h4></span>
+                    <a class="portfolio-btn" href="../usersample/../order.php?id=<?=$info[$i]["mid"]?> data-lightbox="portfolio>
                         <i class="fa fa-plus text-primary" style="font-size: 60px;"></i>
                     </a>
                 </div>
@@ -139,7 +135,8 @@ $dao=new DataAccess();
             }
              else{
               ?>
-              <?php echo "No Item Found";}?>
+              <?php echo "No Item Found".$cid;
+            }?>
               </div>
               </div>
              
