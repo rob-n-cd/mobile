@@ -121,7 +121,7 @@ $dao=new DataAccess();
                 <div class="position-relative overflow-hidden">
                     <img class="img-fluid w-100" src=<?php echo BASE_URL."upload/".$info[$i]["mimg"]; ?> alt="">
                     <span style="color:red;"><h4>Item Name : <?php echo $info[$i]["mname"]?></h4></span>
-                    <a class="portfolio-btn" href="../usersample/../order.php?id=<?=$info[$i]["mid"]?> data-lightbox="portfolio>
+                    <a class="portfolio-btn" href="../usersample/../payment../payment.php?id=<?=$info[$i]["mid"]?> data-lightbox="portfolio>
                         <i class="fa fa-plus text-primary" style="font-size: 60px;"></i>
                     </a>
                 </div>
