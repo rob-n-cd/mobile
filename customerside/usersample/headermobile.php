@@ -116,7 +116,8 @@ $dao=new DataAccess();
 
   ?>
        
-        
+       <div class="container-fluid my-5 py-5 px-0">
+        <div class="row justify-content-center m-0">
             <div class="col-lg-4 col-md-6 p-0 portfolio-item">
                 <div class="position-relative overflow-hidden">
                     <img class="img-fluid w-100" src=<?php echo BASE_URL."upload/".$info[$i]["mimg"]; ?> alt="">
@@ -126,6 +127,8 @@ $dao=new DataAccess();
                     </a>
                 </div>
             </div>
+              </div>
+              </div>
             
       
    

@@ -4,8 +4,7 @@
 include("header.php");
 
 $file=new FileUpload();
-$elements=array(
-        "category"=>"");
+$elements=array("category"=>"","catimg"=>"");
 
 
 $form=new FormAssist($elements,$_POST);
@@ -14,10 +13,11 @@ $form=new FormAssist($elements,$_POST);
 
 $dao=new DataAccess();
 
-$labels=array('category'=>"Category Name");
+$labels=array('category'=>"Category Name",'catimg'=>"Category image");
 
 $rules=array(
     "category"=>array("required"=>true,"maxlength"=>30),
+    "catimg"=>array("filerequired"=>true),
 
 );
     
@@ -31,11 +31,12 @@ if($validator->validate($_POST))
 {
 	
 
-
+    if($fileName=$file->doUploadRandom($_FILES['catimg'],array('.jpg','.png','.JPEG','.jfif','.JFIF'),100000,1,'../upload'))	
+    {
 $data=array(
 
         'category'=>$_POST['category'],
-        
+        'catimg'=>$fileName
          
     );
   
@@ -52,7 +53,7 @@ header('location:category1.php');
 <span style="color:red;"><?php echo $msg; ?></span>
 
 <?php
-    
+    }
 
 
 }
@@ -77,7 +78,15 @@ Category name:
 </div>
 </div>
 
+<div class="row">
+                    <div class="col-md-6">
+Category image:
 
+<?= $form->fileField('catimg',array('class'=>'form-control')); ?>
+<span style="color:red;"><?= $validator->error('catimg'); ?></span>
+
+</div>
+</div>
 
 <button type="submit" name="btn_insert"  >Submit</button>
 </form>

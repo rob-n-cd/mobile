@@ -81,9 +81,9 @@
                             
                             <ul class="widget widget-menu unstyled">
                                 <li><a href="ui-button-icon.html"><i class="menu-icon icon-bold"></i> Buttons </a></li>
-                                <li><a href="ui-typography.html"><i class="menu-icon icon-book"></i>Typography </a></li>
-                                <li><a href="companyimage.php"><i class="menu-icon icon-paste"></i>Forms </a></li>
-                                <li><a href="viewcompany.php"><i class="menu-icon icon-table"></i>Tables </a></li>
+                                <li><a href="ui-typography.html"><i class="menu-icon icon-book"></i>view PAYMENT</a></li>
+                                <li><a href="companyimage.php"><i class="menu-icon icon-paste"></i>ADD COMPANY </a></li>
+                                <li><a href="viewcompany.php"><i class="menu-icon icon-table"></i>VIEW COMPANY</a></li>
                                 <li><a href="viewregister.php"><i class="menu-icon icon-bar-chart"></i>view register details </a></li>
                             </ul>
                             <!--/.widget-nav-->
@@ -92,7 +92,7 @@
                                 </i><i class="icon-chevron-down pull-right"></i><i class="icon-chevron-up pull-right">
                                 </i>More Pages </a>
                                     <ul id="togglePages" class="collapse unstyled">
-                                        <li><a href="other-login.html"><i class="icon-inbox"></i>Login </a></li>
+                                        <li><a href="adminlogin.php"><i class="icon-inbox"></i>Login </a></li>
                                         <li><a href="other-user-profile.html"><i class="icon-inbox"></i>Profile </a></li>
                                         <li><a href="other-user-listing.html"><i class="icon-inbox"></i>All Users </a></li>
                                     </ul>
