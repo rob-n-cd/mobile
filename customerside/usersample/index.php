@@ -70,7 +70,7 @@
         <div class="container-lg position-relative p-0 px-lg-3" style="z-index: 9;">
             <nav class="navbar navbar-expand-lg bg-white navbar-light shadow p-lg-0">
                 <a href="index.html" class="navbar-brand d-block d-lg-none">
-                    <h1 class="m-0 display-4 text-primary"><span class="text-secondary">i</span>CREAM</h1>
+                    <h1 class="m-0 display-4 text-primary"><span class="text-secondary">M</span>obiles</h1>
                 </a>
                 <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
                     <span class="navbar-toggler-icon"></span>
@@ -82,7 +82,7 @@
                         <a href="product.html" class="nav-item nav-link">Product</a>
                     </div>
                     <a href="index.html" class="navbar-brand mx-5 d-none d-lg-block">
-                        <h1 class="m-0 display-4 text-primary"><span class="text-secondary">i</span>CREAM</h1>
+                        <h1 class="m-0 display-4 text-primary"><span class="text-secondary">MOB</span>ILE</h1>
                     </a>
                     <div class="navbar-nav mr-auto py-0">
                         <a href="service.html" class="nav-item nav-link">Service</a>

@@ -66,8 +66,49 @@ echo $file->errors();
 
 ?>
 <html>
-<head>
+<meta charset="UTF-8">
+  <title>Document</title>
+  <head>
+  <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet">
+  <link rel="stylesheet" href="../payment/style.css">
+<meta name="robots" content="noindex,follow" />
 </head>
+<body>
+<form action=""  method="POST" onSubmit="return validations()" enctype="multipart/form-data">
+	
+  <div class="checkout-panel">
+    <div class="panel-body">
+      <h2 class="title">Checkout</h2>
+
+      <div class="progress-bar">
+        <div class="step active"></div>
+        <div class="step active"></div>
+        <div class="step"></div>
+        <div class="step"></div>
+      </div>
+
+      <div class="payment-method">
+        <label for="card" class="method card">
+          <div class="card-logos">
+            <img src="payment/img/visa_logo.png"/>
+            <img src="../payment/img/mastercard_logo.png"/>
+          </div>
+
+          <div class="radio-input">
+            <input id="card" type="radio" name="payment">
+            Pay £340.00 with credit card
+          </div>
+        </label>
+
+        <label for="paypal" class="method paypal">
+          <img src="../payment/img/paypal_logo.png"/>
+          <div class="radio-input">
+            <input id="paypal" type="radio" name="payment">
+            Pay £340.00 with PayPal
+          </div>
+        </label>
+      </div>
+
 <body>
 
  <form action="" method="POST" enctype="multipart/form-data">
@@ -80,7 +121,7 @@ Card name:
 <?= $validator->error('cardname'); ?>
 
 </div>
-</div>
+</div><br>
 <div class="row">
                     <div class="col-md-6">
 Card Number:
@@ -89,7 +130,7 @@ Card Number:
 <?= $validator->error('cardnumber'); ?>
 
 </div>
-</div>
+</div><br>
 <div class="row">
                     <div class="col-md-6">
 Holder Name:
@@ -98,7 +139,7 @@ Holder Name:
 
 
 </div>
-</div>
+</div><br>
 <div class="row">
                     <div class="col-md-6">
 Mobile Price:
@@ -107,7 +148,7 @@ Mobile Price:
 <?= $validator->error('pprice'); ?>
 
 </div>
-</div>
+</div><br>
 <button type="submit" name="insert">Submit</button>
 </form>
 
