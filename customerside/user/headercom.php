@@ -102,11 +102,11 @@ $dao=new DataAccess();
             <div class="container">
                 <div class="row">
                     <div class="col-12">
-                        <h2>Upcoming Categories</h2>
+                        <h2>Upcoming Companies</h2>
                     </div>
                     <div class="col-12">
                         <a href="">Mobile</a>
-                        <a href="">Categories</a>
+                        <a href="">Comapnies</a>
                     </div>
                 </div>
             </div>
@@ -118,13 +118,13 @@ $dao=new DataAccess();
         <div class="event">
             <div class="container">
                 <div class="section-header text-center">
-                    <p>Upcoming Categories</p>
-                    <h2>Be ready for our upcoming Categories</h2>
+                    <p>Upcoming Companies</p>
+                    <h2>Be ready for our upcoming Companies</h2>
                 </div>
                 <div class="row">
                     <?php
 
-$q="select * from category ";
+$q="select * from company ";
 
 $info=$dao->query($q);
 
@@ -135,13 +135,13 @@ $info=$dao->query($q);
 
                     <div class="col-lg-6">
                         <div class="event-item">
-                            <img src=<?php echo BASE_URL."upload/".$info[$i]["ctimage"]; ?> alt="Image">
+                            <img src=<?php echo BASE_URL."upload/".$info[$i]["cimg"]; ?> alt="Image">
                             <div class="event-content">
                                 <div class="event-meta">
                                   
                                 </div>
                                 <div class="event-text">
-                                    <h3><?php echo $info[$i]["ctname"]?></h3>
+                                    <h3><?php echo $info[$i]["cname"]?></h3>
                                     <p>
                                         
                                     </p>
@@ -161,7 +161,7 @@ $info=$dao->query($q);
   
         <!-- Page Header Start -->
     
-                 <a class="btn btn-custom" href="pastevent.php">Past Categories </a>
+                 <a class="btn btn-custom" href="pastevent.php">Past Companies </a>
                     
                  
         
@@ -173,7 +173,7 @@ $info=$dao->query($q);
                     <div class="col-lg-3 col-md-6">
                         <div class="footer-contact">
                             <h2>Our Head Office</h2>
-                            <p><i class="fa fa-map-marker-alt"></i>b143 Street,Angamaly, </p>
+                            <p><i class="fa fa-map-marker-alt"></i>b143 Street,angamaly, </p>
                             <p><i class="fa fa-phone-alt"></i>+9947126589</p>
                             <p><i class="fa fa-envelope"></i>sacredheart.org</p>
                             <div class="footer-social">
