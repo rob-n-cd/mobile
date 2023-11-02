@@ -178,7 +178,7 @@ $info=$dao->query($q);
                                     <p>
                                         
                                     </p>
-                                    <a class="btn btn-custom" href="../user/          php?id=<?=$info[$i]["cid"]?>">select</a>
+                                    <a class="btn btn-custom" href="../user/headercom.php?id=<?=$info[$i]["cid"]?>">select</a>
                                 </div>
                             </div>
                         </div>
