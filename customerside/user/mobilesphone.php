@@ -74,10 +74,10 @@ $dao=new DataAccess();
 
                 <div class="collapse navbar-collapse justify-content-between" id="navbarCollapse">
                     <div class="navbar-nav ml-auto">
-                        <a href="index.html" class="nav-item nav-link active">Home</a>
-                        <a href="headercom.php" class="nav-item nav-link">mobile companys</a>
+                        <a href="headercat.php" class="nav-item nav-link active">Home</a>
+                        <a href="headercom" class="nav-item nav-link ">mobile companys</a>
                         <a href="causes.html" class="nav-item nav-link">Causes</a>
-                        <a href="event.html" class="nav-item nav-link">Events</a>
+                        <a href="event.html" class="nav-item nav-link ">Events</a>
                         <a href="blog.html" class="nav-item nav-link">Blog</a>
                         <div class="nav-item dropdown">
                             <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Pages</a>
@@ -89,7 +89,7 @@ $dao=new DataAccess();
                                 <a href="volunteer.html" class="dropdown-item">Become A SPONSOR</a>
                             </div>
                         </div>
-                        <a href="../login.php" class="nav-item nav-link">Logout</a>
+                        <a href="contact.html" class="nav-item nav-link">Contact</a>
                     </div>
                 </div>
             </div>
@@ -99,58 +99,18 @@ $dao=new DataAccess();
         
 
 
-             <!-- Carousel Start -->
-          <div class="carousel">
-            <div class="container-fluid">
-                <div class="owl-carousel">
-                   
-                       
-                    <div class="carousel-item">
-                        <div class="carousel-img">
-                            <img src="img/carousel-2.jpg" alt="Image">
-                        </div>
-                        <div class="carousel-text">
-                            <h1>Get Involved with helping hand</h1>
-                            <p>
-                                Morbi sagittis turpis id suscipit feugiat. Suspendisse eu augue urna. Morbi sagittis, orci sodales varius fermentum, tortor
-                            </p>
-                            <div class="carousel-btn">
-                                <a class="btn btn-custom" href="">categorys</a>
-                               </div>
-                        </div>
-                    </div>
-                    <div class="carousel-item">
-                        <div class="carousel-img">
-                            <img src="img/carousel-3.jpg" alt="Image">
-                        </div>
-                        <div class="carousel-text">
-                            <h1>Bringing smiles to millions</h1>
-                            <p>
-                                Sed ultrices, est eget feugiat accumsan, dui nibh egestas tortor, ut rhoncus nibh ligula euismod quam. Proin pellentesque odio
-                            </p>
-                            <div class="carousel-btn">
-                                <a class="btn btn-custom" href="">company</a>
-                               </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!-- Carousel End -->
+
         
-
-
-
         <!-- Page Header Start -->
         <div class="page-header">
             <div class="container">
                 <div class="row">
                     <div class="col-12">
-                        <h2>Upcoming Categories</h2>
+                        <h2>Upcoming Companies</h2>
                     </div>
                     <div class="col-12">
                         <a href="">Mobile</a>
-                        <a href="">Categories</a>
+                        <a href="">Comapnies</a>
                     </div>
                 </div>
             </div>
@@ -162,13 +122,14 @@ $dao=new DataAccess();
         <div class="event">
             <div class="container">
                 <div class="section-header text-center">
-                    <p>Upcoming Categories</p>
-                    <h2>Be ready for our upcoming Categories</h2>
+                    <p>Upcoming Companies</p>
+                    <h2>Be ready for our upcoming Companies</h2>
                 </div>
                 <div class="row">
                     <?php
 
-$q="select * from category ";
+     $id = $_GET['id'];
+$q="select * from addmobile where ctid = '$id'";
 
 $info=$dao->query($q);
 
@@ -179,17 +140,17 @@ $info=$dao->query($q);
 
                     <div class="col-lg-6">
                         <div class="event-item">
-                            <img src=<?php echo BASE_URL."upload/".$info[$i]["catimg"]; ?> alt="Image">
+                            <img src=<?php echo BASE_URL."upload/".$info[$i]["mimg"]; ?> alt="Image">
                             <div class="event-content">
                                 <div class="event-meta">
                                   
                                 </div>
                                 <div class="event-text">
-                                    <h3><?php echo $info[$i]["category"]?></h3>
+                                    <h3><?php echo $info[$i]["mname"]?></h3>
                                     <p>
                                         
                                     </p>
-                                    <a class="btn btn-custom" href="../user/mobilesphone.php?id=<?=$info[$i]["cid"]?>">select</a>
+                                    <a class="btn btn-custom" href="singleitem.php?id=<?=$info[$i]["mid"]?>">Select</a>
                                 </div>
                             </div>
                         </div>
@@ -205,7 +166,7 @@ $info=$dao->query($q);
   
         <!-- Page Header Start -->
     
-                 <a class="btn btn-custom" href="pastevent.php">Past Categories </a>
+                 <a class="btn btn-custom" href="pastevent.php">Past Companies </a>
                     
                  
         
@@ -217,7 +178,7 @@ $info=$dao->query($q);
                     <div class="col-lg-3 col-md-6">
                         <div class="footer-contact">
                             <h2>Our Head Office</h2>
-                            <p><i class="fa fa-map-marker-alt"></i>b143 Street,Angamaly, </p>
+                            <p><i class="fa fa-map-marker-alt"></i>b143 Street,angamaly, </p>
                             <p><i class="fa fa-phone-alt"></i>+9947126589</p>
                             <p><i class="fa fa-envelope"></i>sacredheart.org</p>
                             <div class="footer-social">

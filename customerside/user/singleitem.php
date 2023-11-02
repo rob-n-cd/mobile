@@ -6,7 +6,7 @@
     <meta name="viewport">
     <meta http-equiv="X-UA-Compatible">
     <title>Document</title>
-    <link rel="stylesheet" href="ui.css">
+    <link rel="stylesheet" href="../user/css/ui.css">
     
     <script>
 function showtotal() {
@@ -47,25 +47,24 @@ if(!isset($_SESSION['email']))
   }
   else
   {
-$name=$_SESSION['email'];
 $itid = $_GET['id'];
-$q10="select * from item40 where itid=".$itid ;
+$q10="select * from oder where oid=".$itid ;
 $info121=$dao->query($q10);
-$iqty = $info121[0]["qty"];
+$iqty = $info121[0]["quandity"];
 $qty = $_POST["qty"];
 if($iqty>$qty)
 {
-$q1="select * from item40 where itid=".$itid ;
+$q1="select * from oder where oid=".$itid ;
 
 $info1=$dao->query($q1);
-$iname=$info1[0]["itnme"];
+$iname=$info1[0]["oname"];
 $itemname = $iname;
 $price = $_POST["offerprice"];
 $qty = $_POST["qty"];
 $total = $_POST["total"];
 $status=1;
 $date1=date('Y-m-d',time());
-$sql = "INSERT INTO cart(uemail,itid,itnme,offerprice,qty,total,status,odate) VALUES ('$name','$itid' ,'$itemname','$price ','$qty','$total','$status','$date1')";
+$sql = "INSERT INTO cart(oname,quandity,total,proprice,status,odate) VALUES ('$itemname','$price ','$qty','$total','$status','$date1')";
 
 $conn->query($sql);
  header('location:viewcart.php');
@@ -90,7 +89,7 @@ $dao=new DataAccess();
 			 $q="select * from addmobile where mid=".$itid ;
 
 $info=$dao->query($q);
-$iname=$info[0]["itnme"];
+$iname=$info[0]["mname"];
 ?>
  
    
@@ -109,16 +108,16 @@ if(isset($_SESSION['email']))
 
 <?php } ?>
             <h3>Product Details</h3>
-            <img style="width:300; height:300" src=<?php echo BASE_URL."uploads/".$info[0]["itimage"]; ?> alt=" " class="img-responsive" />
+            <img style="width:300; height:300" src=<?php echo BASE_URL."upload/".$info[0]["mimg"]; ?> alt=" " class="img-responsive" />
         </div>
         <div class="content">
             <h3>Details</h3>
             <div style="display: block;">
                 <label for="name">Item Name:</label><br>
                 
-                <label for="name"><?php echo $info[0]["itnme"]; ?></label><br>
+                <label for="name"><?php echo $info[0]["mname"]; ?></label><br>
                  <label for="price">Price:</label><br>
-                <input id="price" name="offerprice" type="text" value="<?php echo $info[0]["offerprice"];  ?>" readonly style="margin-top: 8px;"><br>
+                <input id="price" name="offerprice" type="text" value="<?php echo $info[0]["mprize"];  ?>" readonly style="margin-top: 8px;"><br>
                 <label for="qty">Quantity:</label><br>
                 <input id="qty" name="qty" type="text" onkeyup="showtotal()" style="margin-top: 8px;"><br>
                 <label for="Total">Total</label><br>
