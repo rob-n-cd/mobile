@@ -23,7 +23,7 @@ function showtotal() {
 
 <body>
 
-<?php include("userheader.php");	
+<?php //include("header.php");	
 include("dbcon.php");
 
 ?>
@@ -87,7 +87,7 @@ $dao=new DataAccess();
 
 
 
-			 $q="select * from item40 where itid=".$itid ;
+			 $q="select * from addmobile where mid=".$itid ;
 
 $info=$dao->query($q);
 $iname=$info[0]["itnme"];
