@@ -1,4 +1,4 @@
-<?php include("userheader.php");	?>
+
 <?php require('../config/autoload.php'); 
 include("dbcon.php");
 ?>
@@ -21,7 +21,7 @@ if(!isset($_SESSION['email']))
 	   }
 	   else
 	   { 
-	   $sql = "select sum(total)as t from cart where status=1 and  uemail='$name'";
+	   $sql = "select sum(total)as t from cart where status=1 and  carname='$name'";
 $result = $conn->query($sql);
 	   $row = $result->fetch_assoc();
 	   $total=$row["t"];
@@ -63,12 +63,12 @@ $result = $conn->query($sql);
 
     $config=array(
         'srno'=>true,
-        'hiddenfields'=>array('itid','cart_id')
+        'hiddenfields'=>array('mid','carid')
         
         
     );
 
-   $condition="uemail='".$name."' and status=1";
+   $condition="carname='".$name."' and status=1";
    
    $join=array(
        

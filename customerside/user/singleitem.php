@@ -50,7 +50,6 @@ if(!isset($_SESSION['email']))
     $q1="select * from addmobile";
 $info121=$dao->query($q1);
 $iqty = $info121[0]["qty"];
-echo $iqty;
 $qty = $_POST["qty"];
 echo $iqty;
 
