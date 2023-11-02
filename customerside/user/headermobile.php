@@ -74,11 +74,9 @@ $dao=new DataAccess();
 
                 <div class="collapse navbar-collapse justify-content-between" id="navbarCollapse">
                     <div class="navbar-nav ml-auto">
-                        <a href="index.html" class="nav-item nav-link">Home</a>
-                        <a href="about.html" class="nav-item nav-link">About</a>
-                        <a href="causes.html" class="nav-item nav-link">Causes</a>
-                        <a href="event.html" class="nav-item nav-link active">Events</a>
-                        <a href="blog.html" class="nav-item nav-link">Blog</a>
+                        <a href="index.html" class="nav-item nav-link active">Home</a>
+                        <a href="../login.php" class="nav-item nav-link">Login</a>
+                        
                         <div class="nav-item dropdown">
                             <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Pages</a>
                             <div class="dropdown-menu">
@@ -96,13 +94,53 @@ $dao=new DataAccess();
         </div>
         <!-- Nav Bar End -->
         
+
+
+          <!-- Carousel Start -->
+          <div class="carousel">
+            <div class="container-fluid">
+                <div class="owl-carousel">
+                   
+                       
+                    <div class="carousel-item">
+                        <div class="carousel-img">
+                            <img src="img/carousel-2.jpg" alt="Image">
+                        </div>
+                        <div class="carousel-text">
+                            <h1>Get Involved with helping hand</h1>
+                            <p>
+                                Morbi sagittis turpis id suscipit feugiat. Suspendisse eu augue urna. Morbi sagittis, orci sodales varius fermentum, tortor
+                            </p>
+                            <div class="carousel-btn">
+                                <a class="btn btn-custom" href="">categorys</a>
+                               </div>
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <div class="carousel-img">
+                            <img src="img/carousel-3.jpg" alt="Image">
+                        </div>
+                        <div class="carousel-text">
+                            <h1>Bringing smiles to millions</h1>
+                            <p>
+                                Sed ultrices, est eget feugiat accumsan, dui nibh egestas tortor, ut rhoncus nibh ligula euismod quam. Proin pellentesque odio
+                            </p>
+                            <div class="carousel-btn">
+                                <a class="btn btn-custom" href="">company</a>
+                               </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Carousel End -->
         
         <!-- Page Header Start -->
         <div class="page-header">
             <div class="container">
                 <div class="row">
                     <div class="col-12">
-                        <h2>Upcoming Categories</h2>
+                        <h2>Upcoming mobiles</h2>
                     </div>
                     <div class="col-12">
                         <a href="">Home</a>
@@ -124,7 +162,7 @@ $dao=new DataAccess();
                 <div class="row">
                     <?php
 
-$q="select * from category ";
+$q="select * from addmobile ";
 
 $info=$dao->query($q);
 
@@ -135,17 +173,17 @@ $info=$dao->query($q);
 
                     <div class="col-lg-6">
                         <div class="event-item">
-                            <img src=<?php echo BASE_URL."upload/".$info[$i]["ctimage"]; ?> alt="Image">
+                            <img src=<?php echo BASE_URL."upload/".$info[$i]["mimg"]; ?> alt="Image">
                             <div class="event-content">
                                 <div class="event-meta">
                                   
                                 </div>
                                 <div class="event-text">
-                                    <h3><?php echo $info[$i]["ctname"]?></h3>
+                                    <h3><?php echo $info[$i]["mname"]?></h3>
                                     <p>
                                         
                                     </p>
-                                    <a class="btn btn-custom" href="payments.php">Select</a>
+                                    <a class="btn btn-custom" href="payment.php">Select</a>
                                 </div>
                             </div>
                         </div>
