@@ -47,24 +47,27 @@ if(!isset($_SESSION['email']))
   }
   else
   {
-$itid = $_GET['id'];
-$q10="select * from oder where oid=".$itid ;
-$info121=$dao->query($q10);
-$iqty = $info121[0]["quandity"];
+    $q1="select * from addmobile";
+$info121=$dao->query($q1);
+$iqty = $info121[0]["qty"];
+echo $iqty;
 $qty = $_POST["qty"];
+echo $iqty;
+
 if($iqty>$qty)
 {
-$q1="select * from oder where oid=".$itid ;
+    $itid = $_GET['id'];
+$q2="select * from addmobile where mid=".$itid ;
 
-$info1=$dao->query($q1);
-$iname=$info1[0]["oname"];
+$info1=$dao->query($q2);
+$iname=$info1[0]["mname"];
 $itemname = $iname;
 $price = $_POST["offerprice"];
 $qty = $_POST["qty"];
 $total = $_POST["total"];
 $status=1;
 $date1=date('Y-m-d',time());
-$sql = "INSERT INTO cart(oname,quandity,total,proprice,status,odate) VALUES ('$itemname','$price ','$qty','$total','$status','$date1')";
+$sql = "INSERT INTO cart(carname,quandity,total,proprice,status,odate) VALUES ('$itemname','$price ','$qty','$total','$status','$date1')";
 
 $conn->query($sql);
  header('location:viewcart.php');
