@@ -33,29 +33,29 @@ $dao=new DataAccess();
 
 
 ?>
-        <!-- Top Bar Start -->
-        <div class="top-bar d-none d-md-block">
+      <!-- Top Bar Start -->
+      <div class="top-bar d-none d-md-block">
             <div class="container-fluid">
                 <div class="row">
                     <div class="col-md-8">
                         <div class="top-bar-left">
                             <div class="text">
                                 <i class="fa fa-phone-alt"></i>
-                                <p>+1234567890</p>
+                                <p>+91 9945623514</p>
                             </div>
                             <div class="text">
                                 <i class="fa fa-envelope"></i>
-                                <p>smartstore.org</p>
+                                <p>sacredheart@gmail.org</p>
                             </div>
                         </div>
                     </div>
                     <div class="col-md-4">
                         <div class="top-bar-right">
                             <div class="social">
-                                <a href="twitter.com"><i class="fab fa-twitter"></i></a>
-                                <a href="facebook.com"><i class="fab fa-facebook-f"></i></a>
-                                <a href="linkedin.com"><i class="fab fa-linkedin-in"></i></a>
-                                <a href="instagram.com"><i class="fab fa-instagram"></i></a>
+                                <a href=""><i class="fab fa-twitter"></i></a>
+                                <a href=""><i class="fab fa-facebook-f"></i></a>
+                                <a href=""><i class="fab fa-linkedin-in"></i></a>
+                                <a href=""><i class="fab fa-instagram"></i></a>
                             </div>
                         </div>
                     </div>
@@ -67,17 +67,17 @@ $dao=new DataAccess();
         <!-- Nav Bar Start -->
         <div class="navbar navbar-expand-lg bg-dark navbar-dark">
             <div class="container-fluid">
-                <a href="index.html" class="navbar-brand">SMART STORE</a>
+                <a href="index.html" class="navbar-brand">SACRED HEART</a>
                 <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
                     <span class="navbar-toggler-icon"></span>
                 </button>
 
                 <div class="collapse navbar-collapse justify-content-between" id="navbarCollapse">
                     <div class="navbar-nav ml-auto">
-                        <a href="index.html" class="nav-item nav-link">Home</a>
+                        <a href="headercat.php" class="nav-item nav-link active">Home</a>
                         <a href="about.html" class="nav-item nav-link">About</a>
                         <a href="causes.html" class="nav-item nav-link">Causes</a>
-                        <a href="event.html" class="nav-item nav-link active">Events</a>
+                        <a href="#features" class="nav-item nav-link">categorys</a>
                         <a href="blog.html" class="nav-item nav-link">Blog</a>
                         <div class="nav-item dropdown">
                             <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Pages</a>
@@ -85,8 +85,8 @@ $dao=new DataAccess();
                                 <a href="single.html" class="dropdown-item">Detail Page</a>
                                 <a href="service.html" class="dropdown-item">What We Do</a>
                                 <a href="team.html" class="dropdown-item">Meet The Team</a>
-                                <a href="donate.html" class="dropdown-item">Donate Now</a>
-                                <a href="volunteer.html" class="dropdown-item">Become A SPONSOR</a>
+                                <a href="dreg.php" class="dropdown-item">Donate Now</a>
+                                <a href="sreg.php" class="dropdown-item">Become A Sponsor</a>
                             </div>
                         </div>
                         <a href="contact.html" class="nav-item nav-link">Contact</a>
@@ -96,25 +96,58 @@ $dao=new DataAccess();
         </div>
         <!-- Nav Bar End -->
         
+       
         
-        <!-- Page Header Start -->
-        <div class="page-header">
-            <div class="container">
-                <div class="row">
-                    <div class="col-12">
-                        <h2>Upcoming Categories</h2>
+
+         <!-- Carousel Start -->
+         <div class="carousel">
+            <div class="container-fluid">
+                <div class="owl-carousel">
+                    <div class="carousel-item">
+                        <div class="carousel-img">
+                            <img src="img/carousel-1.jpg" alt="Image">
+                        </div>
+                        <div class="carousel-text">
+                            <h1>Let's be kind for children</h1>
+                            <p>
+                                Lorem ipsum dolor sit amet elit. Phasellus ut mollis mauris. Vivamus egestas eleifend dui ac consequat at lectus in malesuada
+                            </p>
+                            <div class="carousel-btn">
+                                <a class="btn btn-custom" href="">mobiles</a>
+                                <a class="btn btn-custom" href="">category</a>
+                            </div>
+                        </div>
                     </div>
-                    <div class="col-12">
-                        <a href="">Mobile</a>
-                        <a href="">Categories</a>
+                    <div class="carousel-item">
+                        <div class="carousel-img">
+                            <img src="img/carousel-2.jpg" alt="Image">
+                        </div>
+                        <div class="carousel-text">
+                            <h1>Get Involved with helping hand</h1>
+                            <p>
+                                Morbi sagittis turpis id suscipit feugiat. Suspendisse eu augue urna. Morbi sagittis, orci sodales varius fermentum, tortor
+                            </p>
+                            <div class="carousel-btn">
+                                <a class="btn btn-custom" href="">company</a>
+                                <a class="btn btn-custom" href="">category</a>
+                                  </div>
+                        </div>
                     </div>
+                    
                 </div>
             </div>
         </div>
-        <!-- Page Header End -->
+        <!-- Carousel End -->
         
+
+
+
+
+
+
         
         <!-- Event Start -->
+        <section id="features">
         <div class="event">
             <div class="container">
                 <div class="section-header text-center">
@@ -157,6 +190,7 @@ $info=$dao->query($q);
                 </div>
             </div>
         </div>
+        </section>
         <!-- Event End -->
   
         <!-- Page Header Start -->

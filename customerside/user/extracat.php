@@ -41,11 +41,11 @@ $dao=new DataAccess();
                         <div class="top-bar-left">
                             <div class="text">
                                 <i class="fa fa-phone-alt"></i>
-                                <p>+9941235685</p>
+                                <p>+1234567890</p>
                             </div>
                             <div class="text">
                                 <i class="fa fa-envelope"></i>
-                                <p>sacredheart.org</p>
+                                <p>smartstore.org</p>
                             </div>
                         </div>
                     </div>
@@ -74,10 +74,10 @@ $dao=new DataAccess();
 
                 <div class="collapse navbar-collapse justify-content-between" id="navbarCollapse">
                     <div class="navbar-nav ml-auto">
-                        <a href="index.html" class="nav-item nav-link">Home</a>
+                        <a href="headercat.php" class="nav-item nav-link">Home</a>
                         <a href="about.html" class="nav-item nav-link">About</a>
                         <a href="causes.html" class="nav-item nav-link">Causes</a>
-                        <a href="event.html" class="nav-item nav-link active">Events</a>
+                        <a href="extracat.php" class="nav-item nav-link active">categorys</a>
                         <a href="blog.html" class="nav-item nav-link">Blog</a>
                         <div class="nav-item dropdown">
                             <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Pages</a>
@@ -105,8 +105,8 @@ $dao=new DataAccess();
                         <h2>Upcoming Categories</h2>
                     </div>
                     <div class="col-12">
-                        <a href="">Home</a>
-                        <a href="">Events</a>
+                        <a href="">Mobile</a>
+                        <a href="">Categories</a>
                     </div>
                 </div>
             </div>
@@ -119,7 +119,7 @@ $dao=new DataAccess();
             <div class="container">
                 <div class="section-header text-center">
                     <p>Upcoming Categories</p>
-                    <h2>Be ready for our upcoming charity events</h2>
+                    <h2>Be ready for our upcoming Categories</h2>
                 </div>
                 <div class="row">
                     <?php
@@ -135,17 +135,17 @@ $info=$dao->query($q);
 
                     <div class="col-lg-6">
                         <div class="event-item">
-                            <img src=<?php echo BASE_URL."upload/".$info[$i]["ctimage"]; ?> alt="Image">
+                            <img src=<?php echo BASE_URL."upload/".$info[$i]["catimg"]; ?> alt="Image">
                             <div class="event-content">
                                 <div class="event-meta">
                                   
                                 </div>
                                 <div class="event-text">
-                                    <h3><?php echo $info[$i]["ctname"]?></h3>
+                                    <h3><?php echo $info[$i]["category"]?></h3>
                                     <p>
                                         
                                     </p>
-                                    <a class="btn btn-custom" href="payments.php">SPONSOR THIS EVENT</a>
+                                    <a class="btn btn-custom" href="../user/          php?id=<?=$info[$i]["cid"]?>">select</a>
                                 </div>
                             </div>
                         </div>
@@ -161,7 +161,7 @@ $info=$dao->query($q);
   
         <!-- Page Header Start -->
     
-                 <a class="btn btn-custom" href="pastevent.php">PAST EVENTS </a>
+                 <a class="btn btn-custom" href="pastevent.php">Past Categories </a>
                     
                  
         
@@ -173,7 +173,7 @@ $info=$dao->query($q);
                     <div class="col-lg-3 col-md-6">
                         <div class="footer-contact">
                             <h2>Our Head Office</h2>
-                            <p><i class="fa fa-map-marker-alt"></i>b143 Street,mankuzhy, </p>
+                            <p><i class="fa fa-map-marker-alt"></i>b143 Street,Angamaly, </p>
                             <p><i class="fa fa-phone-alt"></i>+9947126589</p>
                             <p><i class="fa fa-envelope"></i>sacredheart.org</p>
                             <div class="footer-social">

@@ -77,7 +77,7 @@ echo $file->errors();
 <form action=""  method="POST" onSubmit="return validations()" enctype="multipart/form-data">
 	
   <div class="checkout-panel">
-    <div class="panel-body">
+    <div class="panel-body"><br><br><br><br>
       <h2 class="title">Checkout</h2>
 
       <div class="progress-bar">
