@@ -21,10 +21,11 @@ if(!isset($_SESSION['email']))
 	   }
 	   else
 	   { 
-	   $sql = "select sum(total)as t from cart where status=1 and  carname='$name'";
+        $name = $_SESSION['itemname'];
+	   $sql = "select total from cart where status=1 and  carname='$name'";
 $result = $conn->query($sql);
 	   $row = $result->fetch_assoc();
-	   $total=$row["t"];
+	   $total=$row["total"];
 	   
 	   $_SESSION['amount']=$total; 
 	   
@@ -73,9 +74,9 @@ $result = $conn->query($sql);
    $join=array(
        
     );  
-	$fields=array('cart_id','itid','itnme','qty','offerprice','total');
+	$fields=array('cartid','quandity','proprice','status','total');
 
-    $users=$dao->selectAsTable($fields,'cart as c',$condition,$join,$actions,$config);
+    $users=$dao->selectAsTable($fields,'cart',$condition,$join,$actions,$config);
     
     echo $users;
                                      
