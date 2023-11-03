@@ -43,7 +43,7 @@ if(isset($_POST["btn_insert"]))
 {
 if(!isset($_SESSION['email']))
    {
-	   header('location:login.php');
+	   header('location:../login.php');
   }
   else
   {
@@ -65,8 +65,7 @@ $price = $_POST["offerprice"];
 $qty = $_POST["qty"];
 $total = $_POST["total"];
 $status=1;
-$date1=date('Y-m-d',time());
-$sql = "INSERT INTO cart(carname,quandity,total,proprice,status,odate) VALUES ('$itemname','$price ','$qty','$total','$status','$date1')";
+$sql = "INSERT INTO `cart`(`carname`,`quandity`,`proprice`,`status`,`total`) VALUES ('$itemname','$qty','$proprice','$status','$total')";
 
 $conn->query($sql);
  header('location:viewcart.php');
