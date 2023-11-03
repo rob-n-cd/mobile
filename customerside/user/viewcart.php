@@ -33,7 +33,6 @@ $result = $conn->query($sql);
        
        
        
-       
  <div class="container_gray_bg" id="home_feat_1">
     <div class="container">
     	<div class="row">
