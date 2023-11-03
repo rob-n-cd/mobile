@@ -5,7 +5,7 @@ include("dbcon.php");
 
 <?php
 $dao=new DataAccess();
-   $name=$_SESSION['email'] ;
+   $name=$_SESSION['itemname'] ;
  if(isset($_POST["payment"]))
 {
      echo "hai";
@@ -21,7 +21,7 @@ if(!isset($_SESSION['email']))
 	   }
 	   else
 	   { 
-        $name = $_SESSION['itemname'];
+        
 	   $sql = "select total from cart where status=1 and  carname='$name'";
 $result = $conn->query($sql);
 	   $row = $result->fetch_assoc();
