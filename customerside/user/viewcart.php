@@ -58,7 +58,7 @@ $result = $conn->query($sql);
     $actions=array(
     
     
-    'delete'=>array('label'=>'Delete','link'=>'deleteitem.php','params'=>array('id'=>'cart_id'),'attributes'=>array('class'=>'btn btn-success'))
+    'delete'=>array('label'=>'Delete','link'=>'deleteitem.php','params'=>array('id'=>'carid'),'attributes'=>array('class'=>'btn btn-success'))
     
     );
 
@@ -74,7 +74,7 @@ $result = $conn->query($sql);
    $join=array(
        
     );  
-	$fields=array('cartid','quandity','proprice','status','total');
+	$fields=array('carid','quandity','proprice','status','total');
 
     $users=$dao->selectAsTable($fields,'cart',$condition,$join,$actions,$config);
     
