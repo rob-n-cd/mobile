@@ -22,10 +22,10 @@ if(!isset($_SESSION['email']))
 	   else
 	   { 
         
-	   $sql = "select sum(total) as t from cart where status=1 and  carname='$name'";
+	   $sql = "select  total from cart where status=1 and  carname='$name'";
 $result = $conn->query($sql);
 	   $row = $result->fetch_assoc();
-	   $total=$row["t"];
+	   $total=$row["total"];
 	   
 	   $_SESSION['amount']=$total; 
 	   
