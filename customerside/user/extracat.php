@@ -123,8 +123,9 @@ $dao=new DataAccess();
                 </div>
                 <div class="row">
                     <?php
+                    $id = $_GET['id'];
 
-$q="select * from category ";
+$q="select * from addmobile  where cmid ='$id' ";
 
 $info=$dao->query($q);
 
@@ -135,17 +136,17 @@ $info=$dao->query($q);
 
                     <div class="col-lg-6">
                         <div class="event-item">
-                            <img src=<?php echo BASE_URL."upload/".$info[$i]["catimg"]; ?> alt="Image">
+                            <img src=<?php echo BASE_URL."upload/".$info[$i]["mimg"]; ?> alt="Image">
                             <div class="event-content">
                                 <div class="event-meta">
                                   
                                 </div>
                                 <div class="event-text">
-                                    <h3><?php echo $info[$i]["category"]?></h3>
+                                    <h3><?php echo $info[$i]["mname"]?></h3>
                                     <p>
                                         
                                     </p>
-                                    <a class="btn btn-custom" href="../user/          php?id=<?=$info[$i]["cid"]?>">select</a>
+                                    <a class="btn btn-custom" href="singleitem.php?id=<?=$info[$i]["mid"]?>">Select</a>
                                 </div>
                             </div>
                         </div>

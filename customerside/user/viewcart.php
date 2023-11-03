@@ -1,11 +1,11 @@
-<?php include("userheader.php");	?>
+
 <?php require('../config/autoload.php'); 
 include("dbcon.php");
 ?>
 
 <?php
 $dao=new DataAccess();
-   $name=$_SESSION['email'] ;
+   $name=$_SESSION['itemname'] ;
  if(isset($_POST["payment"]))
 {
      echo "hai";
@@ -21,10 +21,11 @@ if(!isset($_SESSION['email']))
 	   }
 	   else
 	   { 
-	   $sql = "select sum(total)as t from cart where status=1 and  uemail='$name'";
+        
+	   $sql = "select total from cart where status=1 and  carname='$name'";
 $result = $conn->query($sql);
 	   $row = $result->fetch_assoc();
-	   $total=$row["t"];
+	   $total=$row["total"];
 	   
 	   $_SESSION['amount']=$total; 
 	   
@@ -57,25 +58,25 @@ $result = $conn->query($sql);
     $actions=array(
     
     
-    'delete'=>array('label'=>'Delete','link'=>'deleteitem.php','params'=>array('id'=>'cart_id'),'attributes'=>array('class'=>'btn btn-success'))
+    'delete'=>array('label'=>'Delete','link'=>'deleteitem.php','params'=>array('id'=>'carid'),'attributes'=>array('class'=>'btn btn-success'))
     
     );
 
     $config=array(
         'srno'=>true,
-        'hiddenfields'=>array('itid','cart_id')
+        'hiddenfields'=>array('mid','carid')
         
         
     );
 
-   $condition="uemail='".$name."' and status=1";
+   $condition="carname='".$name."' and status=1";
    
    $join=array(
        
     );  
-	$fields=array('cart_id','itid','itnme','qty','offerprice','total');
+	$fields=array('carid','quandity','proprice','status','total');
 
-    $users=$dao->selectAsTable($fields,'cart as c',$condition,$join,$actions,$config);
+    $users=$dao->selectAsTable($fields,'cart',$condition,$join,$actions,$config);
     
     echo $users;
                                      

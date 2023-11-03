@@ -19,7 +19,7 @@ if(isset($_POST['signin']))
 		if($info=$dao->login($data,$table))
 		{
 		$_SESSION['email']=$info['email'];
-		header('location:header1.php');
+		header('location:user/headercat.php');
 		}
 		else
 		{

@@ -2,8 +2,8 @@
 
 
 //your project path goes here
-define("BASE_URL","http://localhost/robin/");
-define("BASE_PATH","c:wamp64/www/robin/");
+define("BASE_URL","http://localhost/mobile/");
+define("BASE_PATH","c:wamp64/www/mobile/");
 
 //set your timezone here
 date_default_timezone_set('asia/kolkata');

@@ -74,10 +74,10 @@ $dao=new DataAccess();
 
                 <div class="collapse navbar-collapse justify-content-between" id="navbarCollapse">
                     <div class="navbar-nav ml-auto">
-                        <a href="index.html" class="nav-item nav-link">Home</a>
-                        <a href="about.html" class="nav-item nav-link">About</a>
+                        <a href="headercat.php" class="nav-item nav-link">Home</a>
+                        <a href="headercom" class="nav-item nav-link active">mobile companys</a>
                         <a href="causes.html" class="nav-item nav-link">Causes</a>
-                        <a href="event.html" class="nav-item nav-link active">Events</a>
+                        <a href="event.html" class="nav-item nav-link ">Events</a>
                         <a href="blog.html" class="nav-item nav-link">Blog</a>
                         <div class="nav-item dropdown">
                             <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Pages</a>
@@ -96,6 +96,10 @@ $dao=new DataAccess();
         </div>
         <!-- Nav Bar End -->
         
+        
+
+
+
         
         <!-- Page Header Start -->
         <div class="page-header">
@@ -145,7 +149,7 @@ $info=$dao->query($q);
                                     <p>
                                         
                                     </p>
-                                    <a class="btn btn-custom" href="payments.php">Select</a>
+                                    <a class="btn btn-custom" href="../user/extracat.php?id=<?=$info[$i]["cid"]?>">Select</a>
                                 </div>
                             </div>
                         </div>
