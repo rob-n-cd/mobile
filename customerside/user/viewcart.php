@@ -35,7 +35,7 @@ $dao=new DataAccess();
  if(isset($_POST["payment"]))
 {
      echo "hai";
-	 header('location:payment.php');
+	 header('location:../payment/payment.php');
 }
    if(isset($_POST["purchase"]))
 {
@@ -99,7 +99,7 @@ $result = $conn->query($sql);
    $join=array(
        
     );  
-	$fields=array('carid','quandity','proprice','status','total');
+	$fields=array('carid','carname','quandity','proprice','total');
 
     $users=$dao->selectAsTable($fields,'cart',$condition,$join,$actions,$config);
     

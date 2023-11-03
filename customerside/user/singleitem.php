@@ -61,12 +61,12 @@ $q2="select * from addmobile where mid=".$itid ;
 $info1=$dao->query($q2);
 $iname=$info1[0]["mname"];
 $itemname = $iname;
-$price = $_POST["offerprice"];
+$price = $info1[0]["mprize"];
 $qty = $_POST["qty"];
 $total = $_POST["total"];
 $_SESSION['itemname'] = $itemname;
 $status=1;
-$sql = "INSERT INTO `cart`(`carname`,`quandity`,`proprice`,`status`,`total`) VALUES ('$itemname','$qty','$proprice','$status','$total')";
+$sql = "INSERT INTO `cart`(`carname`,`quandity`,`proprice`,`status`,`total`) VALUES ('$itemname','$qty','$price','$status','$total')";
 
 $conn->query($sql);
  header('location:viewcart.php');
