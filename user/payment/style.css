@@ -101,7 +101,7 @@ body {
 }
 
 .step:nth-child(1):before {
-  content: 'Booking';
+  content: 'Delivery';
 }
 .step:nth-child(2):before {
   right: -40px;
