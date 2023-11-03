@@ -1,19 +1,15 @@
-
+<?php include("userheader.php");	?>
 <?php require('../config/autoload.php'); 
 include("dbcon.php");
 ?>
 
 <?php
 $dao=new DataAccess();
-   $name=$_SESSION['itemname'] ;
- if(isset($_POST["payment"]))
-{
-     echo "hai";
-	 header('location:payment.php');
-}
+   $name=$_SESSION['email'] ;
+
    if(isset($_POST["purchase"]))
 {
-     header('location:displaycategory.php');
+     header('location:adminhome.php');
 }
 if(!isset($_SESSION['email']))
    {
@@ -21,15 +17,10 @@ if(!isset($_SESSION['email']))
 	   }
 	   else
 	   { 
-        
-	   $sql = "select  total from cart where status=1 and  carname='$name'";
-$result = $conn->query($sql);
-	   $row = $result->fetch_assoc();
-	   $total=$row["total"];
-	   
-	   $_SESSION['amount']=$total; 
+	 
 	   
 	    ?>
+       
        
        
        
@@ -45,37 +36,37 @@ $result = $conn->query($sql);
                         <th>Sl No</th>
                         <th>Item Name</th>
                         <th>Quantity</th>
-                        <th>Price</th>
                         <th>Total</th>
+                     
                        
-                        <th>DELETE</th>
+                       
                      
                       
                     </tr>
 <?php
+     $action=array(
     
-    $actions=array(
     
-    
-    'delete'=>array('label'=>'Delete','link'=>'deleteitem.php','params'=>array('id'=>'carid'),'attributes'=>array('class'=>'btn btn-success'))
-    
-    );
+        
+        
+        );
+   
 
     $config=array(
         'srno'=>true,
-        'hiddenfields'=>array('mid','carid')
+        'hiddenfields'=>array('itid','cart_id')
         
         
     );
 
-   $condition="carname='".$name."' and status=1";
+   $condition="uemail='".$name."' and status=3 ";
    
    $join=array(
        
     );  
-	$fields=array('carid','quandity','proprice','status','total');
+	$fields=array('cart_id','itid','itnme','qty','total');
 
-    $users=$dao->selectAsTable($fields,'cart',$condition,$join,$actions,$config);
+    $users=$dao->selectAsTable($fields,'cart as c',$condition,$join,$action,$config);
     
     echo $users;
                                      
@@ -86,17 +77,12 @@ $result = $conn->query($sql);
             </div>    
 
 
-            <div class="row">
- <div class="col-md-3">
-TOTAL AMOUNT:
-<input type="text" class="form-control" value="<?php echo $total; ?>" readonly name="total"/>
-
-</div>
+        
 <form action="" method="POST" enctype="multipart/form-data">
 
-<button class="btn btn-success" type="submit"  name="purchase" >New Item Purchase</button>
-<button class="btn btn-success" type="submit" style="margin-right: 2px;"  name="payment" >Payment</button>
+<button class="btn btn-success" type="submit"  name="purchase" >Home</button>
 
+<a href='displaycategory.php'>GO </a>
 </form>
 </div>
 

@@ -1,11 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>CITY MOBILES</title>
+        <meta content="width=device-width, initial-scale=1.0" name="viewport">
+        <meta content="Free Website Template" name="keywords">
+        <meta content="Free Website Template" name="description">
 
+        <!-- Favicon -->
+        <link href="img/favicon.ico" rel="icon">
+
+        <!-- Google Font -->
+        <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+        
+        <!-- CSS Libraries -->
+        <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" rel="stylesheet">
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
+        <link href="lib/flaticon/font/flaticon.css" rel="stylesheet">
+        <link href="lib/animate/animate.min.css" rel="stylesheet">
+        <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+
+        <!-- Template Stylesheet -->
+        <link href="css/style.css" rel="stylesheet">
+    </head>
+</html>
+
+
+<?php // include("index.html");	?>
 <?php require('../config/autoload.php'); 
 include("dbcon.php");
 ?>
 
 <?php
 $dao=new DataAccess();
-   $name=$_SESSION['itemname'] ;
+//$_SESSION['email']="abc"
+   $name=$_SESSION['email'] ;
  if(isset($_POST["payment"]))
 {
      echo "hai";
@@ -13,23 +42,19 @@ $dao=new DataAccess();
 }
    if(isset($_POST["purchase"]))
 {
-     header('location:displaycategory.php');
+     header('location:category.php');
 }
-if(!isset($_SESSION['email']))
-   {
-	   header('location:login.php');
-	   }
-	   else
-	   { 
-        
-	   $sql = "select  total from cart where status=1 and  carname='$name'";
+
+	   
+	   $sql = "select sum(total)as t from cart where status=1 and  uemail='$name'";
 $result = $conn->query($sql);
 	   $row = $result->fetch_assoc();
-	   $total=$row["total"];
+	   $total=$row["t"];
 	   
 	   $_SESSION['amount']=$total; 
 	   
 	    ?>
+       
        
        
        
@@ -57,25 +82,25 @@ $result = $conn->query($sql);
     $actions=array(
     
     
-    'delete'=>array('label'=>'Delete','link'=>'deleteitem.php','params'=>array('id'=>'carid'),'attributes'=>array('class'=>'btn btn-success'))
+    'delete'=>array('label'=>'Delete','link'=>'deleteitem.php','params'=>array('id'=>'cart_id'),'attributes'=>array('class'=>'btn btn-success'))
     
     );
 
     $config=array(
         'srno'=>true,
-        'hiddenfields'=>array('mid','carid')
+        'hiddenfields'=>array('itid','cart_id')
         
         
     );
 
-   $condition="carname='".$name."' and status=1";
+   $condition="uemail='".$name."' and status=1";
    
    $join=array(
        
     );  
-	$fields=array('carid','quandity','proprice','status','total');
+	$fields=array('cart_id','itid','itnme','qty','offerprice','total');
 
-    $users=$dao->selectAsTable($fields,'cart',$condition,$join,$actions,$config);
+    $users=$dao->selectAsTable($fields,'cart as c',$condition,$join,$actions,$config);
     
     echo $users;
                                      
@@ -107,4 +132,3 @@ TOTAL AMOUNT:
     </div><!-- End container -->
     </div><!-- End container_gray_bg -->
 
-<?php } ?>

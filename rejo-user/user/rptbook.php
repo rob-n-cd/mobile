@@ -1,11 +1,11 @@
-
+<?php //include("userheader.php");	?>
 <?php require('../config/autoload.php'); 
 include("dbcon.php");
 ?>
 
 <?php
 $dao=new DataAccess();
-   $name=$_SESSION['itemname'] ;
+   $name=$_SESSION['email'] ;
  if(isset($_POST["payment"]))
 {
      echo "hai";
@@ -21,15 +21,15 @@ if(!isset($_SESSION['email']))
 	   }
 	   else
 	   { 
-        
-	   $sql = "select  total from cart where status=1 and  carname='$name'";
+	   $sql = "select sum(total)as t from cart where status=1 and  uemail='$name'";
 $result = $conn->query($sql);
 	   $row = $result->fetch_assoc();
-	   $total=$row["total"];
+	   $total=$row["t"];
 	   
 	   $_SESSION['amount']=$total; 
 	   
 	    ?>
+       
        
        
        
@@ -48,7 +48,6 @@ $result = $conn->query($sql);
                         <th>Price</th>
                         <th>Total</th>
                        
-                        <th>DELETE</th>
                      
                       
                     </tr>
@@ -57,25 +56,25 @@ $result = $conn->query($sql);
     $actions=array(
     
     
-    'delete'=>array('label'=>'Delete','link'=>'deleteitem.php','params'=>array('id'=>'carid'),'attributes'=>array('class'=>'btn btn-success'))
+    //'delete'=>array('label'=>'Cancel','link'=>'cancel.php','params'=>array('id'=>'cart_id'),'attributes'=>array('class'=>'btn btn-success'))
     
     );
 
     $config=array(
         'srno'=>true,
-        'hiddenfields'=>array('mid','carid')
+        'hiddenfields'=>array('itid','cart_id')
         
         
     );
 
-   $condition="carname='".$name."' and status=1";
+   $condition="uemail='".$name."' and status=2";
    
    $join=array(
        
     );  
-	$fields=array('carid','quandity','proprice','status','total');
+	$fields=array('cart_id','itid','itnme','qty','offerprice','total');
 
-    $users=$dao->selectAsTable($fields,'cart',$condition,$join,$actions,$config);
+    $users=$dao->selectAsTable($fields,'cart as c',$condition,$join,$actions,$config);
     
     echo $users;
                                      
@@ -87,15 +86,7 @@ $result = $conn->query($sql);
 
 
             <div class="row">
- <div class="col-md-3">
-TOTAL AMOUNT:
-<input type="text" class="form-control" value="<?php echo $total; ?>" readonly name="total"/>
-
-</div>
-<form action="" method="POST" enctype="multipart/form-data">
-
-<button class="btn btn-success" type="submit"  name="purchase" >New Item Purchase</button>
-<button class="btn btn-success" type="submit" style="margin-right: 2px;"  name="payment" >Payment</button>
+ 
 
 </form>
 </div>
