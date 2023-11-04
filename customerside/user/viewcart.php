@@ -83,7 +83,7 @@ $result = $conn->query($sql);
     $actions=array(
     
     
-    'delete'=>array('label'=>'Delete','link'=>'deleteitem.php','params'=>array('id'=>'carid'),'attributes'=>array('class'=>'btn btn-success'))
+    'delete'=>array('label'=>'Delete','link'=>'deletecart.php','params'=>array('id'=>'carid'),'attributes'=>array('class'=>'btn btn-success'))
     
     );
 
