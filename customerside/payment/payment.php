@@ -48,8 +48,8 @@ $data=array(
   
     if($dao->insert($data,"payment"))
     {
-        echo "<script> alert('New record created successfully');</script> ";
-
+        echo "<script> alert('New record created successfully');</script>";
+        header('location:../user/printbill.php');
     }
     else
         {$msg="Registration failed";} ?>

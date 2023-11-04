@@ -40,11 +40,11 @@ $dao=new DataAccess();
                                     <tbody>
                                    
  <?php
-$name=$_SESSION['email'] ;
+$name=$_SESSION['itemname'];
 
  
 
-$sql = "SELECT * FROM cart WHERE status=1 and uemail='$name'";
+$sql = "SELECT * FROM cart WHERE status=1 and carname='$name'";
 $result = $conn->query($sql);
 
 
@@ -61,7 +61,7 @@ if ($result->num_rows > 0) {
     while($row = $result->fetch_assoc()) {
 		
 		
-      echo "<tr> <td> "  . $row["itnme"]. "</td> <td>"  . $row["qty"]. "</td> <td>" . $row["offerprice"]. "</td>  <td>" . $row["total"]. "</td>  </tr>";
+      echo "<tr> <td> "  . $row["carname"]. "</td> <td>"  . $row["quandity"]. "</td> <td>" . $row["proprice"]. "</td>  <td>" . $row["total"]. "</td>  </tr>";
 	  
 	    
 }
@@ -71,11 +71,11 @@ if ($result->num_rows > 0) {
  ?>
 
  <?php
- $sql123 = "select sum(total) as t from cart where status=1 and  uemail='$name'";
+ $sql123 = "select sum(total) as t from cart where status=1 and  carname='$name'";
 $result123 = $conn->query($sql123);
 	   $row = $result123->fetch_assoc();
 	   $total=$row["t"];
-	    echo "<tr> <td colspan='3'  style='text-align:right'>Total:</td><td> ", $total, "</td></tr>";
+	    echo "<tr> <td colspan='3'  style='text-align:right'>Total:</td><td> ",$total, "</td></tr>";
 	   ?>
        
 
@@ -88,7 +88,7 @@ $result123 = $conn->query($sql123);
 
 <?php
 
-$q1="select * from cart where status=1 and uemail='".$name."'";
+$q1="select * from cart where status=1 and carname='".$name."'";
 $result1 = $conn->query($q1);
 
 if ($result1->num_rows > 0) {
@@ -96,14 +96,14 @@ if ($result1->num_rows > 0) {
     while($row = $result1->fetch_assoc()) {
 		
 
-   $a=$row["qty"];
-   $b=$row["itid"];
-   $sql12 =" UPDATE item40 SET qty=qty- $a WHERE itid=$b" ;
+   $a=$row["quandity"];
+   $b=$row["carid"];
+   $sql12 =" UPDATE cart SET quandity=quandity- $a WHERE carid=$b" ;
    $conn->query($sql12);
    
 }
 }
-$sql11 =" UPDATE cart SET status=2 WHERE status=1 and uemail='$name'" ;
+$sql11 =" UPDATE cart SET status=2 WHERE status=1 and carid='$name'" ;
 
 if ($conn->query($sql11) === TRUE) {
 	echo "<script> alert('Payment Sucessfully');</script> ";
@@ -115,13 +115,12 @@ if ($conn->query($sql11) === TRUE) {
 
 <input type="button" onclick="printData();" value="PRINT"  />
 
-<a href="displaycategory.php">HOME</a>
+<a href="headercat.php">HOME</a>
 </div>
 </div>
 </div>
 
 </form>
-
 
 
 
