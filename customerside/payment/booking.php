@@ -46,11 +46,12 @@ $data=array(
          
     );
 
-    print_r($data);
+
   
     if($dao->insert($data,"booking"))
     {
         echo "<script> alert('New record created successfully');</script> ";
+        header('location:../user/headercat.php');
 
     }
     else
@@ -123,19 +124,28 @@ Place:
 </div><br>
 <div class="row">
                     <div class="col-md-6">
-Product name:
 
-<?= $form->textBox('bproduct',array('class'=>'form-control')); ?>
-<?= $validator->error('bproduct'); ?>
+
+
+Product name:
+<?php   
+       $mname =  $_SESSION['name'];
+   ?>
+<input type="text" name="bproduct" value=<?php echo$mname?>>
 
 </div>
 </div><br>
 <div class="row">
                     <div class="col-md-6">
+
+
 Product price:
 
-<?= $form->textBox('bprice',array('class'=>'form-control')); ?>
-<?= $validator->error('bprice'); ?>
+   <?php   
+       $mprice =  $_SESSION['amount'];
+   ?>
+
+<input type="text" name="bprice" value=<?php echo$mprice?>>
 </div>
 </div><br>
 <button type="submit" name="insert">Submit</button>

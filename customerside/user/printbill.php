@@ -21,8 +21,7 @@ $dao=new DataAccess();
  <div class="table-responsive">
                                 <table border="1"  id="printTable" style="width:100%" >
                                     <thead>
-                          <center> star </center>
-                           <center> Angamaly </center>
+                          <center> mobile</center>
                             <tr>
                              <th style="text-align:left">BillNo.1</th>
                                <th colspan="2" style="text-align:left"></th>
@@ -86,36 +85,11 @@ $result123 = $conn->query($sql123);
 
 
 
-<?php
 
-$q1="select * from cart where status=1 and carname='".$name."'";
-$result1 = $conn->query($q1);
-
-if ($result1->num_rows > 0) {
-
-    while($row = $result1->fetch_assoc()) {
-		
-
-   $a=$row["quandity"];
-   $b=$row["carid"];
-   $sql12 =" UPDATE cart SET quandity=quandity- $a WHERE carid=$b" ;
-   $conn->query($sql12);
-   
-}
-}
-$sql11 =" UPDATE cart SET status=2 WHERE status=1 and carid='$name'" ;
-
-if ($conn->query($sql11) === TRUE) {
-	echo "<script> alert('Payment Sucessfully');</script> ";
-	 
-	
-	 }
-	 ?>
      <br /><br />
 
 <input type="button" onclick="printData();" value="PRINT"  />
-
-<a href="headercat.php">HOME</a>
+<a href="../payment/booking.php">BOOKING</a>
 </div>
 </div>
 </div>

@@ -88,10 +88,11 @@ $dao=new DataAccess();
 
 
 
-			 $q="select * from addmobile where mid=".$itid ;
+			 $q="select * from addmobile where mid=".$itid;
 
 $info=$dao->query($q);
-$iname=$info[0]["mname"];
+$iname = $_SESSION['name'] = $info[0]["mname"];
+$_SESSION['prize'] = $info[0]["mprize"];
 ?>
  
    
@@ -124,16 +125,14 @@ if(isset($_SESSION['email']))
                 <input id="qty" name="qty" type="text" onkeyup="showtotal()" style="margin-top: 8px;"><br>
                 <label for="Total">Total</label><br>
                 <input id="total" name="total" type="text" readonly style="margin-top: 8px;"><br>
-                <label for="">Something 2</label><br>
-                <input id="something2" type="text" style="margin-top: 8px;"><br>
+               
             </div>
         </div>
     </div>
     <div class="lower">
         <div class="btn-grp">
                 <button class="buttons" name="btn_insert" id="btn-1">Add Cart</button>
-                <button class="buttons" id="btn-2">test2</button>
-                <button class="buttons" id="btn-3">test3</button>        
+                
         </div>
     </div>
     </form>

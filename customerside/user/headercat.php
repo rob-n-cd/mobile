@@ -76,17 +76,14 @@ $dao=new DataAccess();
                     <div class="navbar-nav ml-auto">
                         <a href="index.html" class="nav-item nav-link active">Home</a>
                         <a href="headercom.php" class="nav-item nav-link">mobile companys</a>
-                        <a href="causes.html" class="nav-item nav-link">Causes</a>
+                        <a href="carthome.php" class="nav-item nav-link">MY-cart</a>
                         <a href="event.html" class="nav-item nav-link">Events</a>
                         <a href="blog.html" class="nav-item nav-link">Blog</a>
                         <div class="nav-item dropdown">
                             <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Pages</a>
                             <div class="dropdown-menu">
-                                <a href="single.html" class="dropdown-item">Detail Page</a>
-                                <a href="service.html" class="dropdown-item">What We Do</a>
-                                <a href="team.html" class="dropdown-item">Meet The Team</a>
-                                <a href="donate.html" class="dropdown-item">Donate Now</a>
-                                <a href="volunteer.html" class="dropdown-item">Become A SPONSOR</a>
+                                <a href="viewbookcust.php" class="dropdown-item">view book</a>
+                               
                             </div>
                         </div>
                         <a href="../login.php" class="nav-item nav-link">Logout</a>

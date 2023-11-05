@@ -31,32 +31,11 @@ include("dbcon.php");
 
 <?php
 $dao=new DataAccess();
-   $name=$_SESSION['itemname'] ;
- if(isset($_POST["payment"]))
+  if(isset($_POST["purchase"]))
 {
-     echo "hai";
-	 header('location:../payment/payment.php');
+    header('location:headercat.php');
 }
-   if(isset($_POST["purchase"]))
-{
-     header('location:displaycategory.php');
-}
-if(!isset($_SESSION['email']))
-   {
-	   header('location:login.php');
-	   }
-	   else
-	   { 
-        
-	   $sql = "select carid,sum(total) as t from cart where status=1 and  carname='$name'";
-$result = $conn->query($sql);
-	   $row = $result->fetch_assoc();
-	   $total=$row["t"];
-       $cart_id = $row["carid"];
-       $_SESSION['cartid'] = $cart_id;
-	   $_SESSION['amount']=$total; 
-	   
-	    ?>
+?>
        
        
        
@@ -65,16 +44,16 @@ $result = $conn->query($sql);
     	<div class="row">
             <div class="col-md-12">
             
-            <H1><center> CART DETAILS </center> </H1>
+            <H1><center> BooKIND  PAGE </center> </H1>
                 <table  border="1" class="table" style="margin-top:100px;">
                     <tr>
                         
                         <th>Sl No</th>
+                        <th>Customer Name</th>
+                        <th>Address</th>
+                        <th>Place</th>
                         <th>Item Name</th>
-                        <th>Quantity</th>
-                        <th>Price</th>
-                        <th>Total</th>
-                       
+                       <th>Item Price</th>
                         <th>DELETE</th>
                      
                       
@@ -84,25 +63,25 @@ $result = $conn->query($sql);
     $actions=array(
     
     
-    'delete'=>array('label'=>'Delete','link'=>'deletecart.php','params'=>array('id'=>'carid'),'attributes'=>array('class'=>'btn btn-success'))
+    'delete'=>array('label'=>'Delete','link'=>'deletebookcart.php','params'=>array('id'=>'bid'),'attributes'=>array('class'=>'btn btn-success'))
     
     );
 
     $config=array(
         'srno'=>true,
-        'hiddenfields'=>array('mid','carid')
+        'hiddenfields'=>array('mid','bid')
         
         
     );
 
-   $condition="carname='".$name."' and status=1";
+   $condition="status=1";
    
    $join=array(
        
     );  
-	$fields=array('carid','carname','quandity','proprice','total');
+	$fields=array('bid','bname','baddress','bplace','bproduct','bprice');
 
-    $users=$dao->selectAsTable($fields,'cart',$condition,$join,$actions,$config);
+    $users=$dao->selectAsTable($fields,'booking',$condition,$join,$actions,$config);
     
     echo $users;
                                      
@@ -113,16 +92,11 @@ $result = $conn->query($sql);
             </div>    
 
 
-            <div class="row">
- <div class="col-md-3">
-TOTAL AMOUNT:
-<input type="text" class="form-control" value="<?php echo $total; ?>" readonly name="total"/>
-
-</div>
+         
 <form action="" method="POST" enctype="multipart/form-data">
 
-<button class="btn btn-success" type="headermobile.php"  name="purchase" >New Item Purchase</button>
-<button class="btn btn-success" type="submit" style="margin-right: 2px;"  name="payment" >Payment</button>
+<button class="btn btn-success" type="submit"  name="purchase" >New Item Purchase</button>
+
 
 </form>
 </div>
@@ -133,5 +107,3 @@ TOTAL AMOUNT:
         </div><!-- End row -->
     </div><!-- End container -->
     </div><!-- End container_gray_bg -->
-
-<?php } ?>
