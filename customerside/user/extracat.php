@@ -74,22 +74,19 @@ $dao=new DataAccess();
 
                 <div class="collapse navbar-collapse justify-content-between" id="navbarCollapse">
                     <div class="navbar-nav ml-auto">
-                        <a href="headercat.php" class="nav-item nav-link">Home</a>
-                        <a href="about.html" class="nav-item nav-link">About</a>
-                        <a href="causes.html" class="nav-item nav-link">Causes</a>
-                        <a href="extracat.php" class="nav-item nav-link active">categorys</a>
+                        <a href="headermobile.php" class="nav-item nav-link">Home</a>
+                        <a href="headercom.php" class="nav-item nav-link">Mobile Companys</a>
+                        <a href="carthome.php" class="nav-item nav-link">MY-cart</a>
+                        <a href="extracat.php" class="nav-item nav-link ">+ADS</a>
                         <a href="blog.html" class="nav-item nav-link">Blog</a>
                         <div class="nav-item dropdown">
                             <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Pages</a>
                             <div class="dropdown-menu">
-                                <a href="single.html" class="dropdown-item">Detail Page</a>
-                                <a href="service.html" class="dropdown-item">What We Do</a>
-                                <a href="team.html" class="dropdown-item">Meet The Team</a>
-                                <a href="donate.html" class="dropdown-item">Donate Now</a>
-                                <a href="volunteer.html" class="dropdown-item">Become A SPONSOR</a>
+                                <a href="viewbookcust.php" class="dropdown-item">Booking  Page</a>
+                              
                             </div>
                         </div>
-                        <a href="contact.html" class="nav-item nav-link">Contact</a>
+                        <a href="../logout.php" class="nav-item nav-link">Logout</a>
                     </div>
                 </div>
             </div>

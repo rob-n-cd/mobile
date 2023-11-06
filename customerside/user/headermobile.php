@@ -74,19 +74,11 @@ $dao=new DataAccess();
 
                 <div class="collapse navbar-collapse justify-content-between" id="navbarCollapse">
                     <div class="navbar-nav ml-auto">
-                        <a href="index.html" class="nav-item nav-link active">Home</a>
+                        <a href="headermobile.php" class="nav-item nav-link active">Home</a>
                         <a href="../login.php" class="nav-item nav-link">Login</a>
                         
-                        <div class="nav-item dropdown">
-                            <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Pages</a>
-                            <div class="dropdown-menu">
-                                <a href="single.html" class="dropdown-item">Detail Page</a>
-                                <a href="service.html" class="dropdown-item">What We Do</a>
-                                <a href="team.html" class="dropdown-item">Meet The Team</a>
-                                <a href="donate.html" class="dropdown-item">Donate Now</a>
-                                <a href="volunteer.html" class="dropdown-item">Become A SPONSOR</a>
-                            </div>
-                        </div>
+                        
+                          
                         <a href="contact.html" class="nav-item nav-link">Contact</a>
                     </div>
                 </div>
@@ -99,37 +91,24 @@ $dao=new DataAccess();
           <!-- Carousel Start -->
           <div class="carousel">
             <div class="container-fluid">
+                
                 <div class="owl-carousel">
                    
-                       
+                <div class="carousel-img">
                     <div class="carousel-item">
-                        <div class="carousel-img">
-                            <img src="img/carousel-2.jpg" alt="Image">
-                        </div>
-                        <div class="carousel-text">
+                    <video  autoplay="" muted="muted" loop="" width="100%"  ><source src="../user/mobile.mp4" type="video/mp4" /></video>              
+                    <div class="carousel-text" style="margin-bottom: -300px;">
                             <h1>Get Involved with helping hand</h1>
-                            <p>
-                                Morbi sagittis turpis id suscipit feugiat. Suspendisse eu augue urna. Morbi sagittis, orci sodales varius fermentum, tortor
-                            </p>
+                            
                             <div class="carousel-btn">
-                                <a class="btn btn-custom" href="">categorys</a>
+                                <a       class="btn btn-custom" href="headercat.php">categorys</a>
                                </div>
-                        </div>
-                    </div>
-                    <div class="carousel-item">
-                        <div class="carousel-img">
-                            <img src="img/carousel-3.jpg" alt="Image">
-                        </div>
-                        <div class="carousel-text">
-                            <h1>Bringing smiles to millions</h1>
-                            <p>
-                                Sed ultrices, est eget feugiat accumsan, dui nibh egestas tortor, ut rhoncus nibh ligula euismod quam. Proin pellentesque odio
-                            </p>
-                            <div class="carousel-btn">
-                                <a class="btn btn-custom" href="">company</a>
-                               </div>
-                        </div>
-                    </div>
+                        </div>   
+                    </div>    
+                </div>
+                        
+                    
+                   
                 </div>
             </div>
         </div>
@@ -173,7 +152,7 @@ $info=$dao->query($q);
 
                     <div class="col-lg-6">
                         <div class="event-item">
-                            <img src=<?php echo BASE_URL."upload/".$info[$i]["mimg"]; ?> alt="Image">
+                            <img src=<?php echo BASE_URL."upload/".$info[$i]["mimg"]; ?>  alt="Image">
                             <div class="event-content">
                                 <div class="event-meta">
                                   
@@ -183,7 +162,7 @@ $info=$dao->query($q);
                                     <p>
                                         
                                     </p>
-                                    <a class="btn btn-custom" href="singleitem.php?id=<?=$info[$i]["mid"]?>">Select</a>
+                                    <a class="btn btn-custom" href="singleitem.php?id=<?=$info[$i]["mid"]?>">BUY</a>
                                 </div>
                             </div>
                         </div>
@@ -202,6 +181,84 @@ $info=$dao->query($q);
                  <a class="btn btn-custom" href="pastevent.php">Past Categories </a>
                     
                  
+
+
+
+
+
+
+                    <!-- Team Start -->
+        <div class="team">
+            <div class="container">
+                <div class="section-header text-center">
+                    <p>Meet Our Team</p>
+                    <h2>Awesome guys behind our charity activities</h2>
+                </div>
+                <div class="row">
+                    <div class="col-lg-3 col-md-6">
+                        <div class="team-item">
+                            <div class="team-img">
+                                <img src="img/team-1.jpg" alt="Team Image">
+                            </div>
+                            <div class="team-text">
+                                <h2>Rijoice john</h2>
+                                <p>Template Designing</p>
+                                <div class="team-social">
+                                    <a href=""><i class="fab fa-twitter"></i></a>
+                                    <a href=""><i class="fab fa-facebook-f"></i></a>
+                                    <a href=""><i class="fab fa-linkedin-in"></i></a>
+                                    <a href=""><i class="fab fa-instagram"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-6">
+                        <div class="team-item">
+                            <div class="team-img">
+                                <img src="img/team-2.jpg" alt="Team Image">
+                            </div>
+                            <div class="team-text">
+                                <h2>Robin Davis</h2>
+                                <p>back-end Creation</p>
+                                <div class="team-social">
+                                    <a href=""><i class="fab fa-twitter"></i></a>
+                                    <a href=""><i class="fab fa-facebook-f"></i></a>
+                                    <a href=""><i class="fab fa-linkedin-in"></i></a>
+                                    <a href=""><i class="fab fa-instagram"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-6">
+                        <div class="team-item">
+                            <div class="team-img">
+                                <img src="img/team-3.jpg" alt="Team Image">
+                            </div>
+                            <div class="team-text">
+                                <h2>Sheon Biju</h2>
+                                <p>Front-end Creation</p>
+                                <div class="team-social">
+                                    <a href=""><i class="fab fa-twitter"></i></a>
+                                    <a href=""><i class="fab fa-facebook-f"></i></a>
+                                    <a href=""><i class="fab fa-linkedin-in"></i></a>
+                                    <a href=""><i class="fab fa-instagram"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                   
+                </div>
+            </div>
+        </div>
+        <!-- Team End -->
+        
+
+
+
+
+
+
+
         
 
         <!-- Footer Start -->
@@ -292,6 +349,93 @@ $info=$dao->query($q);
         <!-- Template Javascript -->
         <script src="js/main.js"></script>
     </body>
+
+
+
+    <style>
+        /*******************************/
+/*********** Team CSS **********/
+/*******************************/
+.team {
+    position: relative;
+    width: 100%;
+    padding: 45px 0 15px 0;
+    margin-left: 100px;
+}
+
+.team .team-item {
+    position: relative;
+    margin-bottom: 35px;
+}
+
+.team .team-img {
+    position: relative;
+    overflow: hidden;
+}
+
+.team .team-img img {
+    width: 100%;
+    transform: scale(1.1);
+    margin-bottom: -15px;
+    transition: .3s;
+}
+
+.team .team-item:hover img {
+    margin: -15px 0 0 0;
+}
+
+.team .team-text {
+    position: absolute;
+    width: calc(100% - 40px);
+    height: 96px;
+    bottom: 0;
+    left: 20px;
+    padding: 22px 0;
+    text-align: center;
+    background: #ffffff;
+    transition: .3s;
+    overflow: hidden;
+}
+
+.team .team-text h2 {
+    font-size: 18px;
+    font-weight: 700;
+    margin-bottom: 10px;
+}
+
+.team .team-text p {
+    margin-bottom: 20px;
+}
+
+.team .team-social {
+    position: relative;
+    font-size: 0;
+}
+
+.team .team-social a {
+    display: inline-block;
+    width: 35px;
+    height: 35px;
+    margin: 0 3px;
+    padding: 5px 0;
+    text-align: center;
+    font-size: 14px;
+    color: #4a4c70;
+    border: 2px solid #FDBE33;
+    transition: .3s;
+}
+
+.team .team-social a:hover {
+    color: #20212B;
+    background: #FDBE33;
+}
+
+.team .team-item:hover .team-text {
+    height: 160px;
+}
+
+
+    </style>
 </html>
   
    

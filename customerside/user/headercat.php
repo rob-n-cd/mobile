@@ -77,7 +77,7 @@ $dao=new DataAccess();
                         <a href="index.html" class="nav-item nav-link active">Home</a>
                         <a href="headercom.php" class="nav-item nav-link">mobile companys</a>
                         <a href="carthome.php" class="nav-item nav-link">MY-cart</a>
-                        <a href="event.html" class="nav-item nav-link">Events</a>
+                        <a href="ads.html" class="nav-item nav-link">+ADS</a>
                         <a href="blog.html" class="nav-item nav-link">Blog</a>
                         <div class="nav-item dropdown">
                             <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Pages</a>
