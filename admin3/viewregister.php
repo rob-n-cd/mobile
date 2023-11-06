@@ -16,10 +16,9 @@ $dao=new DataAccess();
                 <table  border="1" class="table" style="margin-top:100px;">
                     <tr>
                         
-                        <th>Register id</th>
                         <th>Customer name</th>
-                        <th>Customer Address</th>
-                        <th>Email id</th>
+                        <th>Customer email id</th>
+                        <th>register id</th>
                      
                       
                     </tr>
@@ -32,7 +31,7 @@ $dao=new DataAccess();
    $join=array(
         
     );
-     $fields=array('rid','name','address','email');
+     $fields=array('name','email','rid');
 
     $users=$dao->selectAsTable($fields,'register',1,$join);
     
