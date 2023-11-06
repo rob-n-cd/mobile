@@ -143,7 +143,7 @@ $info=$dao->query($q);
                                     <p>
                                         
                                     </p>
-                                    <a class="btn btn-custom" href="singleitem.php?id=<?=$info[$i]["mid"]?>">Select</a>
+                                    <a class="btn btn-custom" href="singleitem.php?id=<?=$info[$i]["mid"]?>">BUY</a>
                                 </div>
                             </div>
                         </div>

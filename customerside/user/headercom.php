@@ -75,7 +75,7 @@ $dao=new DataAccess();
                 <div class="collapse navbar-collapse justify-content-between" id="navbarCollapse">
                     <div class="navbar-nav ml-auto">
                         <a href="headermobile.php" class="nav-item nav-link">Home</a>
-                        <a href="headercom.php" class="nav-item nav-link active">mobile companys</a>
+                        <a href="headercom.php" class="nav-item nav-link active">Mobile Companys</a>
                         <a href="carthome.php" class="nav-item nav-link">MY-cart</a>
                         <a href="ads.html" class="nav-item nav-link ">+ADS</a>
                         <a href="blog.html" class="nav-item nav-link">Blog</a>
