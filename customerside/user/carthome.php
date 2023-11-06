@@ -59,15 +59,12 @@ $dao=new DataAccess();
                       
                     </tr>
 <?php
-     $q1="select * from payment where cartid = ".$_SESSION['cart_id'];
-     $info121=$dao->query($q1);
-     $cart = $info121[0]["cartid"];
-     echo $cart;
-         if($cart == $_SESSION['cartid'])
-         {
-    
+     $q1="select * from payment";
+     $info121 = $conn->query($q1);
+    while($row = $info121->fetch_assoc())
+    {
+     $cart = $row["cartid"];
     $actions=array('delete'=>array('label'=>'Delete','link'=>'deletecart1.php','params'=>array('id'=>'carid'),'attributes'=>array('class'=>'btn btn-success')));
-
 
     $config=array(
         'srno'=>true,
@@ -76,7 +73,7 @@ $dao=new DataAccess();
         
     );
 
-   $condition="status=1";
+   $condition=$condition="carid='".$cart."' and status=1";
    
    $join=array(
        
@@ -85,8 +82,8 @@ $dao=new DataAccess();
 
     $users=$dao->selectAsTable($fields,'cart',$condition,$join,$actions,$config);
     
-    echo $users;
-}            
+    echo $users;   
+}
     ?>
 
              

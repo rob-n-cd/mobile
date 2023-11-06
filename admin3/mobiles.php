@@ -16,7 +16,7 @@ $dao=new DataAccess();
 $labels=array('mname'=>"Mobile name",'mprice'=>"Mobile price",'msoft'=>"Mobile software","mimg"=>"Mobile image","cid"=>"Category","cid11"=>"Company");
 
 $rules=array(
-    "mname"=>array("required"=>true,"minlength"=>3,"maxlength"=>30,"alphaonly"=>true),
+    "mname"=>array("required"=>true),
     "mprize"=>array("required"=>true,"minlength"=>2,"maxlength"=>30,"integeronly"=>true),
     "msoft"=>array("required"=>true,"minlength"=>3,"maxlength"=>30,"alphaonly"=>true),
     "mimg"=>array("filerequired"=>true),

@@ -36,9 +36,9 @@ body {
 }
 
 .title {
-  font-weight: 70;
-  margin-top: 400px;
-  margin-bottom: 10px;
+  font-weight: 700;
+  margin-top: 0;
+  margin-bottom: 40px;
   color: #2e2e2e;
 }
 
@@ -105,11 +105,11 @@ body {
 }
 .step:nth-child(2):before {
   right: -40px;
-  content: 'Confirmation';
+  content: 'payment';
 }
 .step:nth-child(3):before {
   right: -30px;
-  content: 'Booking';
+  content: 'booking';
 }
 .step:nth-child(4):before {
   right: 0;

@@ -85,7 +85,7 @@ echo $file->errors();
       <div class="progress-bar">
         <div class="step active"></div>
         <div class="step active"></div>
-        <div class="step"></div>
+        <div class="step active"></div>
         <div class="step"></div>
       </div>
 
