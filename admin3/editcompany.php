@@ -21,14 +21,14 @@ $labels=array('cname'=>"Company Name","cplace"=>"Company place","cimg"=>"Company
     
     
 $validator = new FormValidator($rules,$labels);
-
+$flag = false;
 if(isset($_POST["btn_update"]))
 {
 if($validator->validate($_POST))
 {
 
 if(isset($_FILES['cimg']['name'])){
-			if($fileName=$file->doUploadRandom($_FILES['cimg'],array('.jpg','.png','.jpeg','.JPEG','.jfif','.JFIF'),100000,5,'../upload'))
+			if($fileName=$file->doUploadRandom($_FILES['cimg'],array('.png','.jpg','.jpeg','.JPEG','JPG','.jfif','.JFIF'),100000,1,'../upload'))
 			{
 				$flag=true;
 					
@@ -38,10 +38,11 @@ $data=array(
 
         'cname'=>$_POST['cname'],
         'cplace'=>$_POST['cplace'],
-        'cimg'=>$fileName,
+        
     );
   $condition='cid='.$_GET['id'];
-if(isset($flag))
+  
+if($flag == true)
 			{	$data['cimg']=$fileName;
 		
 			}

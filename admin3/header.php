@@ -79,7 +79,7 @@
                             
                             
                             <ul class="widget widget-menu unstyled">
-                                <li><a href="../customerside/user/viewbookcust.php"><i class="menu-icon icon-bold"></i> Buttons </a></li>
+                                <li><a href="../customerside/user/viewbookcust.php"><i class="menu-icon icon-bold"></i> View Booking </a></li>
                                 <li><a href="../customerside/payment/viewpayment.php"><i class="menu-icon icon-book"></i>view PAYMENT</a></li>
                                 <li><a href="companyimage.php"><i class="menu-icon icon-paste"></i>ADD COMPANY </a></li>
                                 <li><a href="viewcompany.php"><i class="menu-icon icon-table"></i>VIEW COMPANY</a></li>

@@ -59,7 +59,7 @@ if(isset($_POST['signin']))
                             <div class="form-group">
                                 <!--<label for="your_name"><i class="zmdi zmdi-account material-icons-name"></i></label>
                                 <input type="text" name="your_name" id="your_name" placeholder="Your Name"/>--><td>email</td>
-			<td><input type="text" name="email" ></td>
+			<td><input type="email" name="email" ></td>
 			<td> <?php echo $validator->error('email'); ?> </td>
                             </div>
                             <div class="form-group">

@@ -6,8 +6,7 @@ include("header.php");
 $dao=new DataAccess();
 $info=$dao->getData('*','addmobile','mid='.$_GET['id']);
 $file=new FileUpload();
-$elements=array(
-        "mname"=>$info[0]['mname'],"mprize"=>$info[0]['mprize'],"msoft"=>$info[0]['msoft'],"mimg"=>$info[0]['mimg'],);
+$elements=array("mname"=>$info[0]['mname'],"mprize"=>$info[0]['mprize'],"msoft"=>$info[0]['msoft'],"mimg"=>$info[0]['mimg']);
 
 	$form = new FormAssist($elements,$_POST);
 
@@ -35,15 +34,14 @@ if(isset($_FILES['mimg']['name'])){
 			}
 }
 $data=array(
-
         'mname'=>$_POST['mname'],
         'mprize'=>$_POST['mprize'],
         'mimg'=>$fileName,
     );
   $condition='mid='.$_GET['id'];
 if($flag)
-			{	$data['mimg']=$fileName;
-		
+			{	
+                $data['mimg']=$fileName;
 			}
     
 

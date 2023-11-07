@@ -6,9 +6,7 @@ include("header.php");
 $file=new FileUpload();
 $elements=array( "cname"=>"","cplace"=>"","cimg"=>"");
 
-
 $form=new FormAssist($elements,$_POST);
-
 
 
 $dao=new DataAccess();
