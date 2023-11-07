@@ -77,7 +77,7 @@ $dao=new DataAccess();
                         <a href="headermobile.php" class="nav-item nav-link">Home</a>
                         <a href="headercom.php" class="nav-item nav-link">Mobile Companys</a>
                         <a href="carthome.php" class="nav-item nav-link">MY-cart</a>
-                        <a href="extracat.php" class="nav-item nav-link ">+ADS</a>
+                        <a href="ads.html" class="nav-item nav-link ">+ADS</a>
                         <a href="blog.html" class="nav-item nav-link">Blog</a>
                         <div class="nav-item dropdown">
                             <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Pages</a>
@@ -86,7 +86,7 @@ $dao=new DataAccess();
                               
                             </div>
                         </div>
-                        <a href="../logout.php" class="nav-item nav-link">Logout</a>
+                        <a href="../login.php" class="nav-item nav-link">Logout</a>
                     </div>
                 </div>
             </div>
@@ -159,7 +159,7 @@ $info=$dao->query($q);
   
         <!-- Page Header Start -->
     
-                 <a class="btn btn-custom" href="pastevent.php">Past Categories </a>
+                
                     
                  
         

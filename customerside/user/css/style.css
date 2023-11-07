@@ -1228,9 +1228,9 @@ a:focus {
     background: #f3f6ff;
 }
 
-.event .event-item img {
+/* .event .event-item img {
     width: 100%;
-}
+} */
 
 .event .event-content {
     padding: 30px;

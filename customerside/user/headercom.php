@@ -162,7 +162,7 @@ $info=$dao->query($q);
   
         <!-- Page Header Start -->
     
-                 <a class="btn btn-custom" href="pastevent.php">Past Companies </a>
+            
                     
                  
         

@@ -95,7 +95,6 @@ $dao=new DataAccess();
          
 <form action="" method="POST" enctype="multipart/form-data">
 
-<button class="btn btn-success" type="submit"  name="purchase" >New Item Purchase</button>
 
 
 </form>

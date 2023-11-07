@@ -54,7 +54,7 @@ if(isset($_POST['signin']))
                 <div class="signin-content">
                     <div class="signin-image">
                         <figure><img src="registration/images/signin-image.jpg" alt="sing up image"></figure>
-                        <a href="#" class="signup-image-link">Create an account</a>
+                    
                     </div>
                     <div class="signin-form">
                         <h2 class="form-title">ADMIN LOGIN</h2>
@@ -77,7 +77,7 @@ if(isset($_POST['signin']))
                             </div>
                             <div class="form-group form-button">
                                 <input type="submit" name="signin" id="signin" class="form-submit" value="Log in"/>
-                                <a href="index.php">Back to Home</a>
+                            
                             </div>
                         </form>
                         <div class="social-login">

@@ -44,7 +44,7 @@ $data=array(
          
     );
 
-    print_r($data);
+
   
     if($dao->insert($data,"company"))
     {

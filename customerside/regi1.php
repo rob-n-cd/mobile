@@ -25,9 +25,10 @@ if(isset($_POST['signup']))
 	{
 	$data=array(
         'name'=>$_POST['name'],
-        'address'=>$_POST['address'],
+       
 		'email'=>$_POST['email'],
 		'password'=>$_POST['password'],
+        'address'=>$_POST['address'],
   
 		);
 		$table='register';

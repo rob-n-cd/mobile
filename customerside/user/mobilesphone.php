@@ -77,7 +77,7 @@ $dao=new DataAccess();
                         <a href="headercat.php" class="nav-item nav-link active">Home</a>
                         <a href="headercom" class="nav-item nav-link ">mobile companys</a>
                         <a href="carthome.php" class="nav-item nav-link">My-cart</a>
-                        <a href="event.html" class="nav-item nav-link ">Events</a>
+                        <a href="ads.php" class="nav-item nav-link ">+Ads</a>
                         <a href="blog.html" class="nav-item nav-link">Blog</a>
                         <div class="nav-item dropdown">
                             <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Pages</a>
@@ -147,7 +147,7 @@ $info=$dao->query($q);
                                     <p>
                                         
                                     </p>
-                                    <a class="btn btn-custom" href="singleitem.php?id=<?=$info[$i]["mid"]?>">Select</a>
+                                    <a class="btn btn-custom" href="singleitem.php?id=<?=$info[$i]["mid"]?>">BUY</a>
                                 </div>
                             </div>
                         </div>

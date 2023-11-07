@@ -21,7 +21,7 @@ $labels=array('mname'=>"Mobile Name","mprize"=>"Mobile price","mimg"=>"Mobile im
     
     
 $validator = new FormValidator($rules,$labels);
-
+$flag = false;
 if(isset($_POST["btn_update"]))
 {
 if($validator->validate($_POST))
@@ -41,7 +41,7 @@ $data=array(
         'mimg'=>$fileName,
     );
   $condition='mid='.$_GET['id'];
-if(isset($flag))
+if($flag)
 			{	$data['mimg']=$fileName;
 		
 			}

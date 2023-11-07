@@ -17,7 +17,7 @@
             <div class="navbar-inner">
                 <div class="container">
                     <a class="btn btn-navbar" data-toggle="collapse" data-target=".navbar-inverse-collapse">
-                        <i class="icon-reorder shaded"></i></a><a class="brand" href="index.html">ROBIN </a>
+                        <i class="icon-reorder shaded"></i></a><a class="brand" href="mobiles.php">ADMIN</a>
                     <div class="nav-collapse collapse navbar-inverse-collapse">
                         <ul class="nav nav-icons">
                             <li class="active"><a href="#"><i class="icon-envelope"></i></a></li>
@@ -71,16 +71,15 @@
                                 </a></li>
                                 <li><a href="viewmobiles.php"><i class="menu-icon icon-bullhorn"></i>view the products </a>
                                 </li>
-                                <li><a href="message.html"><i class="menu-icon icon-inbox"></i>Inbox <b class="label green pull-right">
-                                    11</b> </a></li>
-                                <li><a href="task.html"><i class="menu-icon icon-tasks"></i>Tasks <b class="label orange pull-right">
+                               
+                                <li><a href="#"><i class="menu-icon icon-tasks"></i>Tasks <b class="label orange pull-right">
                                     19</b> </a></li>
                             </ul>
                             <!--/.widget-nav-->
                             
                             
                             <ul class="widget widget-menu unstyled">
-                                <li><a href="ui-button-icon.html"><i class="menu-icon icon-bold"></i> Buttons </a></li>
+                                <li><a href="../customerside/user/viewbookcust.php"><i class="menu-icon icon-bold"></i> Buttons </a></li>
                                 <li><a href="../customerside/payment/viewpayment.php"><i class="menu-icon icon-book"></i>view PAYMENT</a></li>
                                 <li><a href="companyimage.php"><i class="menu-icon icon-paste"></i>ADD COMPANY </a></li>
                                 <li><a href="viewcompany.php"><i class="menu-icon icon-table"></i>VIEW COMPANY</a></li>
@@ -97,7 +96,7 @@
                                         <li><a href="other-user-listing.html"><i class="icon-inbox"></i>All Users </a></li>
                                     </ul>
                                 </li>
-                                <li><a href="#"><i class="menu-icon icon-signout"></i>Logout </a></li>
+                                <li><a href="index.php"><i class="menu-icon icon-signout"></i>Logout </a></li>
                             </ul>
                         </div>
                         <!--/.sidebar-->

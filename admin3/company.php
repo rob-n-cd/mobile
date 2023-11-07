@@ -32,7 +32,7 @@ $data=array(
         'cplace'=>$_POST['cplace'],
     );
 
-    print_r($data);
+
   
     if($dao->insert($data,"company"))
     {

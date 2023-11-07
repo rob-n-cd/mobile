@@ -52,18 +52,12 @@ $dao=new DataAccess();
                         <th>Card Name</th>
                         <th>Holder Name</th>
                        <th>Item Price</th>
-                       <th>cart id</th>
-                        <th>DELETE</th>
+                      
                      
                       
                     </tr>
 <?php
-    $actions=array(
     
-    
-    'delete'=>array('label'=>'Delete','link'=>'deletebookcart.php','params'=>array('id'=>'pid'),'attributes'=>array('class'=>'btn btn-success'))
-    
-    );
 
     $config=array(
         'srno'=>true,
@@ -77,9 +71,9 @@ $dao=new DataAccess();
    $join=array(
        
     );  
-	$fields=array('pid','cardname','hname','pprice','cartid');
+	$fields=array('pid','cardname','hname','pprice');
 
-    $users=$dao->selectAsTable($fields,'payment',$condition,$join,$actions,$config);
+    $users=$dao->selectAsTable($fields,'payment',$condition);
     
     echo $users;
                                      

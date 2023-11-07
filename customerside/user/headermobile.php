@@ -79,7 +79,7 @@ $dao=new DataAccess();
                         
                         
                           
-                        <a href="contact.html" class="nav-item nav-link">Contact</a>
+                        <a href="carthome.php" class="nav-item nav-link">MY-cart</a>
                     </div>
                 </div>
             </div>
@@ -152,7 +152,7 @@ $info=$dao->query($q);
 
                     <div class="col-lg-6">
                         <div class="event-item">
-                            <img src=<?php echo BASE_URL."upload/".$info[$i]["mimg"]; ?>  alt="Image">
+                            <img src="<?= BASE_URL."upload/".$info[$i]["mimg"] ?>" height="400px"  alt="Image">
                             <div class="event-content">
                                 <div class="event-meta">
                                   
@@ -178,88 +178,7 @@ $info=$dao->query($q);
   
         <!-- Page Header Start -->
     
-                 <a class="btn btn-custom" href="pastevent.php">Past Categories </a>
-                    
-                 
-
-
-
-
-
-
-                    <!-- Team Start -->
-        <div class="team">
-            <div class="container">
-                <div class="section-header text-center">
-                    <p>Meet Our Team</p>
-                    <h2>project teaminates</h2>
-                </div>
-                <div class="row">
-                    <div class="col-lg-3 col-md-6">
-                        <div class="team-item">
-                            <div class="team-img">
-                                <img src="img/team-1.jpg" alt="Team Image">
-                            </div>
-                            <div class="team-text">
-                                <h2>Rijoice john</h2>
-                                <p>Template Designing</p>
-                                <div class="team-social">
-                                    <a href=""><i class="fab fa-twitter"></i></a>
-                                    <a href=""><i class="fab fa-facebook-f"></i></a>
-                                    <a href=""><i class="fab fa-linkedin-in"></i></a>
-                                    <a href=""><i class="fab fa-instagram"></i></a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-3 col-md-6">
-                        <div class="team-item">
-                            <div class="team-img">
-                                <img src="img/team-2.jpg" alt="Team Image">
-                            </div>
-                            <div class="team-text">
-                                <h2>Robin Davis</h2>
-                                <p>back-end Creation</p>
-                                <div class="team-social">
-                                    <a href=""><i class="fab fa-twitter"></i></a>
-                                    <a href=""><i class="fab fa-facebook-f"></i></a>
-                                    <a href=""><i class="fab fa-linkedin-in"></i></a>
-                                    <a href=""><i class="fab fa-instagram"></i></a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-3 col-md-6">
-                        <div class="team-item">
-                            <div class="team-img">
-                                <img src="img/team-3.jpg" alt="Team Image">
-                            </div>
-                            <div class="team-text">
-                                <h2>Sheon Biju</h2>
-                                <p>Front-end Creation</p>
-                                <div class="team-social">
-                                    <a href=""><i class="fab fa-twitter"></i></a>
-                                    <a href=""><i class="fab fa-facebook-f"></i></a>
-                                    <a href=""><i class="fab fa-linkedin-in"></i></a>
-                                    <a href=""><i class="fab fa-instagram"></i></a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                   
-                </div>
-            </div>
-        </div>
-        <!-- Team End -->
-        
-
-
-
-
-
-
-
-        
+            
 
         <!-- Footer Start -->
         <div class="footer">
@@ -352,90 +271,7 @@ $info=$dao->query($q);
 
 
 
-    <style>
-        /*******************************/
-/*********** Team CSS **********/
-/*******************************/
-.team {
-    position: relative;
-    width: 100%;
-    padding: 45px 0 15px 0;
-    margin-left: 100px;
-}
-
-.team .team-item {
-    position: relative;
-    margin-bottom: 35px;
-}
-
-.team .team-img {
-    position: relative;
-    overflow: hidden;
-}
-
-.team .team-img img {
-    width: 100%;
-    transform: scale(1.1);
-    margin-bottom: -15px;
-    transition: .3s;
-}
-
-.team .team-item:hover img {
-    margin: -15px 0 0 0;
-}
-
-.team .team-text {
-    position: absolute;
-    width: calc(100% - 40px);
-    height: 96px;
-    bottom: 0;
-    left: 20px;
-    padding: 22px 0;
-    text-align: center;
-    background: #ffffff;
-    transition: .3s;
-    overflow: hidden;
-}
-
-.team .team-text h2 {
-    font-size: 18px;
-    font-weight: 700;
-    margin-bottom: 10px;
-}
-
-.team .team-text p {
-    margin-bottom: 20px;
-}
-
-.team .team-social {
-    position: relative;
-    font-size: 0;
-}
-
-.team .team-social a {
-    display: inline-block;
-    width: 35px;
-    height: 35px;
-    margin: 0 3px;
-    padding: 5px 0;
-    text-align: center;
-    font-size: 14px;
-    color: #4a4c70;
-    border: 2px solid #FDBE33;
-    transition: .3s;
-}
-
-.team .team-social a:hover {
-    color: #20212B;
-    background: #FDBE33;
-}
-
-.team .team-item:hover .team-text {
-    height: 160px;
-}
-
-
-    </style>
+  
 </html>
   
    
