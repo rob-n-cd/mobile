@@ -75,6 +75,7 @@ $dao=new DataAccess();
                 <div class="collapse navbar-collapse justify-content-between" id="navbarCollapse">
                     <div class="navbar-nav ml-auto">
                         <a href="headermobile.php" class="nav-item nav-link active">Home</a>
+                        <a href="" class="nav-item nav-link ">Admin Login</a>
                         <a href="../login.php" class="nav-item nav-link">Login</a>
                         
                         

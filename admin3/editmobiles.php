@@ -10,11 +10,12 @@ $elements=array("mname"=>$info[0]['mname'],"mprize"=>$info[0]['mprize'],"msoft"=
 
 	$form = new FormAssist($elements,$_POST);
 
-$labels=array('mname'=>"Mobile Name","mprize"=>"Mobile price","mimg"=>"Mobile image");
+$labels=array('mname'=>"Mobile Name","mprize"=>"Mobile price","msoft"=>"Mobile Software","mimg"=>"Mobile image");
 
     $rules=array(
         "mname"=>array("required"=>true,"minlength"=>3,"maxlength"=>30,"alphaonly"=>true),
         "mprize"=>array("required"=>true,"minlength"=>3,"maxlength"=>20,"integeronly"=>true),
+        "msoft"=>array("required"=>true,"minlength"=>3,"maxlength"=>30,"alphaonly"=>true),
         "mimg"=>array("filerequired"=>true)
 );
     
@@ -27,7 +28,7 @@ if($validator->validate($_POST))
 {
 
 if(isset($_FILES['mimg']['name'])){
-			if($fileName=$file->doUploadRandom($_FILES['mimg'],array('.jpg','.png','.jpeg','jfif',),100000,5,'../upload'))
+			if($fileName=$file->doUploadRandom($_FILES['mimg'],array('.jpg','.png','.jpeg','jfif'),100000,1,'../upload'))
 			{
 				$flag=true;
 					
@@ -36,10 +37,11 @@ if(isset($_FILES['mimg']['name'])){
 $data=array(
         'mname'=>$_POST['mname'],
         'mprize'=>$_POST['mprize'],
-        'mimg'=>$fileName,
+        'msoft'=>$_POST['msoft'],
+        
     );
   $condition='mid='.$_GET['id'];
-if($flag)
+if($flag === true)
 			{	
                 $data['mimg']=$fileName;
 			}
@@ -84,7 +86,7 @@ if($dao->update($data,'addmobile',$condition))
  
 <div class="row">
                     <div class="col-md-6">
-Company Name:
+mobile Name:
 
 <?= $form->textBox('mname',array('class'=>'form-control')); ?>
 <?= $validator->error('mname'); ?>
@@ -94,7 +96,7 @@ Company Name:
 
 <div class="row">
                     <div class="col-md-6">
-Company place:
+mobile price:
 
 <?= $form->textBox('mprize',array('class'=>'form-control')); ?>
 <?= $validator->error('mprize'); ?>
@@ -105,6 +107,18 @@ Company place:
 
 <div class="row">
                     <div class="col-md-6">
+Mobile software:
+
+<?= $form->textBox('msoft',array('class'=>'form-control')); ?>
+<?= $validator->error('msoft'); ?>
+
+</div>
+</div>
+
+
+<div class="row">
+                    <div class="col-md-6">
+
 
 Company iMAGE:
 
