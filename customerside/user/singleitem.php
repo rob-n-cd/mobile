@@ -111,14 +111,15 @@ if(isset($_SESSION['email']))
 
 <?php } ?>
             <h3>Product Details</h3>
-            <img style="width:300; height:300" src=<?php echo BASE_URL."upload/".$info[0]["mimg"]; ?> alt=" " class="img-responsive" />
+           <a href="details.php"> <img style="width:300; height:300" src=<?php echo BASE_URL."upload/".$info[0]["mimg"]; ?> alt=" " class="img-responsive" /></a>
         </div>
         <div class="content">
             <h3>Details</h3>
             <div style="display: block;">
                 <label for="name">Item Name:</label><br>
                 
-                <label for="name"><?php echo $info[0]["mname"]; ?></label><br>
+                <input  type="text" value="<?php echo $info[0]["mname"]; ?>" readonly style="margin-top: 8px;"><br>
+ 
                  <label for="price">Price:</label><br>
                 <input id="price" name="offerprice" type="text" value="<?php echo $info[0]["mprize"];  ?>" readonly style="margin-top: 8px;"><br>
                 <label for="qty">Quantity:</label><br>

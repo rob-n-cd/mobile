@@ -1,6 +1,20 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
+    <?php require('../config/autoload.php'); 
+include("dbcon.php");
+$dao=new DataAccess();
+
+
+$email=$_SESSION['email'];
+$q2="select * from register where email='$email'";
+$info1=$dao->query($q2);
+if(!isset($_SESSION['email']))
+{
+    header('location:../login.php');
+}
+else{
+    ?>
         <meta charset="utf-8">
         <title>SMART STORE</title>
         <meta content="width=device-width, initial-scale=1.0" name="viewport">
@@ -25,14 +39,6 @@
     </head>
 
     <body>
-    <?php require('../config/autoload.php'); ?>
-
-<?php
-$dao=new DataAccess();
-
-
-
-?>
         <!-- Top Bar Start -->
         <div class="top-bar d-none d-md-block">
             <div class="container-fluid">
@@ -74,7 +80,7 @@ $dao=new DataAccess();
 
                 <div class="collapse navbar-collapse justify-content-between" id="navbarCollapse">
                     <div class="navbar-nav ml-auto">
-                        <a href="headermobile.php" class="nav-item nav-link">Home</a>
+                        <a href="index.php" class="nav-item nav-link">Home</a>
                         <a href="headercom.php" class="nav-item nav-link">Mobile Companys</a>
                         <a href="carthome.php" class="nav-item nav-link">MY-cart</a>
                         <a href="ads.html" class="nav-item nav-link ">+ADS</a>
@@ -83,10 +89,10 @@ $dao=new DataAccess();
                             <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Pages</a>
                             <div class="dropdown-menu">
                                 <a href="viewbookcust.php" class="dropdown-item">Booking  Page</a>
-                              
+                                <a href="logout.php" class="dropdown-item">logout</a>
                             </div>
                         </div>
-                        <a href="../login.php" class="nav-item nav-link">Logout</a>
+                        <a href="#" class="nav-item nav-link"><?= $info1[0]['name'] ?></a>
                     </div>
                 </div>
             </div>
@@ -251,6 +257,7 @@ $info=$dao->query($q);
 
         <!-- Template Javascript -->
         <script src="js/main.js"></script>
+        <?php } ?>
     </body>
 </html>
   

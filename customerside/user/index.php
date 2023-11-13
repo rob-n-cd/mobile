@@ -74,8 +74,8 @@ $dao=new DataAccess();
 
                 <div class="collapse navbar-collapse justify-content-between" id="navbarCollapse">
                     <div class="navbar-nav ml-auto">
-                        <a href="headermobile.php" class="nav-item nav-link active">Home</a>
-                        <a href="" class="nav-item nav-link ">Admin Login</a>
+                        <a href="index.php" class="nav-item nav-link active">Home</a>
+                    
                         <a href="../login.php" class="nav-item nav-link">Login</a>
                         
                         
@@ -153,7 +153,7 @@ $info=$dao->query($q);
 
                     <div class="col-lg-6">
                         <div class="event-item">
-                            <img src="<?= BASE_URL."upload/".$info[$i]["mimg"] ?>" height="400px"  alt="Image">
+                            <img src="<?= BASE_URL."upload/".$info[$i]["mimg"] ?>"  alt="Image">
                             <div class="event-content">
                                 <div class="event-meta">
                                   

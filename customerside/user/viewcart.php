@@ -121,7 +121,7 @@ TOTAL AMOUNT:
 </div>
 <form action="" method="POST" enctype="multipart/form-data">
 
-<button class="btn btn-success" type="headermobile.php"  name="purchase" >New Item Purchase</button>
+<button class="btn btn-success" type="index.php"  name="purchase" >New Item Purchase</button>
 <button class="btn btn-success" type="submit" style="margin-right: 2px;"  name="payment" >Payment</button>
 
 </form>
