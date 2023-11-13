@@ -1,14 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
-<?php
- require('../config/autoload.php'); 
- include("dbcon.php");
- $dao=new DataAccess();
-$mobile_id = $_SESSION['mobile_id'];
-$q2="select * from addmobile where mid=".$mobile_id ;
-$info=$dao->query($q2);
 
-?>
 <head>
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
@@ -43,7 +35,17 @@ $info=$dao->query($q2);
   * License: https://bootstrapmade.com/license/
   ======================================================== -->
 </head>
+<?php
+include("dbcon.php");
+ require('../config/autoload.php'); 
+ 
+ $dao=new DataAccess();
+  $mid = $_SESSION['mid'];
+  $q="select * from addmobile where mid=".$mid;
 
+  $info=$dao->query($q);
+
+?>
 <body>
 
   <!-- ======= Header ======= -->
@@ -116,9 +118,9 @@ $info=$dao->query($q2);
             <div class="portfolio-info">
               <h3>Project information</h3>
               <ul>
-                <li><strong>Category</strong>: Web design</li>
-                <li><strong>Client</strong>: ASU Company</li>
-                <li><strong>Project date</strong>: 01 March, 2020</li>
+                <li><strong>Mobile Name</strong>:<?=$info[0]["mname"]?> </li>
+                <li><strong>Software</strong>: <?=$info[0]["msoft"]?></li>
+                <li><strong>price</strong>:<?=$info[0]["mprize"]?></li>
                 <li><strong>Project URL</strong>: <a href="#">www.example.com</a></li>
               </ul>
             </div>

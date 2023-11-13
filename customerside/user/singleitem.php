@@ -65,7 +65,7 @@ $price = $info1[0]["mprize"];
 $qty = $_POST["qty"];
 $total = $_POST["total"];
 $_SESSION['itemname'] = $itemname;
-$_SESSION['mobile_id'] = $itid;
+
 $status=1;
 $sql = "INSERT INTO `cart`(`carname`,`quandity`,`proprice`,`status`,`total`) VALUES ('$itemname','$qty','$price','$status','$total')";
 
@@ -92,6 +92,7 @@ $dao=new DataAccess();
 			 $q="select * from addmobile where mid=".$itid;
 
 $info=$dao->query($q);
+$_SESSION['mid'] = $itid;
 $iname = $_SESSION['name'] = $info[0]["mname"];
 $_SESSION['prize'] = $info[0]["mprize"];
 ?>
