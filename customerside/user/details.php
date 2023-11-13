@@ -44,7 +44,11 @@ include("dbcon.php");
   $q="select * from addmobile where mid=".$mid;
 
   $info=$dao->query($q);
+  $company_id = $info[0]['cmid'];
 
+
+  $qc="select * from company where cid=".$company_id;
+  $info1=$dao->query($qc);
 ?>
 <body>
 
@@ -59,9 +63,6 @@ include("dbcon.php");
       <nav id="navbar" class="navbar">
         <ul>
           <li><a class="nav-link scrollto " href="details.php">Home</a></li>  
-          <li><a class="nav-link scrollto" href="#about">Images</a></li>
-          <li><a class="nav-link scrollto" href="#services"></a></li>
-          
           <li><a class="nav-link scrollto" href="#contact">Back</a></li>
         </ul>
         <i class="bi bi-list mobile-nav-toggle"></i>
@@ -116,7 +117,7 @@ include("dbcon.php");
 
           <div class="col-lg-4">
             <div class="portfolio-info">
-              <h3>Project information</h3>
+              <h3><?=$info1[0]["cname"]?></h3>
               <ul>
                 <li><strong>Mobile Name</strong>:<?=$info[0]["mname"]?> </li>
                 <li><strong>Software</strong>: <?=$info[0]["msoft"]?></li>
