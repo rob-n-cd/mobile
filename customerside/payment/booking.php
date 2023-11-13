@@ -3,21 +3,26 @@
  require('../config/autoload.php'); 
 
 $file=new FileUpload();
-$elements=array( "bname"=>"","baddress"=>"","bplace"=>"","bproduct"=>"","bprice"=>"");
+$elements=array( "bname"=>"","baddress"=>"","bplace"=>"");
 
 
 $form=new FormAssist($elements,$_POST);
 
 $dao=new DataAccess();
+include("dbcon.php");
 
-$labels=array('bname'=>"Enter youer name",'baddress'=>"Address",'bplace'=>"Place",'bproduct'=>'Product name','bprice'=>"Mobile Price");
+
+$email=$_SESSION['email'];
+$q2="select * from register where email='$email'";
+$info1=$dao->query($q2);
+
+
+$labels=array('bname'=>"Enter youer name",'baddress'=>"Address",'bplace'=>"Place");
 
 $rules=array(
     "bname"=>array("required"=>true,"minlength"=>3,"maxlength"=>30,"alphaonly"=>true),
     "baddress"=>array("required"=>true,"minlength"=>3 ,"maxlength"=>30,"alphaonly"=>true),
     "bplace"=>array("required"=>true,"minlength"=>3,"maxlength"=>30,"alphaonly"=>true),
-    "bproduct"=>array("required"=>true,"minlength"=>3,"maxlength"=>30,"alphaonly"=>true),
-    "bprice"=>array("required"=>true,"minlength"=>2,"maxlength"=>30,"integeronly"=>true)
     
      
 );
@@ -40,7 +45,9 @@ $data=array(
         'baddress'=>$_POST['baddress'],
         'bplace'=>$_POST['bplace'],
         'bproduct'=>$_POST['bproduct'],
-        'bprice'=>$_POST['bprice']
+        'bprice'=>$_POST['bprice'],
+        'date'=>$_POST['bdate']
+
         
         
          
@@ -99,17 +106,14 @@ echo $file->errors();
                     <div class="col-md-6">
 Enter youer name:
 
-<?= $form->textBox('bname',array('class'=>'form-control')); ?>
-<?= $validator->error('bname'); ?>
+<input type="text" name="bname" value=<?php echo$info1[0]['name']?>>
 
 </div>
 </div><br>
 <div class="row">
                     <div class="col-md-6">
 Address:
-
-<?= $form->textBox('baddress',array('class'=>'form-control')); ?>
-<?= $validator->error('baddress'); ?>
+<input type="text" name="baddress" value=<?php echo$info1[0]['address']?>>
 
 </div>
 </div><br>
@@ -146,6 +150,14 @@ Product price:
    ?>
 
 <input type="text" name="bprice" value=<?php echo$mprice?>>
+</div>
+</div><br>
+<div class="row">
+                    <div class="col-md-6">
+
+<input type="date" name="bdate">
+
+
 </div>
 </div><br>
 <button type="submit" name="insert">Submit</button>

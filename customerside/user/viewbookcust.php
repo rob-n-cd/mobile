@@ -54,6 +54,7 @@ $dao=new DataAccess();
                         <th>Place</th>
                         <th>Item Name</th>
                        <th>Item Price</th>
+                       <th>Date</th>
                         <th>DELETE</th>
                      
                       
@@ -79,7 +80,7 @@ $dao=new DataAccess();
    $join=array(
        
     );  
-	$fields=array('bid','bname','baddress','bplace','bproduct','bprice');
+	$fields=array('bid','bname','baddress','bplace','bproduct','bprice','date');
 
     $users=$dao->selectAsTable($fields,'booking',$condition,$join,$actions,$config);
     

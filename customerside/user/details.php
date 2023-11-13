@@ -1,6 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
+<?php
+ require('../config/autoload.php'); 
+ include("dbcon.php");
+ $dao=new DataAccess();
+$mobile_id = $_SESSION['mobile_id'];
+$q2="select * from addmobile where mid=".$mobile_id ;
+$info=$dao->query($q2);
 
+?>
 <head>
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
@@ -88,7 +96,7 @@
               <div class="swiper-wrapper align-items-center">
 
                 <div class="swiper-slide">
-                  <img src="assets/img/portfolio/portfolio-1.jpg" alt="">
+                <img src=<?php echo BASE_URL."upload/".$info[0]["mimg"]; ?> alt="Image">
                 </div>
 
                 <div class="swiper-slide">

@@ -65,6 +65,7 @@ $price = $info1[0]["mprize"];
 $qty = $_POST["qty"];
 $total = $_POST["total"];
 $_SESSION['itemname'] = $itemname;
+$_SESSION['mobile_id'] = $itid;
 $status=1;
 $sql = "INSERT INTO `cart`(`carname`,`quandity`,`proprice`,`status`,`total`) VALUES ('$itemname','$qty','$price','$status','$total')";
 
