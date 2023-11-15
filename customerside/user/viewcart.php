@@ -34,7 +34,7 @@ $dao=new DataAccess();
    $name=$_SESSION['itemname'] ;
  if(isset($_POST["payment"]))
 {
-     echo "hai";
+     
 	 header('location:../payment/payment.php');
 }
    if(isset($_POST["purchase"]))
