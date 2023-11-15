@@ -63,7 +63,7 @@ include("dbcon.php");
       <nav id="navbar" class="navbar">
         <ul>
           <li><a class="nav-link scrollto " href="details.php">Home</a></li>  
-          <li><a class="nav-link scrollto" href="#contact">Back</a></li>
+          <li><a class="nav-link scrollto" href="">Back</a></li>
         </ul>
         <i class="bi bi-list mobile-nav-toggle"></i>
       </nav><!-- .navbar -->
@@ -102,13 +102,7 @@ include("dbcon.php");
                 <img src=<?php echo BASE_URL."upload/".$info[0]["mimg"]; ?> alt="Image">
                 </div>
 
-                <div class="swiper-slide">
-                  <img src="assets/img/portfolio/portfolio-2.jpg" alt="">
-                </div>
-
-                <div class="swiper-slide">
-                  <img src="assets/img/portfolio/portfolio-3.jpg" alt="">
-                </div>
+               
 
               </div>
               <div class="swiper-pagination"></div>
@@ -122,7 +116,7 @@ include("dbcon.php");
                 <li><strong>Mobile Name</strong>:<?=$info[0]["mname"]?> </li>
                 <li><strong>Software</strong>: <?=$info[0]["msoft"]?></li>
                 <li><strong>price</strong>:<?=$info[0]["mprize"]?></li>
-                <li><strong>Project URL</strong>: <a href="#">www.example.com</a></li>
+                <li><strong>Project URL</strong>: <a href="#"></a></li>
               </ul>
             </div>
            
@@ -197,5 +191,10 @@ include("dbcon.php");
   <script src="js/page.js"></script>
 
 </body>
+<style>
+  .portfolio-details .portfolio-details-slider img {
+  width: 50%;
+}
+</style>
 
 </html>

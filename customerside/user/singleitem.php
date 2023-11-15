@@ -53,7 +53,7 @@ $iqty = $info121[0]["qty"];
 $qty = $_POST["qty"];
 echo $iqty;
 
-if($iqty>$qty)
+if($iqty>$qty && $qty != 0)
 {
     $itid = $_GET['id'];
 $q2="select * from addmobile where mid=".$itid ;
