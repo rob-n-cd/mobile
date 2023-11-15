@@ -26,32 +26,30 @@ $validator = new FormValidator($rules,$labels);
 
 if(isset($_POST["insert"]))
 {
- // $cart_id = $_SESSION['cartid'];
+
 if($validator->validate($_POST))
 {
 	
   
+
 $data=array(
 
        
         'cardname'=>$_POST['cardname'],
         'cardnumber'=>$_POST['cardnumber'],
         'hname'=>$_POST['hname'],
-        'pprice'=>$_POST['pprice'],
-        'cartid'=>$_SESSION['cartid'],
-       
-       
+        'pprice'=>$_POST['pprice']
         
         
          
     );
-    
-   // print_r($data);
-   $_SESSION['cart_id']  = $_SESSION['cartid'];
+
+    print_r($data);
+  
     if($dao->insert($data,"payment"))
     {
-        echo "<script> alert('New record created successfully');</script>";
-        header('location:../user/printbill.php');
+        echo "<script> alert('New record created successfully');</script> ";
+
     }
     else
         {$msg="Registration failed";} ?>
@@ -145,8 +143,9 @@ Holder Name:
 <div class="row">
                     <div class="col-md-6">
 Mobile Price:
-<?php $price = $_SESSION['amount']; ?>
-<input type="text" name="pprice" value=<?php echo$price?>>
+
+<?= $form->textBox('pprice',array('class'=>'form-control')); ?>
+<?= $validator->error('pprice'); ?>
 
 </div>
 </div><br>

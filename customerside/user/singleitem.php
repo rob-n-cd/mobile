@@ -51,9 +51,10 @@ if(!isset($_SESSION['email']))
 $info121=$dao->query($q1);
 $iqty = $info121[0]["qty"];
 $qty = $_POST["qty"];
+$_SESSION['qundity'] = $qty;
 echo $iqty;
 
-if($iqty>$qty && $qty != 0)
+if($iqty>$qty)
 {
     $itid = $_GET['id'];
 $q2="select * from addmobile where mid=".$itid ;
@@ -61,13 +62,12 @@ $q2="select * from addmobile where mid=".$itid ;
 $info1=$dao->query($q2);
 $iname=$info1[0]["mname"];
 $itemname = $iname;
-$price = $info1[0]["mprize"];
+$price = $_POST["offerprice"];
 $qty = $_POST["qty"];
 $total = $_POST["total"];
 $_SESSION['itemname'] = $itemname;
-
 $status=1;
-$sql = "INSERT INTO `cart`(`carname`,`quandity`,`proprice`,`status`,`total`) VALUES ('$itemname','$qty','$price','$status','$total')";
+$sql = "INSERT INTO `cart`(`carname`,`quandity`,`proprice`,`status`,`total`) VALUES ('$itemname','$qty','$proprice','$status','$total')";
 
 $conn->query($sql);
  header('location:viewcart.php');
@@ -89,12 +89,10 @@ $dao=new DataAccess();
 
 
 
-			 $q="select * from addmobile where mid=".$itid;
+			 $q="select * from addmobile where mid=".$itid ;
 
 $info=$dao->query($q);
-$_SESSION['mid'] = $itid;
-$iname = $_SESSION['name'] = $info[0]["mname"];
-$_SESSION['prize'] = $info[0]["mprize"];
+$iname=$info[0]["mname"];
 ?>
  
    
@@ -113,29 +111,30 @@ if(isset($_SESSION['email']))
 
 <?php } ?>
             <h3>Product Details</h3>
-           <a href="details.php"> <img style="width:300; height:300" src=<?php echo BASE_URL."upload/".$info[0]["mimg"]; ?> alt=" " class="img-responsive" /></a>
+            <img style="width:300; height:300" src=<?php echo BASE_URL."upload/".$info[0]["mimg"]; ?> alt=" " class="img-responsive" />
         </div>
         <div class="content">
             <h3>Details</h3>
             <div style="display: block;">
                 <label for="name">Item Name:</label><br>
                 
-                <input  type="text" value="<?php echo $info[0]["mname"]; ?>" readonly style="margin-top: 8px;"><br>
- 
+                <label for="name"><?php echo $info[0]["mname"]; ?></label><br>
                  <label for="price">Price:</label><br>
                 <input id="price" name="offerprice" type="text" value="<?php echo $info[0]["mprize"];  ?>" readonly style="margin-top: 8px;"><br>
                 <label for="qty">Quantity:</label><br>
                 <input id="qty" name="qty" type="text" onkeyup="showtotal()" style="margin-top: 8px;"><br>
                 <label for="Total">Total</label><br>
                 <input id="total" name="total" type="text" readonly style="margin-top: 8px;"><br>
-               
+                <label for="">Something 2</label><br>
+                <input id="something2" type="text" style="margin-top: 8px;"><br>
             </div>
         </div>
     </div>
     <div class="lower">
         <div class="btn-grp">
                 <button class="buttons" name="btn_insert" id="btn-1">Add Cart</button>
-                
+                <button class="buttons" id="btn-2">test2</button>
+                <button class="buttons" id="btn-3">test3</button>        
         </div>
     </div>
     </form>

@@ -1,31 +1,9 @@
 
-<!DOCTYPE html>
-<html lang="en">
-    <head>
-        <meta charset="utf-8">
-        <title>CITY MOBILES</title>
-        <meta content="width=device-width, initial-scale=1.0" name="viewport">
-        <meta content="Free Website Template" name="keywords">
-        <meta content="Free Website Template" name="description">
+<?php 
 
-        <!-- Favicon -->
-        <link href="img/favicon.ico" rel="icon">
-
-        <!-- Google Font -->
-        <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-        
-        <!-- CSS Libraries -->
-        <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" rel="stylesheet">
-        <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
-        <link href="lib/flaticon/font/flaticon.css" rel="stylesheet">
-        <link href="lib/animate/animate.min.css" rel="stylesheet">
-        <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
-
-        <!-- Template Stylesheet -->
-        <link href="css/style.css" rel="stylesheet">
-    </head>
-
-<?php require('../config/autoload.php'); 
+ if($_SESSION['qundity'] != 0)
+ {
+require('../config/autoload.php'); 
 include("dbcon.php");
 ?>
 
@@ -35,7 +13,7 @@ $dao=new DataAccess();
  if(isset($_POST["payment"]))
 {
      echo "hai";
-	 header('location:../payment/payment.php');
+	 header('location:payment.php');
 }
    if(isset($_POST["purchase"]))
 {
@@ -48,15 +26,15 @@ if(!isset($_SESSION['email']))
 	   else
 	   { 
         
-	   $sql = "select carid,sum(total) as t from cart where status=1 and  carname='$name'";
+	   $sql = "select  total from cart where status=1 and  carname='$name'";
 $result = $conn->query($sql);
 	   $row = $result->fetch_assoc();
-	   $total=$row["t"];
-       $cart_id = $row["carid"];
-       $_SESSION['cartid'] = $cart_id;
+	   $total=$row["total"];
+	   
 	   $_SESSION['amount']=$total; 
 	   
 	    ?>
+       
        
        
        
@@ -84,7 +62,7 @@ $result = $conn->query($sql);
     $actions=array(
     
     
-    'delete'=>array('label'=>'Delete','link'=>'deletecart.php','params'=>array('id'=>'carid'),'attributes'=>array('class'=>'btn btn-success'))
+    'delete'=>array('label'=>'Delete','link'=>'deleteitem.php','params'=>array('id'=>'carid'),'attributes'=>array('class'=>'btn btn-success'))
     
     );
 
@@ -100,7 +78,7 @@ $result = $conn->query($sql);
    $join=array(
        
     );  
-	$fields=array('carid','carname','quandity','proprice','total');
+	$fields=array('carid','quandity','proprice','status','total');
 
     $users=$dao->selectAsTable($fields,'cart',$condition,$join,$actions,$config);
     
@@ -121,7 +99,7 @@ TOTAL AMOUNT:
 </div>
 <form action="" method="POST" enctype="multipart/form-data">
 
-<button class="btn btn-success" type="index.php"  name="purchase" >New Item Purchase</button>
+<button class="btn btn-success" type="submit"  name="purchase" >New Item Purchase</button>
 <button class="btn btn-success" type="submit" style="margin-right: 2px;"  name="payment" >Payment</button>
 
 </form>
@@ -134,4 +112,7 @@ TOTAL AMOUNT:
     </div><!-- End container -->
     </div><!-- End container_gray_bg -->
 
-<?php } ?>
+<?php }
+}
+else
+header('location:singleitem.php') ?>

@@ -1,19 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-<?php require('../config/autoload.php'); 
-include("dbcon.php");
-$dao=new DataAccess();
-
-
-$email=$_SESSION['email'];
-$q2="select * from register where email='$email'";
-$info1=$dao->query($q2);
-if(!isset($_SESSION['email']))
-{
-    header('location:../login.php');
-}
-else{
-    ?>
     <head>
         <meta charset="utf-8">
         <title>SMART STORE</title>
@@ -39,7 +25,14 @@ else{
     </head>
 
     <body>
-    
+    <?php require('../config/autoload.php'); ?>
+
+<?php
+$dao=new DataAccess();
+
+
+
+?>
         <!-- Top Bar Start -->
         <div class="top-bar d-none d-md-block">
             <div class="container-fluid">
@@ -83,17 +76,20 @@ else{
                     <div class="navbar-nav ml-auto">
                         <a href="headercat.php" class="nav-item nav-link active">Home</a>
                         <a href="headercom" class="nav-item nav-link ">mobile companys</a>
-                        <a href="carthome.php" class="nav-item nav-link">My-cart</a>
-                        <a href="ads.php" class="nav-item nav-link ">+Ads</a>
+                        <a href="causes.html" class="nav-item nav-link">Causes</a>
+                        <a href="event.html" class="nav-item nav-link ">Events</a>
                         <a href="blog.html" class="nav-item nav-link">Blog</a>
                         <div class="nav-item dropdown">
                             <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Pages</a>
                             <div class="dropdown-menu">
-                                <a href="viewbookcust.php" class="dropdown-item">Booking Page</a>
-                                <a href="logout.php" class="dropdown-item">logout</a>
+                                <a href="single.html" class="dropdown-item">Detail Page</a>
+                                <a href="service.html" class="dropdown-item">What We Do</a>
+                                <a href="team.html" class="dropdown-item">Meet The Team</a>
+                                <a href="donate.html" class="dropdown-item">Donate Now</a>
+                                <a href="volunteer.html" class="dropdown-item">Become A SPONSOR</a>
                             </div>
                         </div>
-                        <a href="#" class="nav-item nav-link"><?= $info1[0]['name'] ?></a>
+                        <a href="contact.html" class="nav-item nav-link">Contact</a>
                     </div>
                 </div>
             </div>
@@ -154,7 +150,7 @@ $info=$dao->query($q);
                                     <p>
                                         
                                     </p>
-                                    <a class="btn btn-custom" href="singleitem.php?id=<?=$info[$i]["mid"]?>">BUY</a>
+                                    <a class="btn btn-custom" href="singleitem.php?id=<?=$info[$i]["mid"]?>">Select</a>
                                 </div>
                             </div>
                         </div>
@@ -262,7 +258,6 @@ $info=$dao->query($q);
 
         <!-- Template Javascript -->
         <script src="js/main.js"></script>
-        <?php } ?>
     </body>
 </html>
   

@@ -20,20 +20,18 @@ $form = new FormAssist($elements,$_POST);
 
 if(isset($_POST['signup']))
 {
+	
 	if($validator->validate($_POST))
 	{
-       
 	$data=array(
         'name'=>$_POST['name'],
-       
+        'address'=>$_POST['address'],
 		'email'=>$_POST['email'],
 		'password'=>$_POST['password'],
-        'address'=>$_POST['address'],
-        
   
 		);
 		$table='register';
-		if($dao->insert($data,$table) && $_POST['agree-term'])
+		if($dao->insert($data,$table))
         {
         	$msg="Registered successfully";
 		echo "<script> alert('New record created successfully');</script> ";
@@ -43,7 +41,7 @@ if(isset($_POST['signup']))
 		else
         {
 			echo "<script> alert('Something went wrong');</script> ";
-
+		$msg="error";
 		header('location:regi1.php');
         }	
 	}
@@ -86,8 +84,8 @@ if(isset($_POST['signup']))
 			<?php echo $validator->error('address') ?>
                             </div>
                             <div class="form-group">
-                               <label for="email"><i class="zmdi zmdi-email"></i></label>
-                                <input type="email" name="email" id="email" placeholder="Your Email"/></h5>
+                               <!-- <label for="email"><i class="zmdi zmdi-email"></i></label>
+                                <input type="email" name="email" id="email" placeholder="Your Email"/>--><h5>EMAIL:<?php echo $form->textBox('email'); ?> </h5>
                                 
 			<?php echo $validator->error('email') ?>
                             </div>
