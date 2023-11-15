@@ -31,6 +31,8 @@ include("dbcon.php");
 
 <?php
 $dao=new DataAccess();
+      if($_SESSION['quand']!=0)
+      {
    $name=$_SESSION['itemname'] ;
  if(isset($_POST["payment"]))
 {
@@ -134,4 +136,8 @@ TOTAL AMOUNT:
     </div><!-- End container -->
     </div><!-- End container_gray_bg -->
 
-<?php } ?>
+<?php } 
+}
+else
+header('location:singleitem.php');
+?>

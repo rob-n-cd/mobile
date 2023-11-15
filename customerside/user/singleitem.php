@@ -63,6 +63,7 @@ $iname=$info1[0]["mname"];
 $itemname = $iname;
 $price = $info1[0]["mprize"];
 $qty = $_POST["qty"];
+$_SESSION['quand'] = $qty;
 $total = $_POST["total"];
 $_SESSION['itemname'] = $itemname;
 
