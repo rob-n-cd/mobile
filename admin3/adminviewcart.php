@@ -3,7 +3,7 @@
 <html lang="en">
     <head>
         <meta charset="utf-8">
-        <title>CITY MOBILES</title>
+        <title>Cart page</title>
         <meta content="width=device-width, initial-scale=1.0" name="viewport">
         <meta content="Free Website Template" name="keywords">
         <meta content="Free Website Template" name="description">
@@ -22,20 +22,15 @@
         <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
 
         <!-- Template Stylesheet -->
-        <link href="css/style.css" rel="stylesheet">
+        <link href="../customerside/user/css/style.css" rel="stylesheet">
     </head>
 
 <?php require('../config/autoload.php'); 
 include("dbcon.php");
+$dao=new DataAccess();
 ?>
 
-<?php
-$dao=new DataAccess();
-  if(isset($_POST["purchase"]))
-{
-    header('location:headercat.php');
-}
-?>
+
        
        
        
@@ -53,8 +48,8 @@ $dao=new DataAccess();
                         <th>Quantity</th>
                         <th>Price</th>
                         <th>Total</th>
-                        <th>Delivary</th>
-                        <th>DELETE</th>
+                        
+                        <th>Admin Conformation</th>
                         
                      
                       
@@ -69,7 +64,7 @@ $dao=new DataAccess();
     while($row = $info121->fetch_assoc())
     {
      $cart = $row["cartid"];
-    $actions=array('delete'=>array('label'=>'Delete','link'=>'deletecart1.php','params'=>array('id'=>'carid'),'attributes'=>array('class'=>'btn btn-success')));
+    $actions=array('Conform'=>array('label'=>'Conform','link'=>'adminconformation.php','params'=>array('id'=>'carid'),'attributes'=>array('class'=>'btn btn-success')));
 
     $config=array(
         'srno'=>true,
@@ -83,7 +78,7 @@ $dao=new DataAccess();
    $join=array(
        
     );  
-	$fields=array('carid','carname','quandity','proprice','total','deliver');
+	$fields=array('carid','carname','quandity','proprice','total');
 
     $users=$dao->selectAsTable($fields,'cart',$condition,$join,$actions,$config);
     
@@ -97,9 +92,6 @@ $dao=new DataAccess();
 
 
          
-<form action="" method="POST" enctype="multipart/form-data">
-
-<button class="btn btn-success" type="submit"  name="purchase" >New Item Purchase</button>
 
 
 </form>

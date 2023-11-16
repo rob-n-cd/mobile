@@ -27,12 +27,13 @@
 
 <?php require('../config/autoload.php'); 
 include("dbcon.php");
+
 ?>
 
 <?php
 $dao=new DataAccess();
-      if($_SESSION['quand']!=0)
-      {
+    if($_SESSION['quand']!= 0)
+    {
    $name=$_SESSION['itemname'] ;
  if(isset($_POST["payment"]))
 {
@@ -107,7 +108,9 @@ $result = $conn->query($sql);
     $users=$dao->selectAsTable($fields,'cart',$condition,$join,$actions,$config);
     
     echo $users;
-                                     
+        $itid = $_SESSION['mid'];
+    $q1="select * from addmobile where mid='$itid'";
+    $info121=$dao->query($q1);                          
     ?>
 
              
@@ -123,7 +126,7 @@ TOTAL AMOUNT:
 </div>
 <form action="" method="POST" enctype="multipart/form-data">
 
-<button class="btn btn-success" type="index.php"  name="purchase" >New Item Purchase</button>
+<a  clss="btn btn-success"  style="margin-right: 2px;" href="singleitem.php?id=<?=$info121[0]["mid"]?>">add items</a>
 <button class="btn btn-success" type="submit" style="margin-right: 2px;"  name="payment" >Payment</button>
 
 </form>
@@ -136,8 +139,13 @@ TOTAL AMOUNT:
     </div><!-- End container -->
     </div><!-- End container_gray_bg -->
 
-<?php } 
-}
+<?php }
+} 
 else
-header('location:singleitem.php');
+{
+   
+?>
+<!--<script> location.replace("singleitem.php")  </script>!-->
+<?php
+}
 ?>

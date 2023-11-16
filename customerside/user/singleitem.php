@@ -51,10 +51,11 @@ if(!isset($_SESSION['email']))
 $info121=$dao->query($q1);
 $iqty = $info121[0]["qty"];
 $qty = $_POST["qty"];
+
 echo $iqty;
 
-if($iqty>$qty && $qty != 0)
-{
+
+
     $itid = $_GET['id'];
 $q2="select * from addmobile where mid=".$itid ;
 
@@ -66,9 +67,11 @@ $qty = $_POST["qty"];
 $_SESSION['quand'] = $qty;
 $total = $_POST["total"];
 $_SESSION['itemname'] = $itemname;
-
+$delivary = "<h style = color:gray;>item delivaryed</h>";
+if($iqty>$qty && $_SESSION['quand']!=0)
+{
 $status=1;
-$sql = "INSERT INTO `cart`(`carname`,`quandity`,`proprice`,`status`,`total`) VALUES ('$itemname','$qty','$price','$status','$total')";
+$sql = "INSERT INTO `cart`(`carname`,`quandity`,`proprice`,`status`,`total`,`deliver`) VALUES ('$itemname','$qty','$price','$status','$total','$delivary')";
 
 $conn->query($sql);
  header('location:viewcart.php');
@@ -126,7 +129,7 @@ if(isset($_SESSION['email']))
                  <label for="price">Price:</label><br>
                 <input id="price" name="offerprice" type="text" value="<?php echo $info[0]["mprize"];  ?>" readonly style="margin-top: 8px;"><br>
                 <label for="qty">Quantity:</label><br>
-                <input id="qty" name="qty" type="text" onkeyup="showtotal()" style="margin-top: 8px;"><br>
+                <input id="qty" name="qty" type="text" value="0" onkeyup="showtotal()" style="margin-top: 8px;"><br>
                 <label for="Total">Total</label><br>
                 <input id="total" name="total" type="text" readonly style="margin-top: 8px;"><br>
                
