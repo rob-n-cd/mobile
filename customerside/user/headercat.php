@@ -82,7 +82,7 @@ else{
 
                 <div class="collapse navbar-collapse justify-content-between" id="navbarCollapse">
                     <div class="navbar-nav ml-auto">
-                        <a href="index.html" class="nav-item nav-link active">Home</a>
+                        <a href="index.php" class="nav-item nav-link active">Home</a>
                         <a href="headercom.php" class="nav-item nav-link">Mobile Companys</a>
                         <a href="carthome.php" class="nav-item nav-link">MY-cart</a>
                         <a href="ads.html" class="nav-item nav-link">+ADS</a>

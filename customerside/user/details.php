@@ -116,6 +116,7 @@ include("dbcon.php");
                 <li><strong>Mobile Name</strong>:<?=$info[0]["mname"]?> </li>
                 <li><strong>Software</strong>: <?=$info[0]["msoft"]?></li>
                 <li><strong>price</strong>:<?=$info[0]["mprize"]?></li>
+                <li><strong>mobile stocks</strong>:<?=$info[0]["stocks"]?></li>
                 <li><strong>Project URL</strong>: <a href="#"></a></li>
               </ul>
             </div>

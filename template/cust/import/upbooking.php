@@ -54,8 +54,8 @@ $data=array(
     );
     include('../user/dbcon.php');
     $cart_id = $_SESSION['cartid'];
-    $cart_name = $_SESSION['cartname']; 
-   $cart_status = "update cart set status=4 where  carname='$cart_name'";
+    $cart_name = $_SESSION['cartname'];
+   $cart_status = "update cart set status=3 where  carname='$cart_name'";
    $conn->query($cart_status);
 
   

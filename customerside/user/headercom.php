@@ -131,7 +131,7 @@ else{
                 <div class="row">
                     <?php
 
-$q="select * from company ";
+$q="select * from company  where status = 1";
 
 $info=$dao->query($q);
 

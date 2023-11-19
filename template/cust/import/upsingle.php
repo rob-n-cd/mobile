@@ -64,12 +64,12 @@ $dao=new DataAccess();
        $delivary = "<h style = color:green;>item delivaryed</h>";
 
        
-    /* $q1="select * from payment";
+     $q1="select * from payment";
      $info121 = $conn->query($q1);
     while($row = $info121->fetch_assoc())
     {
-     $cart = $row["cartid"];*/
-    $cartname =  $_SESSION['cartname'];
+     $cart = $row["cartid"];
+     $cartname = $row["cartname"];
     $actions=array('delete'=>array('label'=>'Delete','link'=>'deletecart1.php','params'=>array('id'=>'carid'),'attributes'=>array('class'=>'btn btn-success')));
 
     $config=array(
@@ -79,7 +79,7 @@ $dao=new DataAccess();
         
     );
 
-   $condition=$condition="carname='".$cartname."' and status=4";
+   $condition=$condition="carname='".$cartname."' and status=3";
    
    $join=array(
        
@@ -89,7 +89,7 @@ $dao=new DataAccess();
     $users=$dao->selectAsTable($fields,'cart',$condition,$join,$actions,$config);
     
     echo $users;   
-/*}*/
+}
     ?>
 
              

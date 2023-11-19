@@ -33,7 +33,7 @@ if(isset($_POST['signup']))
   
 		);
 		$table='register';
-		if($dao->insert($data,$table) && $_POST['agree-term'])
+		if($dao->insert($data,$table))
         {
         	$msg="Registered successfully";
 		echo "<script> alert('New record created successfully');</script> ";
@@ -101,7 +101,7 @@ if(isset($_POST['signup']))
                                 <input type="password" name="re_pass" id="re_pass" placeholder="Repeat your password"/>
                             </div>-->
                             <div class="form-group">
-                                <input type="checkbox" name="agree-term" id="agree-term" class="agree-term" />
+                                <input type="checkbox"  required  name="agree-term" id="agree-term" class="agree-term" />
                                 <label for="agree-term" class="label-agree-term"><span><span></span></span>I agree all statements in  <a href="#" class="term-service">Terms of service</a></label>
                             </div>
                             <div class="form-group form-button">

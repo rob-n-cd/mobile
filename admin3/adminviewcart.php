@@ -1,43 +1,12 @@
 
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="utf-8">
-        <title>Cart page</title>
-        <meta content="width=device-width, initial-scale=1.0" name="viewport">
-        <meta content="Free Website Template" name="keywords">
-        <meta content="Free Website Template" name="description">
-
-        <!-- Favicon -->
-        <link href="img/favicon.ico" rel="icon">
-
-        <!-- Google Font -->
-        <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-        
-        <!-- CSS Libraries -->
-        <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" rel="stylesheet">
-        <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
-        <link href="lib/flaticon/font/flaticon.css" rel="stylesheet">
-        <link href="lib/animate/animate.min.css" rel="stylesheet">
-        <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
-
-        <!-- Template Stylesheet -->
-        <link href="../customerside/user/css/style.css" rel="stylesheet">
-    </head>
-
-<?php require('../config/autoload.php'); 
+    <?php 
+     require('../config/autoload.php'); 
+     include("header.php");
 include("dbcon.php");
 $dao=new DataAccess();
 ?>
-
-
-       
-       
-       
- <div class="container_gray_bg" id="home_feat_1">
-    <div class="container">
-    	<div class="row">
-            <div class="col-md-12">
             
             <H1><center> CART  PAGE </center> </H1>
                 <table  border="1" class="table" style="margin-top:100px;">
@@ -55,8 +24,8 @@ $dao=new DataAccess();
                       
                     </tr>
 <?php
-       if(isset($_SESSION['admin']))
-       $delivary = "<h style = color:green;>item delivaryed</h>";
+       //if(isset($_SESSION['admin']))
+       //$delivary = "<h style = color:green;>item delivaryed</h>";
 
        
      $q1="select * from payment";
@@ -64,8 +33,10 @@ $dao=new DataAccess();
     while($row = $info121->fetch_assoc())
     {
      $cart = $row["cartid"];
+     if(isset($_SESSION['conform']))
     $actions=array('Conform'=>array('label'=>'Conform','link'=>'adminconformation.php','params'=>array('id'=>'carid'),'attributes'=>array('class'=>'btn btn-success')));
-
+     else
+        $actions=array('Conform'=>array('label'=>'Conformed','link'=>'#','params'=>array('id'=>'carid'),'attributes'=>array('class'=>'btn btn-success')));
     $config=array(
         'srno'=>true,
         'hiddenfields'=>array('mid','carid')
@@ -73,7 +44,7 @@ $dao=new DataAccess();
         
     );
 
-   $condition=$condition="carid='".$cart."' and status=1";
+   $condition=$condition="carid='".$cart."' and status=3";
    
    $join=array(
        

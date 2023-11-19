@@ -84,7 +84,7 @@ else{
                         <a href="headercat.php" class="nav-item nav-link active">Home</a>
                         <a href="headercom" class="nav-item nav-link ">mobile companys</a>
                         <a href="carthome.php" class="nav-item nav-link">My-cart</a>
-                        <a href="ads.php" class="nav-item nav-link ">+Ads</a>
+                        <a href="ads.html" class="nav-item nav-link ">+Ads</a>
                         <a href="blog.html" class="nav-item nav-link">Blog</a>
                         <div class="nav-item dropdown">
                             <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Pages</a>
@@ -133,7 +133,7 @@ else{
                     <?php
 
      $id = $_GET['id'];
-$q="select * from addmobile where ctid = '$id'";
+$q="select * from addmobile where status = 1 and    ctid = '$id'";
 
 $info=$dao->query($q);
 

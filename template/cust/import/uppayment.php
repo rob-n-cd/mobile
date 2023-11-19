@@ -26,9 +26,12 @@ $validator = new FormValidator($rules, $labels);
 
 if (isset($_POST["insert"])) {
   include('../user/dbcon.php');
-   //$cart_id = $_SESSION['cartid'];
-  //$cart_name =  $_SESSION['cartname']; 
-  
+   $cart_id = $_SESSION['cartid'];
+   $cart_name = $_SESSION['cartname'];
+  $cart_status = "update cart set status=3 where  carname='$cart_name'";
+  $conn->query($cart_status);
+
+ 
 
   if ($validator->validate($_POST)) {
 
@@ -39,6 +42,7 @@ if (isset($_POST["insert"])) {
       'hname' => $_POST['hname'],
       'pprice' => $_POST['pprice'],
       'cartid' => $_SESSION['cartid'],
+      'cartname' => $_SESSION['cartname'],
     );
 
       

@@ -128,7 +128,7 @@ else{
                     <?php
                     $id = $_GET['id'];
 
-$q="select * from addmobile  where cmid ='$id' ";
+$q="select * from addmobile  where status = 1 and  cmid ='$id' ";
 
 $info=$dao->query($q);
 

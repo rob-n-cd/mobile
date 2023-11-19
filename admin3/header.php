@@ -84,6 +84,8 @@
                                 <li><a href="companyimage.php"><i class="menu-icon icon-paste"></i>ADD COMPANY </a></li>
                                 <li><a href="viewcompany.php"><i class="menu-icon icon-table"></i>VIEW COMPANY</a></li>
                                 <li><a href="viewregister.php"><i class="menu-icon icon-bar-chart"></i>view register details </a></li>
+                                <li><a href="adminviewcart.php"><i class="menu-icon icon-bar-chart"></i>view Customer cart list </a></li>
+
                             </ul>
                             <!--/.widget-nav-->
                             <ul class="widget widget-menu unstyled">

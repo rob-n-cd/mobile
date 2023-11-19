@@ -52,14 +52,17 @@ $info121=$dao->query($q1);
 $iqty = $info121[0]["qty"];
 $qty = $_POST["qty"];
 
-echo $iqty;
+
 
 
 
     $itid = $_GET['id'];
+    $_SESSION['mob_id'] = $itid;
 $q2="select * from addmobile where mid=".$itid ;
-
 $info1=$dao->query($q2);
+$max_stocks = $info1[0]['stocks'];
+
+
 $iname=$info1[0]["mname"];
 $itemname = $iname;
 $price = $info1[0]["mprize"];
@@ -67,8 +70,14 @@ $qty = $_POST["qty"];
 $_SESSION['quand'] = $qty;
 $total = $_POST["total"];
 $_SESSION['itemname'] = $itemname;
+
+//$upstocks = $info1[0]["stocks"] - $qty;
+//$update = "update addmobile set stocks = '$upstocks' where  mid='$itid '";
+//$conn->query($update);
+
 $delivary = "<h style = color:gray;>item delivaryed</h>";
-if($iqty>$qty && $_SESSION['quand']!=0)
+$_SESSION['conform'] = $delivary;
+if($max_stocks>=$qty && $_SESSION['quand']!=0)
 {
 $status=1;
 $sql = "INSERT INTO `cart`(`carname`,`quandity`,`proprice`,`status`,`total`,`deliver`) VALUES ('$itemname','$qty','$price','$status','$total','$delivary')";
@@ -131,17 +140,36 @@ if(isset($_SESSION['email']))
                 <label for="qty">Quantity:</label><br>
                 <input id="qty" name="qty" type="text" value="0" onkeyup="showtotal()" style="margin-top: 8px;"><br>
                 <label for="Total">Total</label><br>
-                <input id="total" name="total" type="text" readonly style="margin-top: 8px;"><br>
+                <input id="total" required  name="total" type="text"  readonly style="margin-top: 8px;"><br>
                
             </div>
         </div>
     </div>
+    <?php 
+     $itid = $_GET['id'];
+    
+ $q2="select * from addmobile where mid=".$itid ;
+ $info1=$dao->query($q2);
+         if($info1[0]["stocks"] > 0)
+         {
+    ?>
     <div class="lower">
         <div class="btn-grp">
                 <button class="buttons" name="btn_insert" id="btn-1">Add Cart</button>
                 
         </div>
     </div>
+         <?php }
+         else
+         {
+        ?>
+            <div class="lower">
+            <div class="btn-grp">
+                    <button class="buttons" id="btn-1">out of stocks</button>
+                    
+            </div>
+        </div>
+        <?php } ?>
     </form>
 </body>
 
