@@ -71,7 +71,7 @@ else{
         <!-- Top Bar End -->
 
         <!-- Nav Bar Start -->
-        <div class="navbar navbar-expand-lg bg-dark navbar-dark">
+        <div class="navbar navbar-expand-lg bg-dark navbar-dark rounded-pill">
             <div class="container-fluid">
                 <a href="index.html" class="navbar-brand">SMART STORE</a>
                 <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
@@ -81,14 +81,27 @@ else{
                 <div class="collapse navbar-collapse justify-content-between" id="navbarCollapse">
                     <div class="navbar-nav ml-auto">
                         <a href="index.php" class="nav-item nav-link">Home</a>
-                        <a href="headercom.php" class="nav-item nav-link active">Mobile Companys</a>
+                        <div class="nav-item dropdown">
+                        <a href="#"  class="nav-link dropdown-toggle" data-toggle="dropdown">Products</a>
+                        <div class="dropdown-menu">
+                                <a href="headercom.php" class="dropdown-item">Mobile Companys</a>
+                                <a href="headercat.php" class="dropdown-item">Mobile Categorys</a>
+                    
+                            </div>
+                            <style>
+                                    .dropdown-item:hover{
+                                            background-color: green;
+                                    }
+                                </style>
+                        </div>
                         <a href="carthome.php" class="nav-item nav-link">MY-cart</a>
                         <a href="ads.html" class="nav-item nav-link ">+ADS</a>
-                        <a href="blog.html" class="nav-item nav-link">Blog</a>
+                        <a href="blog.html" class="nav-item nav-link">About</a>
                         <div class="nav-item dropdown">
                             <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Pages</a>
                             <div class="dropdown-menu">
                                 <a href="viewbookcust.php" class="dropdown-item">Booking Page</a>
+                                <a href="#" class="dropdown-item">Return Product</a>
                                 <a href="logout.php" class="dropdown-item">logout</a>
                             </div>
                         </div>
@@ -141,7 +154,7 @@ $info=$dao->query($q);
                         ?>
 
                     <div class="col-lg-6">
-                        <div class="event-item">
+                        <div class="card-title event-content" style="background-color:aliceblue;">
                             <img src=<?php echo BASE_URL."upload/".$info[$i]["cimg"]; ?> alt="Image">
                             <div class="event-content">
                                 <div class="event-meta">

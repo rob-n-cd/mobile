@@ -28,15 +28,12 @@ $dao=new DataAccess();
        //$delivary = "<h style = color:green;>item delivaryed</h>";
 
        
-     $q1="select * from payment";
+    /* $q1="select * from payment";
      $info121 = $conn->query($q1);
     while($row = $info121->fetch_assoc())
     {
-     $cart = $row["cartid"];
-     if(isset($_SESSION['conform']))
-    $actions=array('Conform'=>array('label'=>'Conform','link'=>'adminconformation.php','params'=>array('id'=>'carid'),'attributes'=>array('class'=>'btn btn-success')));
-     else
-        $actions=array('Conform'=>array('label'=>'Conformed','link'=>'#','params'=>array('id'=>'carid'),'attributes'=>array('class'=>'btn btn-success')));
+     $cart = $row["cartid"];*/
+    $actions=array('Conform'=>array('label'=>'Conform','link'=>'adminconformation.php','params'=>array('id'=>'carid'),'attributes'=>array('class'=>'btn btn-success')));    
     $config=array(
         'srno'=>true,
         'hiddenfields'=>array('mid','carid')
@@ -44,7 +41,7 @@ $dao=new DataAccess();
         
     );
 
-   $condition=$condition="carid='".$cart."' and status=3";
+   $condition=$condition="status=4";
    
    $join=array(
        
@@ -54,7 +51,7 @@ $dao=new DataAccess();
     $users=$dao->selectAsTable($fields,'cart',$condition,$join,$actions,$config);
     
     echo $users;   
-}
+//}
     ?>
 
              

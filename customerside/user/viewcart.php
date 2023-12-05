@@ -128,7 +128,7 @@ TOTAL AMOUNT:
 </div>
 <form action="" method="POST" enctype="multipart/form-data">
 
-<a  clss="btn btn-success"  style="margin-right: 2px;" href="singleitem.php?id=<?=$info121[0]["mid"]?>">add items</a>
+<a  class="btn btn-success"  style="margin-right: 2px;" href="singleitem.php?id=<?=$info121[0]["mid"]?>">add items</a>
 <button class="btn btn-success" type="submit" style="margin-right: 2px;"  name="payment" >Payment</button>
 
 </form>

@@ -53,7 +53,7 @@ include("dbcon.php");
 <body>
 
   <!-- ======= Header ======= -->
-  <header id="header" class="d-flex align-items-center">
+  <header id="header" class="d-flex align-items-center rounded-top-pill">
     <div class="container d-flex align-items-center justify-content-between">
 
       <div class="logo">
@@ -78,7 +78,7 @@ include("dbcon.php");
       <div class="container">
 
         <div class="d-flex justify-content-between align-items-center">
-          <h2>Mobile Details</h2>
+          <h2 class="font-monospace">Mobile Details</h2>
           <ol>
             <li><a href="index.html">Home</a></li>
             <li>Portfoio Details</li>
@@ -92,7 +92,7 @@ include("dbcon.php");
     <section id="portfolio-details" class="portfolio-details">
       <div class="container">
 
-        <div class="row gy-4">
+        <div class="bg-body-tertiary rounded-5 row gy-4 p-5">
 
           <div class="col-lg-8">
             <div class="portfolio-details-slider swiper">

@@ -11,7 +11,6 @@ $form=new FormAssist($elements,$_POST);
 $dao=new DataAccess();
 include("dbcon.php");
 
-
 $email=$_SESSION['email'];
 $q2="select * from register where email='$email'";
 $info1=$dao->query($q2);
@@ -46,16 +45,19 @@ $data=array(
         'bplace'=>$_POST['bplace'],
         'bproduct'=>$_POST['bproduct'],
         'bprice'=>$_POST['bprice'],
-        'date'=>$_POST['bdate']
+        'date'=>$_POST['bdate'],
+        'cartid' => $_SESSION['cartid'],
 
         
         
          
     );
+    $cart_id=  $_SESSION['cartid'];
+
     include('../user/dbcon.php');
     $cart_id = $_SESSION['cartid'];
     $cart_name = $_SESSION['cartname']; 
-   $cart_status = "update cart set status=4 where  carname='$cart_name'";
+   $cart_status = "update cart set status=4 where carname='$cart_name' and status=1";
    $conn->query($cart_status);
 
   
@@ -110,14 +112,14 @@ echo $file->errors();
                     <div class="col-md-6">
 Enter youer name:
 
-<input type="text" name="bname" value=<?php echo$info1[0]['name']?>>
+<input type="text" name="bname" value=<?php echo$info1[0]['name']?> readonly>
 
 </div>
 </div><br>
 <div class="row">
                     <div class="col-md-6">
 Address:
-<input type="text" name="baddress" value=<?php echo$info1[0]['address']?>>
+<input type="text" name="baddress" value=<?php echo$info1[0]['address']?> readonly>
 
 </div>
 </div><br>
@@ -139,7 +141,8 @@ Product name:
 <?php   
        $mname =  $_SESSION['name'];
    ?>
-<input type="text" name="bproduct" value=<?php echo$mname?>>
+<input type="text" name="bproduct" value=<?php echo$mname?> readonly>
+
 
 </div>
 </div><br>
@@ -153,14 +156,23 @@ Product price:
        $mprice =  $_SESSION['amount'];
    ?>
 
-<input type="text" name="bprice" value=<?php echo$mprice?>>
+<input type="text" name="bprice" value=<?php echo$mprice?> readonly>
 </div>
 </div><br>
 <div class="row">
                     <div class="col-md-6">
 
-<input type="date" name="bdate">
-
+<input type="date" name="bdate" required >
+<style>input[type="date"] {
+    width: 100%;
+    height: 50px;
+    color: rgb(46,46,46,.8);
+    border: 1px solid rgb(225,225,225);
+    border-radius: 4px;
+    font-size: 16px;
+    padding-right: 40px;
+    padding-left: 16px;
+}</style>
 
 </div>
 </div><br>

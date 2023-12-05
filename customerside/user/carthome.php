@@ -54,24 +54,15 @@ $dao=new DataAccess();
                         <th>Price</th>
                         <th>Total</th>
                         <th>Delivary</th>
+                        <th>Return</th>
                         <th>DELETE</th>
                         
                      
                       
                     </tr>
 <?php
-       if(isset($_SESSION['admin']))
-       $delivary = "<h style = color:green;>item delivaryed</h>";
-
-       
-    /* $q1="select * from payment";
-     $info121 = $conn->query($q1);
-    while($row = $info121->fetch_assoc())
-    {
-     $cart = $row["cartid"];*/
-    $cartname =  $_SESSION['cartname'];
-    $actions=array('delete'=>array('label'=>'Delete','link'=>'deletecart1.php','params'=>array('id'=>'carid'),'attributes'=>array('class'=>'btn btn-success')));
-
+    $actions=array('delete'=>array('label'=>'Cancel','link'=>'deletecart1.php','params'=>array('id'=>'carid'),'attributes'=>array('class'=>'btn btn-success')));
+   
     $config=array(
         'srno'=>true,
         'hiddenfields'=>array('mid','carid')
@@ -79,13 +70,12 @@ $dao=new DataAccess();
         
     );
 
-   $condition=$condition="carname='".$cartname."' and status=4";
+   $condition=$condition="status=4";
    
    $join=array(
        
     );  
-	$fields=array('carid','carname','quandity','proprice','total','deliver');
-
+	$fields=array('carid','carname','quandity','proprice','total','deliver','button');
     $users=$dao->selectAsTable($fields,'cart',$condition,$join,$actions,$config);
     
     echo $users;   
@@ -106,7 +96,7 @@ $dao=new DataAccess();
 </form>
 </div>
 
-            
+      
             
             
         </div><!-- End row -->
