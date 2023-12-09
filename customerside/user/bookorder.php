@@ -25,16 +25,17 @@
         <link href="css/style.css" rel="stylesheet">
     </head>
 
-<?php require('../config/autoload.php'); 
+<?php
+ if(isset($_POST["done"]))
+ {
+  
+ require('../config/autoload.php'); 
 include("dbcon.php");
 ?>
 
 <?php
 $dao=new DataAccess();
- /* if(isset($_POST["sub"]))
-{
-    header('location:bookorder.php');
-}*/
+
 ?>
        
        
@@ -44,7 +45,7 @@ $dao=new DataAccess();
     	<div class="row">
             <div class="col-md-12">
             
-            <H1><center> BooKIND  PAGE </center> </H1>
+            <H1><center> BooKIND Date Order PAGE </center> </H1>
                 <table  border="1" class="table" style="margin-top:100px;">
                     <tr>
                         
@@ -74,8 +75,9 @@ $dao=new DataAccess();
         
         
     );
-
-   $condition="status=1";
+    $date = $_POST['date'];
+    echo$date;
+    $condition="status=1 and date='$date'";
    
    $join=array(
        
@@ -85,7 +87,7 @@ $dao=new DataAccess();
     $users=$dao->selectAsTable($fields,'booking',$condition,$join,$actions,$config);
     
     echo $users;
-                                     
+                                 
     ?>
 
              
@@ -94,9 +96,8 @@ $dao=new DataAccess();
 
 
          
-<form action="bookorder.php" method="POST" enctype="multipart/form-data">
-
-<input class="btn btn-success" type="text"  name="date" placeholder="Enter the Date">
+<form action=" bookorder.php" method="POST" enctype="multipart/form-data">    
+<input class="btn btn-success" type="text"  name="date" placeholder="Enter the Date" >
 <button class="btn btn-success" type="submit"  name="done" >Done</button>
 
 </form>
@@ -104,7 +105,9 @@ $dao=new DataAccess();
 
             
             
-            
+<?php } 
+
+//header('location:viewbookcust.php');?>          
         </div><!-- End row -->
     </div><!-- End container -->
     </div><!-- End container_gray_bg -->

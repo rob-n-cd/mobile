@@ -41,7 +41,7 @@ $dao=new DataAccess();
         
     );
 
-   $condition=$condition="status=4";
+   $condition="status=4";
    
    $join=array(
        

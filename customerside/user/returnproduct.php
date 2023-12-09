@@ -5,6 +5,7 @@ include("dbcon.php");
 $dao=new DataAccess();
 //$cid = $_SESSION['cid'];
 $cid = $_GET['cid'];
+$_SESSION['carts'] = $cid;
 $sql = "select * from cart where carid = $cid";
 $result = $conn->query($sql);
 	   $row = $result->fetch_assoc();
@@ -48,132 +49,55 @@ $info222=$dao->query($q3);
     <link href="css/return.css" rel="stylesheet">
 
     
-        <form  method="post" role="form" class="bg-dark-subtle  php-email-form p-3 p-md-4">
+        <form action="return.php"  method="POST" role="form"   enctype="multipart/form-data" class="bg-dark-subtle  php-email-form p-3 p-md-4">
           <div class=" h1 row">
             <div class=" h1 col-xl-6 form-group">
-              <input type="text" name="name" class="form-control" id="name" value="Name: <?= $info111[0]['name'] ?>" readonly>
+              <input type="text" name="name" class="form-control" id="name" value="<?= $info111[0]['name'] ?>" readonly>
             </div>
             <div class=" h1 col-xl-6 form-group">
-              <input type="email" class="form-control" name="email" id="email" value="Address:  <?= $info111[0]['address'] ?>" readonly>
+              <input type="text" class="form-control" name="address" id="email" value="<?= $info111[0]['address'] ?>" readonly>
             </div>
             <div class=" h1 col-xl-6 form-group">
-              <input type="text" name="name" class="form-control" id="name" value="Email:  <?= $info111[0]['email'] ?>" readonly>
+              <input type="email" name="email" class="form-control" id="name" value="<?= $info111[0]['email'] ?>" readonly>
             </div>
             <div class=" h1 col-xl-6 form-group">
-              <input type="email" class="form-control" name="email" id="email" value="Place: <?= $info222[0]['bplace'] ?>" readonly>
+              <input type="text" class="form-control" name="place" id="email" value=" <?= $info222[0]['bplace'] ?>" readonly>
             </div>
             <div class=" h1 col-xl-6 form-group">
-              <input type="text" name="name" class="form-control" id="name" value="Product Name: <?=$row['carname']?>" readonly>
+              <input type="text" name="product" class="form-control" id="name" value="<?=$row['carname']?>" readonly>
             </div>
             <div class=" h1 col-xl-6 form-group">
-              <input type="email" class="form-control" name="email" id="email" value="Price: <?=$row['proprice']?>"  readonly>
+              <input type="number" class="form-control" name="price" id="email" value="<?=$row['proprice']?>"  readonly>
             </div>
             <div class=" h1 col-xl-6 form-group">
-              <input type="text" name="name" class="form-control" id="name" value="Quandity: <?=$row['quandity']?>"  readonly>
+              <input type="number" name="quandity" class="form-control" id="name" value="<?=$row['quandity']?>"  readonly>
             </div>
             <div class=" h1 col-xl-6 form-group">
-              <input type="email" class="form-control" name="email" id="email" value="Total: <?=$row['total']?>"  readonly>
+              <input type="text" class="form-control" name="total" id="email"  value="<?=$row['total']?>"  readonly>
             </div>
             <div class=" h1 col-xl-6 form-group">
-              <input type="text" name="name" class="form-control" id="name" value="Booking date: <?= $info222[0]['date'] ?>" readonly>
+              <input type="text" name="bdate" class="form-control" id="name" value="<?= $info222[0]['date'] ?>" readonly>
             </div>
             <div class=" h1 col-xl-6 form-group">
-              <input type="text" class="form-control" name="email" id="email"  readonly value="Return Date:  <?= $date2=date('Y-m-d',time()); ?>" readonly>
+              <input type="text" class="form-control" name="rdate" id="email"  readonly value="<?= $date2=date('Y-m-d',time()); ?>" readonly>
             </div>
           </div>
           
           <div class="h1 form-group">
-            <textarea class="form-control" name="message" rows="5" placeholder="why do you return this item?" required></textarea>
+            <textarea class="form-control" name="discription" rows="5" placeholder="why do you return this item?" required></textarea>
           </div>
          
-          <div class=" hstack "><button class=" btn navbar-collapse text-center text-bg-secondary" name="insert" type="submit"<?=time();?>>Send Message</button></div>
+          <div class=" hstack "><input class=" btn navbar-collapse text-center text-bg-secondary" name="submit" type="submit" value="Sent message"></div>
         </form><!--End Contact Form -->
 
       </div>
     </section><!-- End Contact Section -->
-    </body>
+
+ 
+  
+
+</body>
 </html>
-
-
-<?php
-$file=new FileUpload();
-$elements=array( "bname"=>"","baddress"=>"","bplace"=>"");
-
-
-$form=new FormAssist($elements,$_POST);
-
-$dao=new DataAccess();
-include("dbcon.php");
-
-$email=$_SESSION['email'];
-$q2="select * from register where email='$email'";
-$info1=$dao->query($q2);
-
-
-$labels=array('bname'=>"Enter youer name",'baddress'=>"Address",'bplace'=>"Place");
-
-$rules=array(
-    "bname"=>array("required"=>true,"minlength"=>3,"maxlength"=>30,"alphaonly"=>true),
-    "baddress"=>array("required"=>true,"minlength"=>3 ,"maxlength"=>30,"alphaonly"=>true),
-    "bplace"=>array("required"=>true,"minlength"=>3,"maxlength"=>30,"alphaonly"=>true),
-    
-     
-);
-    
-    
-$validator = new FormValidator($rules,$labels);
-
-if(isset($_POST["insert"]))
-{
-
-if($validator->validate($_POST))
-{
-	
-  
-
-$data=array(
-
-       
-        'bname'=>$_POST['bname'],
-        'baddress'=>$_POST['baddress'],
-        'bplace'=>$_POST['bplace'],
-        'bproduct'=>$_POST['bproduct'],
-        'bprice'=>$_POST['bprice'],
-        'date'=>$_POST['bdate'],
-        'cartid' => $_SESSION['cartid'],
-
-        
-        
-         
-    );
-    $cart_id=  $_SESSION['cartid'];
-
-    include('../user/dbcon.php');
-    $cart_id = $_SESSION['cartid'];
-    $cart_name = $_SESSION['cartname']; 
-   $cart_status = "update cart set status=4 where carname='$cart_name' and status=1";
-   $conn->query($cart_status);
-
-  
-    if($dao->insert($data,"booking"))
-    {
-        echo "<script> alert('New record created successfully');</script> ";
-        header('location:../user/headercat.php');
-
-    }
-    else
-        {$msg="Registration failed";} ?>
-
-
-<?php
-    
-}
-else
-echo $file->errors();
-}
-?>
-
-
 
 
 

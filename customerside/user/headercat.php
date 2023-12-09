@@ -104,7 +104,7 @@ else{
                             <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Pages</a>
                             <div class="dropdown-menu">
                                 <a href="viewbookcust.php" class="dropdown-item">view book</a>
-                                <a href="#" class="dropdown-item">Return Product</a>
+                                <a href="returnpage.php" class="dropdown-item">Return Product</a>
                                 <a href="logout.php" class="dropdown-item">logout</a>
                                
                             </div>

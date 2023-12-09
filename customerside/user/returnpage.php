@@ -31,10 +31,7 @@ include("dbcon.php");
 
 <?php
 $dao=new DataAccess();
- /* if(isset($_POST["sub"]))
-{
-    header('location:bookorder.php');
-}*/
+ 
 ?>
        
        
@@ -44,48 +41,40 @@ $dao=new DataAccess();
     	<div class="row">
             <div class="col-md-12">
             
-            <H1><center> BooKIND  PAGE </center> </H1>
+            <H1><center> CART  PAGE </center> </H1>
                 <table  border="1" class="table" style="margin-top:100px;">
                     <tr>
                         
                         <th>Sl No</th>
-                        <th>Customer Name</th>
-                        <th>Address</th>
-                        <th>Place</th>
                         <th>Item Name</th>
-                       <th>Item Price</th>
-                       <th>Date</th>
+                        <th>Quantity</th>
+                        <th>Price</th>
+                        <th>Total</th>
                         <th>DELETE</th>
+                        
                      
                       
                     </tr>
 <?php
-    
-    $actions=array(
-    
-    
-    'delete'=>array('label'=>'Delete','link'=>'deletebookcart.php','params'=>array('id'=>'bid'),'attributes'=>array('class'=>'btn btn-success'))
-    
-    );
-
+    $actions=array('delete'=>array('label'=>'Cancel','link'=>'deletecart1.php','params'=>array('id'=>'carid'),'attributes'=>array('class'=>'btn btn-success')));
+   
     $config=array(
         'srno'=>true,
-        'hiddenfields'=>array('mid','bid')
+        'hiddenfields'=>array('mid','carid')
         
         
     );
 
-   $condition="status=1";
+   $condition=$condition="status=6";
    
    $join=array(
        
     );  
-	$fields=array('bid','bname','baddress','bplace','bproduct','bprice','date');
-
-    $users=$dao->selectAsTable($fields,'booking',$condition,$join,$actions,$config);
+	$fields=array('carid','carname','quandity','proprice','total');
+    $users=$dao->selectAsTable($fields,'cart',$condition,$join,$actions,$config);
     
-    echo $users;
-                                     
+    echo $users;   
+/*}*/
     ?>
 
              
@@ -94,15 +83,15 @@ $dao=new DataAccess();
 
 
          
-<form action="bookorder.php" method="POST" enctype="multipart/form-data">
+<form action="" method="POST" enctype="multipart/form-data">
 
-<input class="btn btn-success" type="text"  name="date" placeholder="Enter the Date">
-<button class="btn btn-success" type="submit"  name="done" >Done</button>
+<button class="btn btn-success" type="submit"  name="purchase" >New Item Purchase</button>
+
 
 </form>
 </div>
 
-            
+      
             
             
         </div><!-- End row -->
