@@ -44,7 +44,7 @@ $dao=new DataAccess();
     	<div class="row">
             <div class="col-md-12">
             
-            <H1><center> BooKIND  PAGE </center> </H1>
+            <H1><center> BooKING  PAGE </center> </H1>
                 <table  border="1" class="table" style="margin-top:100px;">
                     <tr>
                         

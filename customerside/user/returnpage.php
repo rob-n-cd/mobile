@@ -41,7 +41,7 @@ $dao=new DataAccess();
     	<div class="row">
             <div class="col-md-12">
             
-            <H1><center> CART  PAGE </center> </H1>
+            <H1><center> RETURN  PAGE </center> </H1>
                 <table  border="1" class="table" style="margin-top:100px;">
                     <tr>
                         
@@ -83,9 +83,6 @@ $dao=new DataAccess();
 
 
          
-<form action="" method="POST" enctype="multipart/form-data">
-
-<button class="btn btn-success" type="submit"  name="purchase" >New Item Purchase</button>
 
 
 </form>
