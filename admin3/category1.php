@@ -6,7 +6,6 @@ include("header.php");
 $file=new FileUpload();
 $elements=array("category"=>"","catimg"=>"");
 
-
 $form=new FormAssist($elements,$_POST);
 
 

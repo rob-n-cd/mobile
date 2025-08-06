@@ -35,8 +35,7 @@ include("dbcon.php");
 
 <?php
 $dao=new DataAccess();
-if($_POST['date'] != 0)
-{}
+
 ?>
        
        
@@ -46,7 +45,7 @@ if($_POST['date'] != 0)
     	<div class="row">
             <div class="col-md-12">
             
-            <H1><center> BooKIND Date Order PAGE </center> </H1>
+            <H1><center> BooKing Date Order PAGE </center> </H1>
                 <table  border="1" class="table" style="margin-top:100px;">
                     <tr>
                         
@@ -76,8 +75,11 @@ if($_POST['date'] != 0)
         
         
     );
+    if($_POST['date'] == 0)
+    echo "no records are avilable";
+    else
+    {
     $date = $_POST['date'];
-    echo$date;
     $condition="status=1 and date='$date'";
    
    $join=array(
@@ -88,7 +90,7 @@ if($_POST['date'] != 0)
     $users=$dao->selectAsTable($fields,'booking',$condition,$join,$actions,$config);
     
     echo $users;
-                                 
+}                     
     ?>
 
              
@@ -100,6 +102,7 @@ if($_POST['date'] != 0)
 <form action=" bookorder.php" method="POST" enctype="multipart/form-data">    
 <input class="btn btn-success" type="text"  name="date" placeholder="Enter the Date" >
 <button class="btn btn-success" type="submit"  name="done" >Done</button>
+<a href= "/mobile/admin3/mobiles.php">BACK</a>
 
 </form>
 </div>

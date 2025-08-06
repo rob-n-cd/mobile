@@ -18,10 +18,14 @@ include('header.php'); ?>
                     <tr>
                         
                         <th>Mobile Id</th>
-                        <th>Mobile name</th>
-                        <th>Mobile prize</th>
-                        <th>Mobile software</th>
-                        <th>Mobile image</th>
+                        <th>Mobile Name</th>
+                        <th>Mobile Prize</th>
+                        <th>Mobile Software</th>
+                        <th>Mobile Memory stoarge</th>
+                        <th>Mobile Camera</th>
+                        <th>Mobile Battery</th>
+                        <th>Cellular Technology</th>
+                        <th>Mobile Image</th>
                         <th>EDIT/DELETE</th>
                      
                       
@@ -50,7 +54,7 @@ include('header.php'); ?>
    $join=array(
         
     );
-     $fields=array('mid','mname','mprize','msoft','mimg');
+     $fields=array('mid','mname','mprize','msoft','storage','camera','charge','ct','mimg');
 
     $users=$dao->selectAsTable($fields,'addmobile',"status=1",null,$actions,$config);
     

@@ -67,7 +67,7 @@ $dao=new DataAccess();
         <!-- Nav Bar Start -->
         <div class="navbar navbar-expand-lg bg-dark navbar-dark">
             <div class="container-fluid">
-                <a href="index.html" class="navbar-brand">SMART STORE</a>
+                <a href="index.php" class="navbar-brand">SMART STORE</a>
                 <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
                     <span class="navbar-toggler-icon"></span>
                 </button>
@@ -80,7 +80,7 @@ $dao=new DataAccess();
                         
                         
                           
-                        <a href="carthome.php" class="nav-item nav-link">MY-cart</a>
+                        
                     </div>
                 </div>
             </div>
@@ -97,12 +97,12 @@ $dao=new DataAccess();
                    
                 <div class="carousel-img">
                     <div class="carousel-item">
-                    <video  autoplay="" muted="muted" loop="" width="100%"  ><source src="../user/mobile.mp4" type="video/mp4" /></video>              
+                    <video  autoplay="" muted="muted"  loop="" width="100%"  ><source src="../user/mobile.mp4" type="video/mp4" /></video>              
                     <div class="carousel-text" style="margin-bottom: -300px;">
                             <h1>Get Involved with helping hand</h1>
                             
                             <div class="carousel-btn">
-                                <a       class="btn btn-custom" href="headercat.php">categorys</a>
+                                <a       class="btn btn-custom" href="headercat.php">categories</a>
                                </div>
                         </div>   
                     </div>    
@@ -122,10 +122,7 @@ $dao=new DataAccess();
                     <div class="col-12">
                         <h2>Upcoming mobiles</h2>
                     </div>
-                    <div class="col-12">
-                        <a href="">Home</a>
-                        <a href="">Events</a>
-                    </div>
+                    
                 </div>
             </div>
         </div>

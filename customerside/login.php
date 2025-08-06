@@ -74,7 +74,7 @@ if(isset($_POST['signin']))
                             </div>
                             <div class="form-group form-button">
                                 <input type="submit" name="signin" id="signin" class="form-submit" value="Log in"/>
-                                <a href="../customerside/user/index.php">Back to Home</a>
+                                <a href="../customerside/user/index.php" class="term-service">Back to Home</a>
                             </div>
                         </form>
                         <div class="social-login">

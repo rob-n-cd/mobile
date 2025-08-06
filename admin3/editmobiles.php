@@ -6,17 +6,20 @@ include("header.php");
 $dao=new DataAccess();
 $info=$dao->getData('*','addmobile','mid='.$_GET['id']);
 $file=new FileUpload();
-$elements=array("mname"=>$info[0]['mname'],"mprize"=>$info[0]['mprize'],"msoft"=>$info[0]['msoft'],"mimg"=>$info[0]['mimg']);
+$elements=array("mname"=>$info[0]['mname'],"mprize"=>$info[0]['mprize'],"msoft"=>$info[0]['msoft'],"mimg"=>$info[0]['mimg'],"storage"=>$info[0]['storage'],"camera"=>$info[0]['camera'],"charge"=>$info[0]['charge']);
 
 	$form = new FormAssist($elements,$_POST);
 
-$labels=array('mname'=>"Mobile Name","mprize"=>"Mobile price","msoft"=>"Mobile Software","mimg"=>"Mobile image");
+$labels=array('mname'=>"Mobile Name","mprize"=>"Mobile price","msoft"=>"Mobile Software","mimg"=>"Mobile image","storage"=>"RAM","camera"=>"Camera","charge"=>"Battery");
 
     $rules=array(
-        "mname"=>array("required"=>true,"minlength"=>3,"maxlength"=>30,"alphaonly"=>true),
-        "mprize"=>array("required"=>true,"minlength"=>3,"maxlength"=>20,"integeronly"=>true),
-        "msoft"=>array("required"=>true,"minlength"=>3,"maxlength"=>30,"alphaonly"=>true),
-        "mimg"=>array("filerequired"=>true)
+        "mname"=>array("required"=>true),
+        "mprize"=>array("required"=>true),
+        "msoft"=>array("required"=>true),
+        "mimg"=>array("filerequired"=>true),
+        "storage"=> array("required"=>true),
+        "camera"=>array("required"=>true),
+        "charge"=>array("required"=>true),
 );
     
     
@@ -38,6 +41,9 @@ $data=array(
         'mname'=>$_POST['mname'],
         'mprize'=>$_POST['mprize'],
         'msoft'=>$_POST['msoft'],
+        'storage'=>$_POST['storage'],
+         'camera'=>$_POST['camera'],
+         'charge'=>$_POST['charge'],
         
     );
   $condition='mid='.$_GET['id'];
@@ -125,6 +131,35 @@ Company iMAGE:
 
 <?= $form->fileField('mimg',array('class'=>'form-control')); ?>
 <span style="color:red;"><?= $validator->error('mimg'); ?></span>
+</div>
+</div>
+
+<div class="row">
+                    <div class="col-md-6">
+
+
+RAM :
+<?= $form->textBox('storage',array('class'=>'form-control')); ?>
+<?= $validator->error('storage'); ?>
+
+</div>
+</div>
+
+<div class="row">
+                    <div class="col-md-6">
+Camera :
+<?= $form->textBox('camera',array('class'=>'form-control')); ?>
+<?= $validator->error('camera'); ?>
+
+</div>
+</div>
+
+<div class="row">
+                    <div class="col-md-6">
+Battery :
+<?= $form->textBox('charge',array('class'=>'form-control')); ?>
+<?= $validator->error('charge'); ?>
+
 </div>
 </div>
 

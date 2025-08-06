@@ -56,7 +56,7 @@ $dao=new DataAccess();
                       
                     </tr>
 <?php
-    $actions=array('delete'=>array('label'=>'Cancel','link'=>'deletecart1.php','params'=>array('id'=>'carid'),'attributes'=>array('class'=>'btn btn-success')));
+    $actions=array('delete'=>array('label'=>'Cancel','link'=>'returndelete.php','params'=>array('id'=>'carid'),'attributes'=>array('class'=>'btn btn-success')));
    
     $config=array(
         'srno'=>true,

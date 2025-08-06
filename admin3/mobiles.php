@@ -4,7 +4,7 @@
 include("header.php");
 
 $file=new FileUpload();
-$elements=array( "mname"=>"","mprize"=>"","msoft"=>"","mimg"=>"","cid"=>"","cid11"=>"");
+$elements=array( "mname"=>"","mprize"=>"","msoft"=>"","mimg"=>"","cid"=>"","cid11"=>"","storage"=>"","camera"=>"","charge"=>"","ct"=>"");
 
 
 $form=new FormAssist($elements,$_POST);
@@ -13,7 +13,7 @@ $form=new FormAssist($elements,$_POST);
 
 $dao=new DataAccess();
 
-$labels=array('mname'=>"Mobile name",'mprice'=>"Mobile price",'msoft'=>"Mobile software","mimg"=>"Mobile image","cid"=>"Category","cid11"=>"Company");
+$labels=array('mname'=>"Mobile name",'mprice'=>"Mobile price",'msoft'=>"Mobile software","mimg"=>"Mobile image","cid"=>"Category","cid11"=>"Company","storage"=>"RAM","camera"=>"Camera","charge"=>"Battery","ct"=>"Cellular Technology");
 
 $rules=array(
     "mname"=>array("required"=>true),
@@ -21,7 +21,12 @@ $rules=array(
     "msoft"=>array("required"=>true,"minlength"=>3,"maxlength"=>30,"alphaonly"=>true),
     "mimg"=>array("filerequired"=>true),
     "cid"=>array("required"=>true),
-    "cid11"=>array("required"=>true), 
+    "cid11"=>array("required"=>true),
+    "storage"=> array("required"=>true),
+    "camera"=>array("required"=>true),
+    "charge"=>array("required"=>true),
+    "ct"=>array("required"=>true),
+
      
 );
     
@@ -46,10 +51,13 @@ $data=array(
         'mimg'=>$fileName,
         'ctid'=>$_POST['cid'],
         'cmid'=>$_POST['cid11'],
-         
+         'storage'=>$_POST['storage'],
+         'camera'=>$_POST['camera'],
+         'charge'=>$_POST['charge'],
+         'ct'=>$_POST['ct'],
+
     );
 
-    print_r($data);
   
     if($dao->insert($data,"addmobile"))
     {
@@ -138,6 +146,46 @@ Company :
      $options = $dao->createOptions('cname','cid',"company");
      echo $form->dropDownList('cid11',array('class'=>'form-control'),$options); ?>
 <?= $validator->error('cid11'); ?>
+
+</div>
+</div>
+<div class="row">
+                    <div class="col-md-6">
+
+
+RAM :
+<?= $form->textBox('storage',array('class'=>'form-control')); ?>
+<?= $validator->error('storage'); ?>
+
+</div>
+</div>
+<div class="row">
+                    <div class="col-md-6">
+
+
+Camera :
+<?= $form->textBox('camera',array('class'=>'form-control')); ?>
+<?= $validator->error('camera'); ?>
+
+</div>
+</div>
+<div class="row">
+                    <div class="col-md-6">
+
+
+Battery :
+<?= $form->textBox('charge',array('class'=>'form-control')); ?>
+<?= $validator->error('charge'); ?>
+
+</div>
+</div>
+<div class="row">
+                    <div class="col-md-6">
+
+
+Cellular Technology :
+<?= $form->textBox('ct',array('class'=>'form-control')); ?>
+<?= $validator->error('ct'); ?>
 
 </div>
 </div>

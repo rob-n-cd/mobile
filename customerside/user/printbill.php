@@ -22,7 +22,8 @@ $dao=new DataAccess();
 <div class="row">
  <div class="col-md-12">
  <div class="table-responsive">
-                                <table border="1"  id="printTable" style="width:100%" >
+ <link href="css/style.css" rel="stylesheet">
+                                <table bgcolor= "yellow" border="1"  id="printTable" style="width:100%" >
                                     <thead>
                           <center> mobile</center>
                             <tr>
@@ -92,7 +93,21 @@ $result123 = $conn->query($sql123);
      <br /><br />
 
 <input type="button" onclick="printData();" value="PRINT"  />
-<a href="../payment/booking.php">BOOKING</a>
+<a class="butt" href="../payment/booking.php">BOOKING</a>
+<style>
+  .butt{
+    text-decoration: none;
+    border: 1px solid;
+    background-color: green;
+    color:black;
+    border-radius: 4px;
+    margin-left: 1000px;
+    padding-right: 5px;
+    padding-left: 5px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+  }
+</style>
 </div>
 </div>
 </div>

@@ -63,7 +63,7 @@ include("dbcon.php");
       <nav id="navbar" class="navbar">
         <ul>
           <li><a class="nav-link scrollto " href="details.php">Home</a></li>  
-          <li><a class="nav-link scrollto" href="">Back</a></li>
+          <li><a class="nav-link scrollto" href="singleitem.php?id=<?=$mid?>">Back</a></li>
         </ul>
         <i class="bi bi-list mobile-nav-toggle"></i>
       </nav><!-- .navbar -->
@@ -80,8 +80,7 @@ include("dbcon.php");
         <div class="d-flex justify-content-between align-items-center">
           <h2 class="font-monospace">Mobile Details</h2>
           <ol>
-            <li><a href="index.html">Home</a></li>
-            <li>Portfoio Details</li>
+           
           </ol>
         </div>
 
@@ -114,8 +113,12 @@ include("dbcon.php");
               <h3><?=$info1[0]["cname"]?></h3>
               <ul>
                 <li><strong>Mobile Name</strong>:<?=$info[0]["mname"]?> </li>
-                <li><strong>Software</strong>: <?=$info[0]["msoft"]?></li>
+                <li><strong>Operating System</strong>: <?=$info[0]["msoft"]?></li>
+                <li><strong>Mobile Memory Storage</strong>: <?=$info[0]["storage"]?></li>
                 <li><strong>price</strong>:<?=$info[0]["mprize"]?></li>
+                <li><strong>Mobile Camera</strong>: <?=$info[0]["camera"]?></li>
+                <li><strong>Battery</strong>: <?=$info[0]["charge"]?></li>
+                <li><strong>Cellular Technology</strong>: <?=$info[0]["ct"]?></li>
                 <li><strong>mobile stocks</strong>:<?=$info[0]["stocks"]?></li>
                 <li><strong>Project URL</strong>: <a href="#"></a></li>
               </ul>
